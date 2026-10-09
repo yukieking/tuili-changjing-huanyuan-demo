@@ -448,3 +448,7 @@ header nav a.active {
 .r-reading a:hover {
   text-decoration: underline;
 }
+
+header nav a,header nav a.active{color:#355e64}header nav a.active{border-color:#a47856}.r-hero h1{color:#294c55}.r-hero p{color:#7d8e87}.r-card{background:#eeeee4;border-color:#d9ded3}.r-card h3,.r-reason{color:#355e64}.r-author,.r-study,.r-tags{color:#7d8e87}.r-controls{border-color:#d9ded3}.r-tabs button.active{background:#355e64;color:#f6f4ec}.r-reading a{color:#a47856}input,select{background:#f6f4ec;border:1px solid #d9ded3;border-radius:5px;padding:10px}.r-card button{color:#355e64}.r-card button[aria-pressed=true]{background:#355e64;color:white}
+
+.r-results h2,.r-study b{color:#355e64}.r-tags span{color:#647b6b;border-color:#b7c3b4}.r-card button{background:#e4e9db;border-color:#c5cebd}.r-filters select{background:#eeeee4;color:#355e64;border-color:#d0d8ca}.r-existing{background:#eeeee4;border-color:#d9ded3}.r-existing h2,.r-existing a{color:#355e64}.r-existing p{color:#74877d}

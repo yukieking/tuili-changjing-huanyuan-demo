@@ -1,0 +1,2445 @@
+{
+  "id": "decagon",
+  "title": "十角馆事件",
+  "subtitle": "角岛 · 十角馆 · 两处地下空间",
+  "author": "绫辻行人",
+  "names": [
+    "埃勒里",
+    "阿加莎",
+    "卡尔",
+    "勒鲁",
+    "范达因",
+    "奥希兹",
+    "爱伦·坡",
+    "江南孝明",
+    "岛田洁",
+    "守须恭一",
+    "中村红次郎"
+  ],
+  "offPlaces": {
+    "oHome": "O市 · 守须住处",
+    "jHome": "O市 · 江南住处",
+    "redHome": "铁轮 · 红次郎家",
+    "ajimu": "安心院 · 吉川政子家",
+    "shore": "S区海岸",
+    "cape": "J岬角",
+    "sea": "角岛—J岬角海上",
+    "port": "S区渔业组合",
+    "club": "K大学研究会",
+    "oCity": "O市",
+    "prep": "本土 · 准备地点未细分"
+  },
+  "observed": [
+    {
+      "id": "arrive",
+      "day": 26,
+      "seq": 20,
+      "time": "3/26 · 11点刚过",
+      "title": "六人登岛",
+      "summary": "六人在西岸栈桥上岸；范已先到岛上，稍后迎接。",
+      "source": "第1章·第1–2节",
+      "actors": {
+        "0": {
+          "place": "pier",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "pier",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "pier",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "pier",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "pier",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "pier",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "mainletter",
+      "day": 26,
+      "seq": 21,
+      "time": "3/26 · 上午11点",
+      "title": "本土收到怪信",
+      "summary": "江南在住处发现署名中村青司的信。这个时间与六人上岛接近，先后不作定论。",
+      "source": "第2章·第1节",
+      "actors": {
+        "7": {
+          "place": "jHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "letters",
+          "title": "死者来信",
+          "place": "jHome",
+          "state": "江南收到",
+          "detail": "寄信人身份尚未证实；信中的指控不是鉴定结论。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "rooms",
+      "day": 26,
+      "seq": 30,
+      "time": "3/26 · 登岛后",
+      "title": "分配客房",
+      "summary": "七人入住；仅这个入住节点把人物放入各自客房，不把此位置沿用到后续空白时段。",
+      "source": "第1章·第2–3节",
+      "actors": {
+        "0": {
+          "place": "ellery",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "agatha",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "carr",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "leroux",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "orczy",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "poe",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "tour",
+      "day": 26,
+      "seq": 40,
+      "time": "3/26 · 午前",
+      "title": "四人查看蓝屋",
+      "summary": "埃勒里、勒鲁、范、爱伦·坡查看蓝屋废墟；两位女生在厨房。卡尔独自出门，具体地点未明。",
+      "source": "第1章·第3节",
+      "actors": {
+        "0": {
+          "place": "ruins",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": null,
+          "note": "独自外出，原文未定位"
+        },
+        "3": {
+          "place": "ruins",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "ruins",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ruins",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "ring",
+      "day": 26,
+      "seq": 42,
+      "time": "3/26 · 午前，岛上探访期间",
+      "title": "戒指被注意到",
+      "summary": "阿加莎注意到奥希兹左手中指的戒指；这里不赋予其尚未揭示的意义。",
+      "source": "第1章·第3节",
+      "actors": {
+        "1": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "ring",
+          "title": "奥希兹的戒指",
+          "place": "orczy",
+          "state": "戴在左手中指",
+          "detail": "画面标记所属客房，仅表示归属；不是这段对话的精确坐标。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "lunch1",
+      "day": 26,
+      "seq": 50,
+      "time": "3/26 · 13:30后",
+      "title": "返回大厅午餐",
+      "summary": "外出者返回，十角桌上的午餐是共同活动节点。",
+      "source": "第1章·第3节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "redvisit1",
+      "day": 26,
+      "seq": 55,
+      "time": "3/26 · 本土午后",
+      "title": "江南初访红次郎",
+      "summary": "江南在铁轮的红次郎家见到岛田，两条叙事线开始并行。",
+      "source": "第2章·第2–3节",
+      "actors": {
+        "7": {
+          "place": "redHome",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "redHome",
+          "note": "叙述确认"
+        },
+        "10": {
+          "place": "redHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "map": null
+    },
+    {
+      "id": "night1",
+      "day": 26,
+      "seq": 70,
+      "time": "3/26 · 晚饭后，19点过后",
+      "title": "大厅聚谈",
+      "summary": "众人围桌喝咖啡、谈推理。咖啡杯此时尚未被识别为十一角形。",
+      "source": "第1章·第4节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cups",
+          "title": "墨绿色咖啡杯",
+          "place": "hall",
+          "state": "用于晚间咖啡",
+          "detail": "当时看起来与其他十角餐具相似，不能提前标记毒杯。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "vanrest1",
+      "day": 26,
+      "seq": 80,
+      "time": "3/26 · 夜间，较早回房",
+      "title": "范称身体不适回房",
+      "summary": "只记录他回到房间这个可见节点；之后的实际去向不能据此确定。",
+      "source": "第1章·第4节",
+      "actors": {
+        "4": {
+          "place": "van",
+          "note": "看见其回房；之后位置未明"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "visitguard1",
+      "day": 26,
+      "seq": 95,
+      "time": "3/26 · 深夜，近午夜",
+      "title": "守须在本土会见二人",
+      "summary": "江南和岛田来到守须住处；画架上的画处于浅着色阶段。",
+      "source": "第2章·第5–6节",
+      "actors": {
+        "7": {
+          "place": "oHome",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "oHome",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "oHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "painting",
+          "title": "佛像画",
+          "place": "oHome",
+          "state": "浅着色阶段",
+          "detail": "守须声称白天去国东写生；这是他的说法，不能直接画成白天在国东。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "boards",
+      "day": 27,
+      "seq": 20,
+      "time": "3/27 · 08:00左右",
+      "title": "发现七块预告板",
+      "summary": "奥希兹起床来到大厅，看见桌上七块塑料板，随后叫醒阿加莎。",
+      "source": "第3章·第1节",
+      "actors": {
+        "5": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boards",
+          "title": "七块预告板",
+          "place": "hall",
+          "state": "桌上被发现",
+          "detail": "五名被害者、侦探与凶手的标记；此时作者身份未知。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "drawer",
+      "day": 27,
+      "seq": 30,
+      "time": "3/27 · 当天早晨，众人到齐后",
+      "title": "预告板收入抽屉",
+      "summary": "七人围桌讨论；埃勒里把预告板放进厨房抽屉。",
+      "source": "第3章·第2节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boards",
+          "title": "七块预告板",
+          "place": "kitchen",
+          "state": "收入厨房抽屉",
+          "detail": "保存地点改变，不代表有人从此一直守在厨房。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "poeroom",
+      "day": 27,
+      "seq": 50,
+      "time": "3/27 · 午后",
+      "title": "范在爱伦·坡房中量体温",
+      "summary": "两人在爱伦·坡的客房；卡尔独自外出。",
+      "source": "第3章·第3节",
+      "actors": {
+        "2": {
+          "place": null,
+          "note": "独自外出，地点未明"
+        },
+        "4": {
+          "place": "poe",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "poe",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "jigsaw",
+          "title": "狐狸拼图",
+          "place": "poe",
+          "state": "铺在地板",
+          "detail": "两千块拼图尚未完成。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "rocksvisit",
+      "day": 27,
+      "seq": 55,
+      "time": "3/27 · 午后，先后未细化",
+      "title": "埃勒里与勒鲁在岩区",
+      "summary": "两人讨论预告板，此处的岩区在后续回忆中再次出现。",
+      "source": "第3章·第3节；第9章·第1节",
+      "actors": {
+        "0": {
+          "place": "rocks",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "rocks",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "ajimu",
+      "day": 27,
+      "seq": 60,
+      "time": "3/27 · 下午，17点后离开",
+      "title": "本土走访吉川政子",
+      "summary": "江南和岛田在安心院与吉川政子谈话，调查半年前的蓝屋事件。",
+      "source": "第4章·第2节",
+      "actors": {
+        "7": {
+          "place": "ajimu",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "ajimu",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "map": null
+    },
+    {
+      "id": "vanrest2",
+      "day": 27,
+      "seq": 80,
+      "time": "3/27 · 晚饭后，约19点",
+      "title": "范再次较早回房",
+      "summary": "范与卡尔争执后回自己的房间；不能把“回房”延伸为整夜留在房内。",
+      "source": "第3章·第4节",
+      "actors": {
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "visitguard2",
+      "day": 27,
+      "seq": 95,
+      "time": "3/27 · 22:40后",
+      "title": "本土再次会见守须",
+      "summary": "江南和岛田来到守须住处；画作变为浓厚着色阶段，守须提出退出调查。",
+      "source": "第4章·第3节",
+      "actors": {
+        "7": {
+          "place": "oHome",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "oHome",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "oHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "painting",
+          "title": "佛像画",
+          "place": "oHome",
+          "state": "浓厚着色阶段",
+          "detail": "画的变化并不能单独证明白天去过国东。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "orczyfound",
+      "day": 28,
+      "seq": 30,
+      "time": "3/28 · 正午",
+      "title": "发现奥希兹遇害",
+      "summary": "阿加莎发现房门上的预告板；爱伦·坡检查尸体，埃勒里也进入房间，其他人停在门口。",
+      "source": "第5章·第1–2节",
+      "actors": {
+        "0": {
+          "place": "orczy",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "在奥希兹房门外"
+        },
+        "2": {
+          "place": "hall",
+          "note": "在奥希兹房门外"
+        },
+        "3": {
+          "place": "hall",
+          "note": "在奥希兹房门外"
+        },
+        "4": {
+          "place": "hall",
+          "note": "在奥希兹房门外"
+        },
+        "6": {
+          "place": "orczy",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "board1",
+          "title": "第一被害者牌",
+          "place": "orczy",
+          "state": "贴在房门",
+          "detail": "发现时间是正午，不等于粘贴时间。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "nylon",
+          "title": "尼龙绳与遗体",
+          "place": "orczy",
+          "state": "发现勒痕与尼龙绳",
+          "detail": "奥希兹左手缺失；绞杀由现场检查得出。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "orczydeath",
+          "title": "死亡时间推定",
+          "place": "orczy",
+          "state": "约06:00—09:00",
+          "detail": "爱伦·坡明确说是外行估计，不能当作精确作案时刻。",
+          "kind": "判断",
+          "truth": false
+        },
+        {
+          "id": "orczylocks",
+          "title": "门窗锁状态",
+          "place": "orczy",
+          "state": "房门未锁，窗插销未插好",
+          "detail": "这是发现时的状态；不能据此确定凶手从窗进入。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "ring",
+          "title": "奥希兹的戒指",
+          "place": null,
+          "state": "左手被切断，戒指去向未明",
+          "detail": "之前见她戴在左手中指；发现遗体时左手缺失，不能继续标在手上。",
+          "kind": "观察"
+        }
+      ],
+      "deaths": {
+        "5": "orczy"
+      },
+      "truthChanges": [
+        {
+          "id": "ring",
+          "title": "奥希兹的戒指",
+          "place": "behind",
+          "state": "仍随被藏起的左手",
+          "detail": "结尾补述说明左手及戒指藏在馆后；发现遗体时其他人尚不知道。",
+          "kind": "结尾补述",
+          "truth": true
+        }
+      ]
+    },
+    {
+      "id": "orczyseal",
+      "day": 28,
+      "seq": 35,
+      "time": "3/28 · 正午，检查后",
+      "title": "锁闭奥希兹房间",
+      "summary": "爱伦·坡和埃勒里处理门窗；六人回大厅讨论。",
+      "source": "第5章·第1–2节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "orczylocks",
+          "title": "门窗锁状态",
+          "place": "orczy",
+          "state": "检查后锁闭",
+          "detail": "爱伦·坡持房门钥匙，窗也被关闭。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "searchshore",
+      "day": 28,
+      "seq": 50,
+      "time": "3/28 · 午后",
+      "title": "埃勒里与勒鲁寻找联络办法",
+      "summary": "他们在岛上找船只与联络途径，不把一次巡视定位成整段时间站在某个岩石上。",
+      "source": "第5章·第3–4节",
+      "actors": {
+        "0": {
+          "place": null,
+          "note": "在岛上巡视，节点内位置未细分"
+        },
+        "3": {
+          "place": null,
+          "note": "在岛上巡视，节点内位置未细分"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "mainshore",
+      "day": 28,
+      "seq": 65,
+      "time": "3/28 · 黄昏",
+      "title": "本土远眺角岛",
+      "summary": "江南和岛田在S区海岸调查当地居民与渔夫；没有上岛。",
+      "source": "第6章",
+      "actors": {
+        "7": {
+          "place": "shore",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "map": null
+    },
+    {
+      "id": "coffee",
+      "day": 28,
+      "seq": 90,
+      "time": "3/28 · 夜间咖啡时",
+      "title": "卡尔在大厅毒发",
+      "summary": "阿加莎从厨房端出咖啡；六人取杯，卡尔随后倒地。这里不把他在大厅毒发误画成在客房喝下咖啡。",
+      "source": "第5章·第4–5节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cups",
+          "title": "卡尔喝过的杯子",
+          "place": "hall",
+          "state": "疑似与中毒有关",
+          "detail": "取杯顺序：埃勒里，勒鲁与卡尔，爱伦·坡，阿加莎，范。具体毒物当时未定。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "carrdead",
+      "day": 29,
+      "seq": 5,
+      "time": "3/29 · 02:30（第三天深夜）",
+      "title": "卡尔在客房死亡",
+      "summary": "原文第三天深夜两点半按自然日归入3月29日；卡尔已被移到自己房间。",
+      "source": "第5章·第4–5节",
+      "actors": {},
+      "changes": [
+        {
+          "id": "carrdeath",
+          "title": "卡尔死亡",
+          "place": "carr",
+          "state": "02:30死亡",
+          "detail": "死亡地点为自己的床，毒发地点为大厅。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "2": "carr"
+      }
+    },
+    {
+      "id": "carrhand",
+      "day": 29,
+      "seq": 30,
+      "time": "3/29 · 中午，勒鲁起床前",
+      "title": "发现浴缸里的左手",
+      "summary": "爱伦·坡发现卡尔左手在浴缸里，随后放回卡尔床上；埃勒里也发现第二块牌与另一套板。此节点展示发现时。",
+      "source": "第7章·第1节",
+      "actors": {
+        "6": {
+          "place": "wash",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "carrhand",
+          "title": "卡尔左手",
+          "place": "wash",
+          "state": "在浴缸被发现",
+          "detail": "之后移回客房；这是发现地点，不是死亡地点。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "board2",
+          "title": "第二被害者牌",
+          "place": "carr",
+          "state": "贴在房门",
+          "detail": "原厨房抽屉仍有六块，说明至少两套预告板。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "lateLunch",
+      "day": 29,
+      "seq": 40,
+      "time": "3/29 · 将近15:00",
+      "title": "五人迟来的午餐",
+      "summary": "阿加莎和爱伦·坡准备餐食，五人围桌；卡尔左手已经放回床上。",
+      "source": "第7章·第1节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "carrhand",
+          "title": "卡尔左手",
+          "place": "carr",
+          "state": "移回床上",
+          "detail": "不能在后续场景继续把它留在浴室。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "bluecellar",
+      "day": 29,
+      "seq": 50,
+      "time": "3/29 · 午餐后",
+      "title": "蓝屋地窖的绊线",
+      "summary": "埃勒里下石阶时绊倒；爱伦·坡、范和勒鲁进入地下室，阿加莎留在上方。",
+      "source": "第7章·第2节",
+      "actors": {
+        "0": {
+          "place": "bluecellar",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "ruins",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "bluecellar",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "bluecellar",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "bluecellar",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "fishingline",
+          "title": "楼梯绊线",
+          "place": "bluecellar",
+          "state": "发现细而坚韧的线",
+          "detail": "位置为台阶胫骨高度；不展示尚未揭示的布线者。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "swept",
+          "title": "地面干净圆弧",
+          "place": "bluecellar",
+          "state": "发现异常清扫痕迹",
+          "detail": "有人藏身是埃勒里的推测，不能把那个人自动放进地窖。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "unlock": [
+        "bluecellar"
+      ]
+    },
+    {
+      "id": "ankle",
+      "day": 29,
+      "seq": 60,
+      "time": "3/29 · 返回十角馆后",
+      "title": "脚伤和失踪的钓鱼线",
+      "summary": "爱伦·坡处理埃勒里脚伤，并确认放在玄关的最粗钓鱼线不见了。",
+      "source": "第7章·第3节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "ankle",
+          "title": "埃勒里脚伤",
+          "place": "hall",
+          "state": "右脚踝轻度受伤",
+          "detail": "非致命伤，后续仍能步行。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "fishinggear",
+          "title": "钓鱼线卷",
+          "place": "entry",
+          "state": "最粗线卷缺失",
+          "detail": "线卷原来放在玄关；不能从“失踪”推出谁偷了它。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "redvisit2",
+      "day": 29,
+      "seq": 65,
+      "time": "3/29 · 下午15点过后",
+      "title": "本土再访红次郎",
+      "summary": "江南和岛田在红次郎家追问旧案。岛上地窖事件与此处的具体先后未详。",
+      "source": "第8章·第1–3节",
+      "actors": {
+        "7": {
+          "place": "redHome",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "redHome",
+          "note": "叙述确认"
+        },
+        "10": {
+          "place": "redHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "map": null
+    },
+    {
+      "id": "sleep4",
+      "day": 29,
+      "seq": 80,
+      "time": "3/29 · 19点刚过",
+      "title": "众人较早散去",
+      "summary": "勒鲁、爱伦·坡和范索要药物，随后众人回房；内入口门把手被绳子系住。",
+      "source": "第7章·第3–4节",
+      "actors": {
+        "0": {
+          "place": "ellery",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "agatha",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "leroux",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "poe",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "entryrope",
+          "title": "入口绳子",
+          "place": "entry",
+          "state": "两个把手系在一起",
+          "detail": "门锁与绳子是不同状态；原文描述的是绳子闩门。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "sleepdrug",
+          "title": "安眠药",
+          "place": "hall",
+          "state": "爱伦·坡分发药物",
+          "detail": "具体服用情况与作用时间未作确定模拟。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "main29night",
+      "day": 29,
+      "seq": 95,
+      "time": "3/29 · 22:10后",
+      "title": "守须到江南住处",
+      "summary": "守须带绘画工具到江南房间，与江南和岛田谈话。",
+      "source": "第8章·第2–3节",
+      "actors": {
+        "7": {
+          "place": "jHome",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "jHome",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "jHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "painting",
+          "title": "佛像画",
+          "place": "jHome",
+          "state": "带至江南住处",
+          "detail": "晚间实地见面与白天写生的说法必须分开。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "lerouxout",
+      "day": 30,
+      "seq": 12,
+      "time": "3/30 · 天亮前后",
+      "title": "勒鲁独自外出",
+      "summary": "勒鲁记起岩区的异常后起身外出；这一叙述节点没有交代他已经走到哪处。",
+      "source": "第9章·第1节",
+      "actors": {
+        "3": {
+          "place": null,
+          "note": "离开客房，目的与路程未直接展示"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "agathamakeup",
+      "day": 30,
+      "seq": 20,
+      "time": "3/30 · 早晨，未给准确时刻",
+      "title": "阿加莎在盥洗室换口红",
+      "summary": "她改用红色口红；不能把后来约八点的死亡推定冒充此刻的精确时间。",
+      "source": "第9章·第1节",
+      "actors": {
+        "1": {
+          "place": "wash",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "lipstick",
+          "title": "红色口红",
+          "place": "wash",
+          "state": "正在使用",
+          "detail": "红色与玫瑰色两支口红；此时尚未完成毒物确认。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "agathafound",
+      "day": 30,
+      "seq": 30,
+      "time": "3/30 · 10:00后",
+      "title": "发现阿加莎遗体",
+      "summary": "范起床后发现阿加莎，去拍爱伦·坡房门；爱伦·坡检查，埃勒里将范扶到厨房。",
+      "source": "第9章·第2节",
+      "actors": {
+        "0": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "wash",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "agathadeath",
+          "title": "阿加莎遗体",
+          "place": "wash",
+          "state": "在盥洗室被发现",
+          "detail": "现场有苦杏仁气味，中毒种类是爱伦·坡的现场判断。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "board3",
+          "title": "第三被害者牌",
+          "place": "leroux",
+          "state": "勒鲁房门出现预告板",
+          "detail": "此时发现顺序与被害者编号并不一致。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "1": "wash"
+      }
+    },
+    {
+      "id": "breakwindow",
+      "day": 30,
+      "seq": 35,
+      "time": "3/30 · 发现阿加莎后",
+      "title": "破窗查看勒鲁房间",
+      "summary": "勒鲁房门锁着，三人从外侧砸窗；坡与埃勒里进入空房，范留在窗外。",
+      "source": "第9章·第3节",
+      "actors": {
+        "0": {
+          "place": "leroux",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "island-house",
+          "note": "勒鲁窗外；场景内窗口坐标为示意"
+        },
+        "6": {
+          "place": "leroux",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "lerouxwindow",
+          "title": "勒鲁门窗",
+          "place": "leroux",
+          "state": "房门锁闭，窗被破坏",
+          "detail": "窗内挂钩与绑拉手的绳带；床上没有勒鲁。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "entryrope",
+          "title": "入口绳子",
+          "place": "entry",
+          "state": "已解开，一端垂落",
+          "detail": "能确认有人解开，不能只据此确定解绳者。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "searchleroux",
+      "day": 30,
+      "seq": 40,
+      "time": "3/30 · 当天上午，搜寻时",
+      "title": "三人分头搜索",
+      "summary": "爱伦·坡去海湾，埃勒里检查十角馆与蓝屋附近，范在十角馆门口等候。",
+      "source": "第9章·第3节",
+      "actors": {
+        "0": {
+          "place": null,
+          "note": "搜索馆与废墟附近，地点范围"
+        },
+        "4": {
+          "place": "island-house",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "pier",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "lerouxfound",
+      "day": 30,
+      "seq": 45,
+      "time": "3/30 · 当天上午，10点之后",
+      "title": "蓝屋前院发现勒鲁",
+      "summary": "埃勒里呼唤另外两人；三人看见前院遗体和雨后脚印。",
+      "source": "第9章·第3节",
+      "actors": {
+        "0": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "footprints",
+          "title": "前院脚印",
+          "place": "forecourt",
+          "state": "雨后地面可见",
+          "detail": "对方向和组数的推理到后续节点再展开。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "lerouxdeath",
+          "title": "勒鲁死亡时间",
+          "place": "forecourt",
+          "state": "推定约05:00—06:00",
+          "detail": "爱伦·坡根据尸体现象估计，非精确法医结论。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "3": "forecourt"
+      }
+    },
+    {
+      "id": "bodiesmove",
+      "day": 30,
+      "seq": 50,
+      "time": "3/30 · 搜寻后，午前后",
+      "title": "遗体与口红重新检查",
+      "summary": "勒鲁搬回自己床上；阿加莎也移回客房，化妆包里的红色口红被判断含毒。",
+      "source": "第9章·第4节",
+      "actors": {
+        "0": {
+          "place": "agatha",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "agatha",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "agatha",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "lipstick",
+          "title": "红色口红",
+          "place": "agatha",
+          "state": "判断被下毒",
+          "detail": "依据气味检查；结尾才揭示何时和由谁涂毒。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "agathadeath",
+          "title": "阿加莎死亡时间",
+          "place": "agatha",
+          "state": "推定约08:00",
+          "detail": "爱伦·坡在搬回后发表估计，精确时间仍不明。",
+          "kind": "判断",
+          "truth": false
+        },
+        {
+          "id": "lerouxkey",
+          "title": "勒鲁房门钥匙",
+          "place": "leroux",
+          "state": "在其上衣口袋发现",
+          "detail": "与锁门和破窗的记录合并查看。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "moveBodies": {
+        "1": "agatha",
+        "3": "leroux"
+      }
+    },
+    {
+      "id": "cup11",
+      "day": 30,
+      "seq": 60,
+      "time": "3/30 · 午后讨论期间",
+      "title": "识别十一角杯",
+      "summary": "三人在大厅讨论；埃勒里从厨房吧台取来白毛巾覆盖的卡尔用杯，数出十一角。",
+      "source": "第9章·第5–6节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cups",
+          "title": "十一角形咖啡杯",
+          "place": "kitchen",
+          "state": "此前保存在厨房吧台",
+          "detail": "异形足以辨认杯子，但本节点尚未确认隐藏机关。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "printsreason",
+      "day": 30,
+      "seq": 70,
+      "time": "3/30 · 午后，15点之前",
+      "title": "重新对照脚印",
+      "summary": "三人再次去蓝屋前院比较足迹。只有勒鲁双向足迹及另一组朝向十角馆的单向足迹；“外来者”是埃勒里的错误结论。",
+      "source": "第9章·第6–7节",
+      "actors": {
+        "0": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "footprints",
+          "title": "前院脚印",
+          "place": "forecourt",
+          "state": "双向与单向足迹被区分",
+          "detail": "足迹方向是观察；从中断言外来者或青司仍活着属于人物推理。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "poedead",
+      "day": 30,
+      "seq": 80,
+      "time": "3/30 · 午后，15点后的讨论",
+      "title": "爱伦·坡吸烟后死亡",
+      "summary": "三人在大厅；爱伦·坡抽云雀烟后倒地。不得提前认定换烟过程被别人看见。",
+      "source": "第9章·第7–8节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cigarette",
+          "title": "云雀烟与烟盒",
+          "place": "hall",
+          "state": "吸烟后突然死亡",
+          "detail": "随后埃勒里根据苦杏仁气味判断有氰化钾；这是当时的判断。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "6": "hall"
+      }
+    },
+    {
+      "id": "poemove",
+      "day": 30,
+      "seq": 90,
+      "time": "3/30 · 黄昏",
+      "title": "将爱伦·坡移回客房",
+      "summary": "埃勒里和范搬动遗体后回大厅；十一角杯引出隐蔽房间的猜想。",
+      "source": "第9章·第9节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "hiddenGuess",
+          "title": "第十一个房间猜想",
+          "place": "kitchen",
+          "state": "尚未验证",
+          "detail": "杯子与房间之间的关联，此时只是埃勒里的推断。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "moveBodies": {
+        "6": "poe"
+      }
+    },
+    {
+      "id": "hatch",
+      "day": 30,
+      "seq": 95,
+      "time": "3/30 · 天刚黑",
+      "title": "厨房机关开启",
+      "summary": "埃勒里把十一角杯嵌入厨房地板储藏柜底部缺口，转动后底板下倾，出现下行石阶。",
+      "source": "第9章·第9节",
+      "actors": {
+        "0": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cups",
+          "title": "十一角杯",
+          "place": "kitchen",
+          "state": "成为机关钥匙",
+          "detail": "此前含咖啡的杯子被倒空后用于开启底板。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "hatch",
+          "title": "厨房地板机关",
+          "place": "kitchen",
+          "state": "底板开启",
+          "detail": "储藏盖板约80厘米见方；模型只画出连接，不做精确机关工程。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "unlock": [
+        "cellar",
+        "cellarstairs"
+      ]
+    },
+    {
+      "id": "passage",
+      "day": 30,
+      "seq": 100,
+      "time": "3/30 · 夜间，机关开启后",
+      "title": "暗室木门后发现旧尸",
+      "summary": "两人由厨房下至大厅下方暗室，打开木门，在暗道内发现旧尸；身份当时没有被鉴定。",
+      "source": "第9章·第9节",
+      "actors": {
+        "0": {
+          "place": "passage",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "passage",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "oldbody",
+          "title": "暗道内旧尸",
+          "place": "passage",
+          "state": "发现，身份未确认",
+          "detail": "不能把人物猜测或后来的警方推定作为此刻的鉴定结果。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "unlock": [
+        "passage"
+      ]
+    },
+    {
+      "id": "fire",
+      "day": 31,
+      "seq": 5,
+      "time": "3/30深夜—3/31凌晨 · 夜半",
+      "title": "十角馆起火",
+      "summary": "叙述看到建筑陷入火海；当时所见不直接给出纵火者与埃勒里死前的位置。",
+      "source": "第9章·第10节",
+      "actors": {},
+      "changes": [
+        {
+          "id": "fire",
+          "title": "十角馆火灾",
+          "place": "island-house",
+          "state": "建筑燃烧",
+          "detail": "完整纵火过程只在真相复盘展示。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "fire": true
+    },
+    {
+      "id": "phonefire",
+      "day": 31,
+      "seq": 20,
+      "time": "3/31 · 08:00",
+      "title": "守须接到火灾消息",
+      "summary": "守须在本土住处接电话，再联系江南前往S区。",
+      "source": "第10章·第1节",
+      "actors": {
+        "9": {
+          "place": "oHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "map": null
+    },
+    {
+      "id": "portmeet",
+      "day": 31,
+      "seq": 45,
+      "time": "3/31 · 临近13:00",
+      "title": "三人在港口会合",
+      "summary": "江南、岛田和守须在渔业组合会议室会合；警方后续提供初步尸检，不能认作最终真相。",
+      "source": "第10章·第1–2节",
+      "actors": {
+        "7": {
+          "place": "port",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "port",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "port",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "policeTheory",
+          "title": "警方初步推论",
+          "place": "port",
+          "state": "怀疑埃勒里杀人后自焚",
+          "detail": "小说随后揭示此结论错误；此处只记录警方说法。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "news",
+      "day": 32,
+      "seq": 10,
+      "time": "4/01 · 晨报",
+      "title": "报纸报道六名学生遗体",
+      "summary": "记录报道中的六具学生遗体与另发现的地下旧尸，不把报道视作所有事实已查清。",
+      "source": "第11章",
+      "actors": {},
+      "changes": [
+        {
+          "id": "news",
+          "title": "火灾案件报道",
+          "place": "port",
+          "state": "六名学生与地下旧尸",
+          "detail": "本土线索，地点未细分为某一个读报房间。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "clearBodies": true,
+      "map": null,
+      "deaths": {
+        "0": "ellery"
+      }
+    },
+    {
+      "id": "meeting",
+      "day": 33,
+      "seq": 30,
+      "time": "4/02 · 午后",
+      "title": "研究会接受警方询问",
+      "summary": "江南、守须与研究会成员在活动室；警方把埃勒里认作凶手，动机仍不清楚。岛田洁没有到场。",
+      "source": "第12章·第1节",
+      "actors": {
+        "7": {
+          "place": "club",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "club",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "policeTheory",
+          "title": "警方结论",
+          "place": "club",
+          "state": "认定埃勒里杀人后自杀",
+          "detail": "仍是误判，不能在事实图层给埃勒里标记凶手。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "map": null
+    }
+  ],
+  "truthOnly": [
+    {
+      "id": "prep",
+      "day": 25,
+      "seq": 10,
+      "time": "3/25 · 白天",
+      "title": "事前准备与九封信",
+      "summary": "守须寄出九封信并提前运送物资，准备两套预告板、毒物与航行工具。",
+      "source": "第12章·第2节",
+      "actors": {
+        "4": {
+          "place": "prep",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "letters",
+          "title": "九封冒名信",
+          "place": "prep",
+          "state": "守须寄出",
+          "detail": "冒用中村青司署名；不是死人复活。",
+          "kind": "文书",
+          "truth": true
+        },
+        {
+          "id": "boardsSet",
+          "title": "两套预告板",
+          "place": "prep",
+          "state": "事先制作",
+          "detail": "两套的存在直到第四天才被岛上众人察觉。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "capePrep",
+      "day": 25,
+      "seq": 60,
+      "time": "3/25 · 夜间",
+      "title": "本土前往J岬角",
+      "summary": "守须把船和燃料藏在J岬角；夜间从O市骑车到岬角。原文给出典型车程，未给出此次出发钟点。",
+      "source": "第12章·第2节",
+      "actors": {
+        "4": {
+          "place": "cape",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boat",
+          "title": "橡皮艇与燃料",
+          "place": "cape",
+          "state": "藏于岬角",
+          "detail": "不按估计耗时补出整条精确分钟轨迹。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "firstland",
+      "day": 26,
+      "seq": 5,
+      "time": "3/25深夜—3/26清晨",
+      "title": "岩区上岸，住进漏雨客房",
+      "summary": "守须渡海到岩区，把船和引擎包裹藏入岩缝，住进自己的漏雨房间。",
+      "source": "第12章·第2节",
+      "actors": {
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boat",
+          "title": "橡皮艇与引擎",
+          "place": "rocks",
+          "state": "藏在岩缝",
+          "detail": "船体、空气筒、引擎包裹后用绳子固定；不是敞开放在岩区。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "vanroom",
+          "title": "漏雨客房与睡袋",
+          "place": "van",
+          "state": "仅有空架等，不具备普通客房家具",
+          "detail": "初始图鉴的通用家具在真相复盘中撤去。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "cross1",
+      "day": 26,
+      "seq": 85,
+      "time": "3/26 · 回房后夜间",
+      "title": "范从岩区离岛",
+      "summary": "较早回房后换潜水服，从岩区乘艇去J岬角，再赶往O市；全段准确时刻未给出。",
+      "source": "第12章·第3节",
+      "actors": {
+        "4": {
+          "place": "sea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boat",
+          "title": "橡皮艇",
+          "place": "sea",
+          "state": "离岛使用",
+          "detail": "用夜间往返在岛上昵称与本土姓名之间制造分隔。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "home23",
+      "day": 26,
+      "seq": 90,
+      "time": "3/26 · 约23:00",
+      "title": "守须回到O市住处",
+      "summary": "他致电江南无人接听，摆出第一幅预制画，等江南联络。",
+      "source": "第12章·第3节",
+      "actors": {
+        "4": {
+          "place": "oHome",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "painting",
+          "title": "三幅预制佛像画",
+          "place": "oHome",
+          "state": "摆出第一幅",
+          "detail": "不同完成度的三幅画事先准备，不能证明每天去了国东。",
+          "kind": "文书",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "return1",
+      "day": 27,
+      "seq": 5,
+      "time": "3/27 · 天亮前",
+      "title": "返岛并摆放预告板",
+      "summary": "本土会面后经J岬角返岛；把预告板摆上大厅桌，并拿走十一角杯，用多余杯替代。摆板准确钟点未给出。",
+      "source": "第12章·第3–4节",
+      "actors": {
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boards",
+          "title": "七块预告板",
+          "place": "hall",
+          "state": "守须摆放",
+          "detail": "与08点左右被发现是不同时间。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "cups",
+          "title": "十一角杯",
+          "place": "van",
+          "state": "带回自己房间",
+          "detail": "当晚认出异形；随后准备投毒。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "lipstickPoison",
+      "day": 27,
+      "seq": 65,
+      "time": "3/27 · 下午（先后未细化）",
+      "title": "阿加莎口红被涂毒",
+      "summary": "守须潜入阿加莎房间，把氰化钾涂到其中一支红色口红；不是第五天早晨当场投毒。",
+      "source": "第12章·第4节",
+      "actors": {
+        "4": {
+          "place": "agatha",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "lipstick",
+          "title": "红色口红",
+          "place": "agatha",
+          "state": "已被涂氰化钾",
+          "detail": "她前几天使用另一颜色，延迟到第五天才中毒。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "cross2",
+      "day": 27,
+      "seq": 85,
+      "time": "3/27 · 较早回房之后",
+      "title": "第二次离岛",
+      "summary": "守须再次从岩区渡海到J岬角，返回本土会见江南与岛田。",
+      "source": "第12章·第3节",
+      "actors": {
+        "4": {
+          "place": "sea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "return2",
+      "day": 28,
+      "seq": 5,
+      "time": "3/28 · 天亮前",
+      "title": "第二次返岛",
+      "summary": "守须从O市经J岬角回到十角馆；后续作案之前的具体分钟无法还原。",
+      "source": "第12章·第3节",
+      "actors": {
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "truth": true
+    },
+    {
+      "id": "orczykill",
+      "day": 28,
+      "seq": 15,
+      "time": "3/28 · 清晨，准确时刻未明",
+      "title": "万能钥匙进入奥希兹房间",
+      "summary": "守须用万能钥匙进入客房，绞杀奥希兹，切下左手埋在屋后，故意解开门窗锁并贴牌。",
+      "source": "第12章·第4节",
+      "actors": {
+        "4": {
+          "place": "orczy",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "masterkey",
+          "title": "万能钥匙",
+          "place": "orczy",
+          "state": "用于进入锁门客房",
+          "detail": "不能以现场房门未锁来倒推原先没有上锁。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "ring",
+          "title": "戒指与奥希兹左手",
+          "place": "behind",
+          "state": "断手埋在屋后",
+          "detail": "取不下戒指是断手原因；铭文与千织关系在结尾揭示。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "orczylocks",
+          "title": "奥希兹门窗",
+          "place": "orczy",
+          "state": "故意解开，制造外来者假象",
+          "detail": "随后正午会被其他人重新锁闭。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "5": "orczy"
+      }
+    },
+    {
+      "id": "cupPoison",
+      "day": 28,
+      "seq": 80,
+      "time": "3/28 · 晚饭前",
+      "title": "毒杯混回厨房吧台",
+      "summary": "守须将涂亚砷酸的十一角杯放回厨房，后来卡尔取到它；不是精确指定卡尔必然取杯。",
+      "source": "第12章·第4节",
+      "actors": {
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cups",
+          "title": "十一角毒杯",
+          "place": "kitchen",
+          "state": "混入待用咖啡杯",
+          "detail": "六人取杯时有机会被任一人取到。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "handTrap",
+      "day": 29,
+      "seq": 15,
+      "time": "3/29 · 众人睡下后，天亮前后",
+      "title": "断手、第二套牌与地窖布线",
+      "summary": "守须进入卡尔客房切下左手扔入浴缸，从第二套取牌；随后到蓝屋地窖，用偷来的钓鱼线设绊线，清扫地面伪造藏身痕迹。",
+      "source": "第12章·第4节",
+      "actors": {
+        "4": {
+          "place": "bluecellar",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "carrhand",
+          "title": "卡尔左手",
+          "place": "wash",
+          "state": "被守须放进浴缸",
+          "detail": "伪造与第一案一致的断手行为。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "fishingline",
+          "title": "地窖绊线",
+          "place": "bluecellar",
+          "state": "由守须布设",
+          "detail": "目的是使埃勒里受伤，并非青司伏击。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "swept",
+          "title": "干净圆弧",
+          "place": "bluecellar",
+          "state": "人为清扫的假线索",
+          "detail": "不能把这里画成中村青司实际藏身地点。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "unlock": [
+        "bluecellar"
+      ]
+    },
+    {
+      "id": "cross3",
+      "day": 29,
+      "seq": 85,
+      "time": "3/29 · 散去后的夜间",
+      "title": "第三次本土往返",
+      "summary": "身体已恢复，守须仍离岛去见江南，扩大不在场印象；途中下过小雨。",
+      "source": "第12章·第4节",
+      "actors": {
+        "4": {
+          "place": "sea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "lerouxkill",
+      "day": 30,
+      "seq": 15,
+      "time": "3/30 · 天蒙蒙亮，准确时刻未明",
+      "title": "岩区遭遇与前院灭口",
+      "summary": "守须返岛上岸，被勒鲁看见。勒鲁从石阶逃向蓝屋前院，守须追上后用石块杀害。",
+      "source": "第12章·第5节",
+      "actors": {
+        "4": {
+          "place": "forecourt",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "footprints",
+          "title": "前院脚印",
+          "place": "forecourt",
+          "state": "追逐与离场留下",
+          "detail": "真实凶手就是岛上人物；单向脚印并不证明外来者。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "lerouxroute",
+          "title": "勒鲁最后一段行动",
+          "place": "forecourt",
+          "state": "岩区石阶 → 蓝屋前院",
+          "detail": "只画关系连线，长度与步行耗时未知。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "3": "forecourt"
+      }
+    },
+    {
+      "id": "boatmove",
+      "day": 30,
+      "seq": 18,
+      "time": "3/30 · 勒鲁遇害后",
+      "title": "船转移到海湾小船坞",
+      "summary": "守须返回岩区，把船移到海湾、收起后藏在船坞，回馆贴第三块牌并钻入睡袋。",
+      "source": "第12章·第5节",
+      "actors": {
+        "4": {
+          "place": "van",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boat",
+          "title": "橡皮艇",
+          "place": "pier",
+          "state": "改藏海湾小船坞",
+          "detail": "位置由岩区转移，后续不能继续只画在岩区。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "board3",
+          "title": "第三被害者牌",
+          "place": "leroux",
+          "state": "由守须贴上",
+          "detail": "勒鲁已在室外遇害，他的客房并不是作案现场。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "agathakill",
+      "day": 30,
+      "seq": 25,
+      "time": "3/30 · 使用红色口红后",
+      "title": "迟发毒口红生效",
+      "summary": "阿加莎使用第二天下午被涂毒的红色口红，在盥洗室死亡。没有准确的死亡钟点。",
+      "source": "第9章·第1–2节；第12章·第4–5节",
+      "actors": {},
+      "changes": [
+        {
+          "id": "lipstick",
+          "title": "红色毒口红",
+          "place": "wash",
+          "state": "使用后致死",
+          "detail": "约八点只是后来的现场估计。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "1": "wash"
+      }
+    },
+    {
+      "id": "smokeswap",
+      "day": 30,
+      "seq": 75,
+      "time": "3/30 · 午后讨论时",
+      "title": "桌下换入毒香烟",
+      "summary": "守须借烟盒，在桌下放入事先注入氰化钾的云雀烟；本轮不保证究竟谁先抽到。",
+      "source": "第12章·第5节",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cigarette",
+          "title": "毒云雀烟",
+          "place": "hall",
+          "state": "守须换进爱伦·坡烟盒",
+          "detail": "毒烟事先准备，换入发生在大厅，而非确认过的客房潜入。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "terrace",
+      "day": 30,
+      "seq": 105,
+      "time": "3/30 · 夜间，发现暗道旧尸后",
+      "title": "暗道通向断崖平台",
+      "summary": "两人走到暗道尽头，发现海湾断崖中腹的突出平台。守须认为旧尸是吉川，但其死亡经过仍有两种可能。",
+      "source": "第12章·第6节",
+      "actors": {
+        "0": {
+          "place": "terrace",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "terrace",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "oldbody",
+          "title": "暗道内旧尸",
+          "place": "passage",
+          "state": "守须推认吉川；后来警方亦推定",
+          "detail": "具体旧案杀害过程未被完整证明，不作动画补全。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "unlock": [
+        "terrace"
+      ]
+    },
+    {
+      "id": "sleepEllery",
+      "day": 30,
+      "seq": 110,
+      "time": "3/30 · 探查暗道返回后",
+      "title": "咖啡中加入安眠药",
+      "summary": "守须在大厅给埃勒里咖啡下药，待睡熟后搬到床上；此动作不是埃勒里自杀。",
+      "source": "第12章·第6节",
+      "actors": {
+        "0": {
+          "place": "ellery",
+          "note": "被搬回床上，熟睡"
+        },
+        "4": {
+          "place": "ellery",
+          "note": "结尾叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "sleepdrug",
+          "title": "安眠药咖啡",
+          "place": "hall",
+          "state": "守须给埃勒里服下",
+          "detail": "其后移至客房；没有准确服药与入睡时刻。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "staging",
+      "day": 30,
+      "seq": 120,
+      "time": "3/30 · 纵火前",
+      "title": "取回戒指并布置嫁祸现场",
+      "summary": "守须从屋后挖出左手，取戒指后把手放回奥希兹尸体旁；可疑工具与衣物搬到埃勒里房间，浇灯油。",
+      "source": "第12章·第6节",
+      "actors": {
+        "4": {
+          "place": "ellery",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "ring",
+          "title": "奥希兹左手 / 戒指",
+          "place": "orczy",
+          "state": "手放回尸体旁，戒指被守须取走",
+          "detail": "遗体上断手状态与戒指去向不应一直保留为屋后埋藏。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "staging",
+          "title": "塑料板、血衣、毒药、匕首",
+          "place": "ellery",
+          "state": "用于嫁祸",
+          "detail": "集中搬进埃勒里房间的时间是最后一夜。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "fuel",
+          "title": "灯油",
+          "place": "ellery",
+          "state": "房间、床和埃勒里身上",
+          "detail": "埃勒里体内安眠药与起火点被用于伪装自焚。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "ignite",
+      "day": 30,
+      "seq": 125,
+      "time": "3/30深夜—3/31凌晨 · 精确钟点未明",
+      "title": "窗外点火后离岛",
+      "summary": "守须从外侧窗口点燃埃勒里的床，关窗后经海湾离开；埃勒里并非自杀。",
+      "source": "第12章·第6节",
+      "actors": {
+        "4": {
+          "place": "sea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "fire",
+          "title": "十角馆纵火",
+          "place": "ellery",
+          "state": "守须纵火",
+          "detail": "起火点是埃勒里房间；完整火势传播不进行物理仿真。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "0": "ellery"
+      },
+      "fire": true,
+      "map": null
+    },
+    {
+      "id": "cleanup",
+      "day": 31,
+      "seq": 30,
+      "time": "3/31 · 接电话后、港口会合前",
+      "title": "收回J岬角船具",
+      "summary": "守须借车，取回藏在岬角的船和油桶，把船放回伯父车库，随后赴港口。",
+      "source": "第12章·第6节",
+      "actors": {
+        "4": {
+          "place": "cape",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "boat",
+          "title": "船具与燃料",
+          "place": "prep",
+          "state": "收回并归还车库",
+          "detail": "不再留在海湾或J岬角；车库未精确建模。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    }
+  ],
+  "aliases": {
+    "9": 4
+  },
+  "truthNames": {
+    "4": "范达因／守须恭一"
+  },
+  "ending": {
+    "time": "尾声 · 具体日期未给出",
+    "title": "海边玻璃瓶",
+    "summary": "案件过后，守须再次在海边遇见岛田，捡到装有纸片的浅绿色玻璃瓶，并托孩子交给岛田。小说没有给出这段的准确日期，也没有直接描写随后如何逮捕；不补出4月2日晚的自首事件。",
+    "source": "序幕；尾声"
+  },
+  "dayLabels": {
+    "25": "3/25",
+    "26": "3/26",
+    "27": "3/27",
+    "28": "3/28",
+    "29": "3/29",
+    "30": "3/30",
+    "31": "3/31",
+    "32": "4/1",
+    "33": "4/2"
+  },
+  "basis": "十角馆轮廓及房间环绕关系依据原书附图；角岛外景落点和暗道长度为示意。真相复盘合并范达因与守须恭一，不画成两个人。旧尸身份与旧案过程保留判断性质。"
+}

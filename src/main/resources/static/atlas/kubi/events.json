@@ -1,0 +1,2171 @@
+{
+  "id": "kubi",
+  "title": "如首无作祟之物",
+  "author": "三津田信三",
+  "subtitle": "媛首山 · 双螺旋荣螺塔 · 三座婚舍",
+  "names": [
+    "富堂",
+    "兵堂",
+    "富贵",
+    "长寿郎",
+    "妃女子",
+    "藏田甲子",
+    "佥鸟郁子",
+    "斧高",
+    "铃江",
+    "一枝",
+    "纮达",
+    "笛子",
+    "纮弌",
+    "纮弍",
+    "竹子",
+    "二枝",
+    "克棋",
+    "绫子",
+    "华子",
+    "桃子",
+    "三枝",
+    "毬子",
+    "高屋敷元",
+    "高屋敷妙子",
+    "二见",
+    "佐伯",
+    "大江田真八",
+    "岩槻",
+    "入间",
+    "江川兰子",
+    "丝波小陆",
+    "刀城言耶",
+    "阿武隈川乌",
+    "伊势桥",
+    "溜吉",
+    "宅造"
+  ],
+  "offPlaces": {
+    "eastStation": "东守派出所",
+    "station": "滑万尾站",
+    "busStop": "喉佛口巴士站",
+    "crematorium": "火葬场 · 具体位置未明",
+    "city": "终下市",
+    "hospital": "终下市医院",
+    "rental": "北守出租屋 · 内部布局未完整说明",
+    "rentalYard": "北守出租屋后院 · 埋藏位置未详"
+  },
+  "dayLabels": {
+    "0": "十三夜参礼",
+    "1": "翌日葬礼",
+    "2": "旧案调查",
+    "10": "婚舍集会",
+    "11": "翌日搜索",
+    "12": "指名／守夜",
+    "13": "第三案",
+    "14": "分类讨论",
+    "15": "终下市案",
+    "16": "死讯",
+    "20": "多年后写作",
+    "21": "解答",
+    "22": "附录"
+  },
+  "observed": [
+    {
+      "id": "riteGather",
+      "day": 0,
+      "seq": 630,
+      "time": "十年前 · 十三夜参礼 · 约18:30",
+      "title": "一守家一行进入祭祀堂",
+      "summary": "兵堂、双胞胎、甲子婆、郁子与斧高在准备场所集合。活动表时刻是高屋敷按五分钟整理的约时，不是统一对表的实测。",
+      "source": "第1–2章；第6章活动表",
+      "actors": {
+        "1": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "ritual",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "timeBasis",
+          "title": "仪式时间表",
+          "place": "ritual",
+          "state": "约时整理",
+          "detail": "多数人没有经常看表，五分钟刻度也不能视为精确五分钟。",
+          "kind": "文书",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "policeVisit",
+      "day": 0,
+      "seq": 650,
+      "time": "十三夜参礼 · 约18:50",
+      "title": "高屋敷到祭祀堂",
+      "summary": "高屋敷拜访祭祀堂；佐伯向南鸟居口出发。",
+      "source": "第2章；第6章活动表",
+      "actors": {
+        "22": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "25": {
+          "place": null,
+          "note": "向南鸟居口出发"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "northPatrol",
+      "day": 0,
+      "seq": 655,
+      "time": "十三夜参礼 · 约18:55",
+      "title": "巡视北鸟居口",
+      "summary": "高屋敷来到北入口检查情况。",
+      "source": "第2章；第6章活动表",
+      "actors": {
+        "22": {
+          "place": "north",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "departRite",
+      "day": 0,
+      "seq": 700,
+      "time": "十三夜参礼 · 19点多",
+      "title": "长寿郎入山，斧高尾随",
+      "summary": "被称为长寿郎的身影离开祭祀堂；斧高随后跟入。高屋敷去了东守派出所，不把他提前放在东鸟居口。",
+      "source": "第1–3章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "eastStation",
+          "note": "叙述确认"
+        },
+        "24": {
+          "place": null,
+          "note": "离开派出所前往东入口"
+        }
+      },
+      "changes": [],
+      "truthActors": {
+        "4": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "eastStation",
+          "note": "叙述确认"
+        },
+        "24": {
+          "place": null,
+          "note": "离开派出所前往东入口"
+        }
+      }
+    },
+    {
+      "id": "wellFirst",
+      "day": 0,
+      "seq": 715,
+      "time": "十三夜参礼 · 约19:15",
+      "title": "井边祓禊与树后目击",
+      "summary": "斧高看见称作长寿郎的人在井边净身，自己藏在入口树后；妃女子离开祭祀堂，郁子在窗边监视。",
+      "source": "第3章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "well",
+          "note": "目击标签，身份未核实"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ritual",
+          "note": "窗边监视北入口"
+        }
+      },
+      "changes": [],
+      "truthActors": {
+        "4": {
+          "place": "well",
+          "note": "目击标签，身份未核实"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ritual",
+          "note": "窗边监视北入口"
+        }
+      }
+    },
+    {
+      "id": "soundToShrine",
+      "day": 0,
+      "seq": 720,
+      "time": "十三夜参礼 · 约19:20",
+      "title": "脚步声被认为走向神堂",
+      "summary": "斧高根据碎石上的脚步声认为长寿郎进入媛神堂；高屋敷在路上遇见二见与纮弌。声音并不是连续目视。",
+      "source": "第3章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "shrine",
+          "note": "活动表归属，依脚步推断"
+        },
+        "22": {
+          "place": null,
+          "note": "前往东入口的途中"
+        },
+        "24": {
+          "place": null,
+          "note": "前往东入口的途中"
+        },
+        "12": {
+          "place": null,
+          "note": "前往东入口的途中"
+        }
+      },
+      "changes": [
+        {
+          "id": "gravelSound",
+          "title": "碎石上的脚步声",
+          "place": "courtyard",
+          "state": "根据声音推定行动",
+          "detail": "不能把听见声音画成一路目视追踪。",
+          "kind": "证词",
+          "truth": false
+        }
+      ],
+      "truthActors": {
+        "4": {
+          "place": null,
+          "note": "脚步声不是真正长寿郎入堂；身份归属有不同解答"
+        },
+        "22": {
+          "place": null,
+          "note": "前往东入口的途中"
+        },
+        "24": {
+          "place": null,
+          "note": "前往东入口的途中"
+        },
+        "12": {
+          "place": null,
+          "note": "前往东入口的途中"
+        }
+      }
+    },
+    {
+      "id": "twoSightings1",
+      "day": 0,
+      "seq": 730,
+      "time": "十三夜参礼 · 约19:30",
+      "title": "第一个妃女子身影",
+      "summary": "斧高见井边身影片刻后消失；高屋敷到东入口遇见纮弍，二见随后抵达。",
+      "source": "第3章；第6章活动表",
+      "actors": {
+        "4": {
+          "place": "well",
+          "note": "第一次目击的叙事标签"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "13": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "24": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "firstFigure",
+          "title": "第一次井边身影",
+          "place": "well",
+          "state": "片刻后不见",
+          "detail": "身份与具体去向在当时没有核实。",
+          "kind": "证词",
+          "truth": false
+        }
+      ],
+      "truthActors": {
+        "3": {
+          "place": "well",
+          "note": "第一次目击的叙事标签"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "13": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "24": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      }
+    },
+    {
+      "id": "twoSightings2",
+      "day": 0,
+      "seq": 735,
+      "time": "十三夜参礼 · 约19:35",
+      "title": "第二次井边净身",
+      "summary": "斧高再度看见称作妃女子的人；此节点只画这一回的身影，不把两回各画成一个独立人物。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "4": {
+          "place": "well",
+          "note": "第二次目击标签"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "secondFigure",
+          "title": "第二次井边身影",
+          "place": "well",
+          "state": "再次出现并净身",
+          "detail": "目击顺序确定，身份连续性待解。",
+          "kind": "证词",
+          "truth": false
+        }
+      ],
+      "truthActors": {
+        "3": {
+          "place": "well",
+          "note": "第二次目击标签"
+        },
+        "7": {
+          "place": "stone",
+          "note": "叙述确认"
+        }
+      }
+    },
+    {
+      "id": "girlShrine",
+      "day": 0,
+      "seq": 740,
+      "time": "十三夜参礼 · 约19:40",
+      "title": "身影进入媛神堂",
+      "summary": "斧高所见的妃女子进入神堂，高屋敷从东鸟居口进入山中。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "4": {
+          "place": "shrine",
+          "note": "斧高目击标签"
+        },
+        "22": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "lantern",
+          "title": "灯笼与携带之物",
+          "place": "shrine",
+          "state": "目击者觉得像提着人头",
+          "detail": "光线、遮挡和恐惧影响辨识；不在事实图层放出一个确定人头。",
+          "kind": "证词",
+          "truth": false
+        }
+      ],
+      "truthActors": {
+        "3": {
+          "place": "shrine",
+          "note": "斧高目击标签"
+        },
+        "22": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      }
+    },
+    {
+      "id": "towerSound",
+      "day": 0,
+      "seq": 745,
+      "time": "十三夜参礼 · 约19:45",
+      "title": "婚舍一侧听见上塔动静",
+      "summary": "活动表记录长寿郎在婚舍觉察有人上塔；并没有双方正面会面。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "frontRoom",
+          "note": "长寿郎本人事后叙述"
+        }
+      },
+      "changes": [
+        {
+          "id": "towerWitness",
+          "title": "上塔动静",
+          "place": "towerEntry",
+          "state": "叙述有人走上荣螺塔",
+          "detail": "主客叙述不能合成两人真实同屏。",
+          "kind": "证词",
+          "truth": false
+        }
+      ],
+      "truthActors": {
+        "3": {
+          "place": "frontRoom",
+          "note": "解答据亮灯与换装重读；当时说法不属全知事实"
+        }
+      }
+    },
+    {
+      "id": "towerTop",
+      "day": 0,
+      "seq": 750,
+      "time": "十三夜参礼 · 约19:50",
+      "title": "长寿郎登塔顶查看",
+      "summary": "活动表记载长寿郎上到塔顶寻找妃女子。原文里的通路是独立双螺旋坡道。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "towerTop",
+          "note": "事后叙述的行动"
+        }
+      },
+      "changes": [
+        {
+          "id": "light",
+          "title": "灯光消失与婚舍亮灯",
+          "place": "towerTop",
+          "state": "塔顶火光消失后前婚舍亮灯",
+          "detail": "所见灯光变化是线索，不能自动等同人物瞬移。",
+          "kind": "证词",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "returnShrine",
+      "day": 0,
+      "seq": 755,
+      "time": "十三夜参礼 · 约19:55—20:00前",
+      "title": "检查神堂",
+      "summary": "长寿郎由塔返回并检查神堂，没有找到妃女子。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "shrine",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "meetFutaka",
+      "day": 0,
+      "seq": 805,
+      "time": "十三夜参礼 · 20点多",
+      "title": "长寿郎与斧高相遇",
+      "summary": "二人在神堂外相遇；高屋敷在境内听见类似人声，但没有进入逐个核实。",
+      "source": "第5章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "courtyard",
+          "note": "只确认来到境内，不与二人确证面对面"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "wellBody",
+      "day": 0,
+      "seq": 815,
+      "time": "十三夜参礼 · 约20:10多",
+      "title": "发现井中有人",
+      "summary": "长寿郎与斧高发现井中倒立遗体，称其为妃女子；识别受视角与家属说法限制。",
+      "source": "第5章；第7章；第6章活动表",
+      "actors": {
+        "3": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "well",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "wellBody",
+          "title": "井内遗体",
+          "place": "well",
+          "state": "据称妃女子落井",
+          "detail": "死者身份与死因不是目击落井过程后直接确定的。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "note",
+          "title": "长寿郎便条",
+          "place": "ritual",
+          "state": "由斧高带回",
+          "detail": "称“小斧儿”的用词后来参与身份解答。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "4": "well"
+      }
+    },
+    {
+      "id": "message",
+      "day": 0,
+      "seq": 820,
+      "time": "十三夜参礼 · 约20:20",
+      "title": "斧高返回祭祀堂报信",
+      "summary": "斧高把便条送给兵堂、甲子婆和郁子。",
+      "source": "第7章；第6章活动表",
+      "actors": {
+        "7": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ritual",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "wellRescue",
+      "day": 0,
+      "seq": 845,
+      "time": "十三夜参礼 · 约20:45",
+      "title": "众人来到井边",
+      "summary": "兵堂、长寿郎、甲子婆、郁子以及溜吉、宅造来到井边。",
+      "source": "第7章；第6章活动表",
+      "actors": {
+        "1": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "34": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "35": {
+          "place": "well",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "bodyRecovered",
+      "day": 0,
+      "seq": 910,
+      "time": "十三夜参礼 · 21点多",
+      "title": "打捞遗体并包裹",
+      "summary": "溜吉下井系住脚踝，其他用人被要求不看裸身；尸体随后被席子包起。",
+      "source": "第6–7章",
+      "actors": {
+        "1": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "34": {
+          "place": "well",
+          "note": "叙述确认"
+        },
+        "35": {
+          "place": "well",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "wellBody",
+          "title": "井内遗体",
+          "place": "well",
+          "state": "已捞起并包裹",
+          "detail": "只有少数家属声称确认身份；不是全体见过死者脸。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "riteFuneral",
+      "day": 1,
+      "seq": 10,
+      "time": "十三夜参礼 · 翌日午后至日落前",
+      "title": "匆忙葬礼与火化",
+      "summary": "高屋敷赶到一守家时已在办葬礼；当天日落前遗体火化。没有留下可供之后再次尸检的完整遗体。",
+      "source": "第6章",
+      "actors": {
+        "0": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "wellBody",
+          "title": "十三夜参礼遗体",
+          "place": "crematorium",
+          "state": "火化，骨灰送回",
+          "detail": "火化具体钟点与路程未记录；不能一直把遗体留在井边。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "removeBodies": [
+        "4"
+      ],
+      "map": 0
+    },
+    {
+      "id": "interviewOld",
+      "day": 2,
+      "seq": 10,
+      "time": "十三夜参礼 · 葬礼翌日",
+      "title": "高屋敷整理目击记录",
+      "summary": "巡警回到一守家逐个询问，形成约时活动表；证词与实际行动仍须区别。",
+      "source": "第6–8章",
+      "actors": {
+        "22": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "timeBasis",
+          "title": "十三夜参礼活动表",
+          "place": "ichimori",
+          "state": "事后汇总完成",
+          "detail": "由多人叙述组成，不能直接当作全知镜头。",
+          "kind": "文书",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "weddingArrival",
+      "day": 10,
+      "seq": 1400,
+      "time": "十年后 · 婚舍集会 · 约14:00",
+      "title": "竹子和华子到达",
+      "summary": "两位候选人到一守家；三处鸟居口分别由高屋敷、入间和佐伯监视。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "14": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "north",
+          "note": "叙述确认"
+        },
+        "28": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "25": {
+          "place": "south",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "watchedGates",
+          "title": "三处出入口",
+          "place": "north",
+          "state": "北、东、南口分别监视",
+          "detail": "监视是证词约束，不是整个山体有实体封墙。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "marikoArrival",
+      "day": 10,
+      "seq": 1430,
+      "time": "婚舍集会 · 约14:30",
+      "title": "毬子到达一守家",
+      "summary": "毬子晚到；三位候选人随后准备更衣。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "21": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "dressing",
+      "day": 10,
+      "seq": 1445,
+      "time": "婚舍集会 · 约14:45",
+      "title": "祭祀堂更衣与屏风",
+      "summary": "三位女生进入里间更衣，长寿郎藏在外间屏风后，斧高待命。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "3": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "14": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "ritual",
+          "note": "叙述确认"
+        },
+        "21": {
+          "place": "ritual",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "hoods",
+          "title": "三色头巾与和服",
+          "place": "ritual",
+          "state": "藏青、灰、茶色",
+          "detail": "头巾遮挡身份；颜色归属最初由斧高按出场次序判断，不能仅凭颜色确认脸。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "takekoLeaves",
+      "day": 10,
+      "seq": 1515,
+      "time": "婚舍集会 · 约15:15",
+      "title": "藏青色候选人入山",
+      "summary": "活动表记作竹子，第一人从北入口入山。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "14": {
+          "place": "north",
+          "note": "活动表记作竹子"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "hanakoLeaves",
+      "day": 10,
+      "seq": 1520,
+      "time": "婚舍集会 · 约15:20",
+      "title": "灰色候选人入山",
+      "summary": "活动表记作华子，第二人出发。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "18": {
+          "place": "north",
+          "note": "活动表记作华子"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "marikoLeaves",
+      "day": 10,
+      "seq": 1525,
+      "time": "婚舍集会 · 约15:25",
+      "title": "茶色候选人入山",
+      "summary": "活动表记作毬子，第三人出发。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "21": {
+          "place": "north",
+          "note": "活动表记作毬子"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "hirojiGate",
+      "day": 10,
+      "seq": 1530,
+      "time": "婚舍集会 · 约15:30",
+      "title": "纮弍被入间逐回",
+      "summary": "纮弍在东鸟居口出现，被巡警阻止入山。不能由这个节点推导整晚都在家中。",
+      "source": "第14章活动表",
+      "actors": {
+        "13": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "28": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "choLeaves",
+      "day": 10,
+      "seq": 1545,
+      "time": "婚舍集会 · 约15:40—15:45",
+      "title": "长寿郎离开祭祀堂",
+      "summary": "正文约15:40现身，事后表记15:45出发；保留差异，不合并成虚构精确钟点。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "3": {
+          "place": "north",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "departureTime",
+          "title": "长寿郎出发时间",
+          "place": "ritual",
+          "state": "正文与活动表有约时差异",
+          "detail": "现身与出发可能是不同动作；不强行订正为同一分钟。",
+          "kind": "文书",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "futakaLeaves",
+      "day": 10,
+      "seq": 1550,
+      "time": "婚舍集会 · 约15:50",
+      "title": "斧高进入山中",
+      "summary": "斧高进入媛首山；之后与高屋敷在北入口会合的路径并非全段同时目视。",
+      "source": "第11章；第14章活动表",
+      "actors": {
+        "7": {
+          "place": "north",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "choShrine",
+      "day": 10,
+      "seq": 1600,
+      "time": "婚舍集会 · 约16:00",
+      "title": "长寿郎到神堂，兰子抵站",
+      "summary": "长寿郎进入媛神堂；本土叙述中江川兰子在滑万尾站下车。",
+      "source": "第14章活动表",
+      "actors": {
+        "3": {
+          "place": "shrine",
+          "note": "叙述确认"
+        },
+        "29": {
+          "place": "station",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "rearTea",
+      "day": 10,
+      "seq": 1610,
+      "time": "婚舍集会 · 约16:10",
+      "title": "后婚舍为竹子泡茶",
+      "summary": "长寿郎进入后婚舍，竹子在那里等候。",
+      "source": "第11–12章；第14章活动表",
+      "actors": {
+        "3": {
+          "place": "rearTea",
+          "note": "叙述确认"
+        },
+        "14": {
+          "place": "rearTea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "frontTea",
+      "day": 10,
+      "seq": 1620,
+      "time": "婚舍集会 · 约16:20",
+      "title": "前婚舍为华子泡茶",
+      "summary": "长寿郎随后到前婚舍为华子泡茶。",
+      "source": "第14章活动表",
+      "actors": {
+        "3": {
+          "place": "frontTea",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "frontTea",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "middleAssumed",
+      "day": 10,
+      "seq": 1630,
+      "time": "婚舍集会 · 约16:30（推定）",
+      "title": "推定长寿郎进入中婚舍",
+      "summary": "活动表只说姑且认为进入中婚舍；并非有人准确看表目送。",
+      "source": "第14章活动表",
+      "actors": {
+        "3": {
+          "place": "middleRoom",
+          "note": "事后时间表推定，未直接确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "middleTime",
+          "title": "中婚舍时段",
+          "place": "middleRoom",
+          "state": "约16:30为推定",
+          "detail": "人物棋子为推定位置，不能用于确定不在场证明。",
+          "kind": "判断",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "femaleDeathEstimate",
+      "day": 10,
+      "seq": 1640,
+      "time": "婚舍集会 · 约16:40（推定）",
+      "title": "无头女尸死亡时段推定",
+      "summary": "警方表推定当时毬子遇害，身份与精确时间都尚未核实。此节点只记判断，不提前新增灰色遗体。",
+      "source": "第14章活动表",
+      "actors": {
+        "29": {
+          "place": "busStop",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "femaleEstimate",
+          "title": "女尸死亡时段",
+          "place": "middleRoom",
+          "state": "警方推定约16:40",
+          "detail": "被害者当时被认为是毬子，不能把这个推定时刻当作亲眼所见。",
+          "kind": "判断",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "ranGate",
+      "day": 10,
+      "seq": 1700,
+      "time": "婚舍集会 · 约17:00",
+      "title": "入间见到江川兰子",
+      "summary": "入间在东鸟居口见到来人，随后兰子走上东参道。",
+      "source": "第12章；第14章活动表",
+      "actors": {
+        "28": {
+          "place": "east",
+          "note": "叙述确认"
+        },
+        "29": {
+          "place": "east",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "femaleFound",
+      "day": 10,
+      "seq": 1705,
+      "time": "婚舍集会 · 17点过后",
+      "title": "竹子发现中婚舍无头女尸",
+      "summary": "竹子找长寿郎时，在中婚舍里间发现女尸；她称其为毬子，但这是基于剩余人员作出的认定。",
+      "source": "第12章；第14章活动表",
+      "actors": {
+        "14": {
+          "place": "middleRoom",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "femaleBody",
+          "title": "中婚舍无头女尸",
+          "place": "middleRoom",
+          "state": "被称作毬子",
+          "detail": "无头、全裸；下身盖淡紫色包袱布，身份尚无充分验明。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "purpleCloth",
+          "title": "淡紫色包袱布",
+          "place": "middleRoom",
+          "state": "盖住尸体下身",
+          "detail": "形态与位置来自现场；不据此证明死者性别身份关系。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "21": "middleRoom"
+      },
+      "truthDeaths": {
+        "3": "middleRoom"
+      }
+    },
+    {
+      "id": "bridesMeet",
+      "day": 10,
+      "seq": 1710,
+      "time": "婚舍集会 · 约17:10",
+      "title": "竹子与华子回中婚舍",
+      "summary": "竹子先在前婚舍找到华子，二人一起查看女尸。",
+      "source": "第14章活动表",
+      "actors": {
+        "14": {
+          "place": "middleRoom",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "middleRoom",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "maleEstimate",
+      "day": 10,
+      "seq": 1715,
+      "time": "婚舍集会 · 约17:15（推定）",
+      "title": "第二处遇害时段推定",
+      "summary": "警方猜测长寿郎此时遇害；兰子自述经过马头观音祠感到前方有人，尚没有核实尸体身份。",
+      "source": "第12–14章",
+      "actors": {
+        "29": {
+          "place": "kannon",
+          "note": "兰子自述经过"
+        }
+      },
+      "changes": [
+        {
+          "id": "maleEstimate",
+          "title": "祠堂男尸死亡时段",
+          "place": "kannon",
+          "state": "警方推定约17:15",
+          "detail": "身份与到达时刻均需要在解答中重审。",
+          "kind": "判断",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "gatherShrine",
+      "day": 10,
+      "seq": 1725,
+      "time": "婚舍集会 · 约17:25",
+      "title": "五人在神堂外会合",
+      "summary": "竹子、华子和自称江川兰子的来人与高屋敷、斧高相遇。",
+      "source": "第12章；第14章活动表",
+      "actors": {
+        "14": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "29": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "22": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "courtyard",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "inspectFemale",
+      "day": 10,
+      "seq": 1740,
+      "time": "婚舍集会 · 约17:40",
+      "title": "检查中婚舍里间",
+      "summary": "高屋敷看见颈切面、柱前的榻榻米刀痕、包袱布及木格纸窗。",
+      "source": "第12章；第14章活动表",
+      "actors": {
+        "22": {
+          "place": "middleRoom",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "tatamiCuts",
+          "title": "榻榻米上的刀痕",
+          "place": "middleRoom",
+          "state": "颈部下方可见多次刀具痕迹",
+          "detail": "纸窗外木格与里外间拉门为密室条件，不构造原文未说明的出口。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "weapons",
+          "title": "祭坛供具",
+          "place": "shrine",
+          "state": "斧头、柴刀等可取用",
+          "detail": "尚不能确认每件工具都参与同一次作案。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "maleFound",
+      "day": 10,
+      "seq": 1750,
+      "time": "婚舍集会 · 约17:50",
+      "title": "马头观音祠发现无头男尸",
+      "summary": "高屋敷在东参道中途祠内发现男尸；甲子婆后来对其为长寿郎的判断并不坚定。",
+      "source": "第14章",
+      "actors": {
+        "22": {
+          "place": "kannon",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "maleBody",
+          "title": "祠堂无头男尸",
+          "place": "kannon",
+          "state": "被认为是长寿郎",
+          "detail": "头部缺失，性别与既知人物身份的对应仍有疑问。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "axe",
+          "title": "染血斧子",
+          "place": "kannon",
+          "state": "留在第二现场",
+          "detail": "两处斩首和致命伤需要分开；不能一律当作斧子直接杀人。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "3": "kannon"
+      },
+      "truthDeaths": {
+        "29": "kannon"
+      }
+    },
+    {
+      "id": "guardOvernight",
+      "day": 10,
+      "seq": 1800,
+      "time": "婚舍集会 · 当晚至翌晨",
+      "title": "三个入口继续监视",
+      "summary": "警方和青年团守住三个出入口；时段内人员变化并未逐分钟记载。",
+      "source": "第14章",
+      "actors": {
+        "22": {
+          "place": "north",
+          "note": "持续监视时段的记录"
+        }
+      },
+      "changes": [
+        {
+          "id": "watchedGates",
+          "title": "三处出入口",
+          "place": "north",
+          "state": "警方与青年团继续警戒",
+          "detail": "仍是监视约束，不等同于山中不可能进行身份替换。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "forestEvidence",
+      "day": 11,
+      "seq": 10,
+      "time": "婚舍集会 · 翌日搜索",
+      "title": "森林与手水舍痕迹",
+      "summary": "搜查发现东参道左侧森林中的衣物、草鞋与书，以及东侧手水舍洗涤痕迹。头颅尚未找到。",
+      "source": "第14–16章",
+      "actors": {},
+      "changes": [
+        {
+          "id": "clothes",
+          "title": "衣物、草鞋与书",
+          "place": "forest",
+          "state": "搜索发现",
+          "detail": "不能自动把衣物归属当作尸体已验明。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "washTrace",
+          "title": "东侧手水舍痕迹",
+          "place": "eastWater",
+          "state": "有清洗痕迹",
+          "detail": "警方认为清洗过人头；后续解答将改读为活人卸妆。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "removeBodies": [
+        "21",
+        "3",
+        "29"
+      ]
+    },
+    {
+      "id": "familyMeeting",
+      "day": 11,
+      "seq": 20,
+      "time": "婚舍集会 · 翌日下午",
+      "title": "一守家亲族会议",
+      "summary": "亲族争论继承人，警方另在客房开搜查会议；不能把全族同时画进神堂。",
+      "source": "第15–16章",
+      "actors": {
+        "0": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "10": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "11": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "14": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "15": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "16": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "17": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "18": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "20": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "identityDispute",
+          "title": "长寿郎身份争议",
+          "place": "ichimori",
+          "state": "一枝要求见头颅才承认死亡",
+          "detail": "继承问题的说法，不是新的死亡鉴定。",
+          "kind": "证词",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "naming",
+      "day": 12,
+      "seq": 10,
+      "time": "婚舍集会 · 第二个早晨后",
+      "title": "斧高被指定为继承人",
+      "summary": "家族再开会议，富堂说明斧高身世及继承安排。",
+      "source": "第17–18章",
+      "actors": {
+        "0": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "futakaParentage",
+          "title": "斧高身世",
+          "place": "ichimori",
+          "state": "家族揭示其为兵堂与郁子之子",
+          "detail": "身份说明与他是否涉案是不同问题。",
+          "kind": "文书",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "secretMeet",
+      "day": 12,
+      "seq": 20,
+      "time": "长寿郎守夜式当晚 · 时刻未给",
+      "title": "兰子与纮弍在神社外相见",
+      "summary": "斧高在独立的媛守神社附近看到二人举动；不能把这个神社混为山中央的媛神堂。",
+      "source": "第19章",
+      "actors": {
+        "29": {
+          "place": "jinja",
+          "note": "斧高目击，谈话内容未完全知晓"
+        },
+        "13": {
+          "place": "jinja",
+          "note": "斧高目击，谈话内容未完全知晓"
+        },
+        "7": {
+          "place": "jinja",
+          "note": "斧高目击，谈话内容未完全知晓"
+        }
+      },
+      "changes": [
+        {
+          "id": "secretMeeting",
+          "title": "兰子与纮弍会面",
+          "place": "jinja",
+          "state": "斧高看见二人接近",
+          "detail": "求婚、威胁或交易不能仅凭外观作定论。",
+          "kind": "证词",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "thirdFound",
+      "day": 13,
+      "seq": 20,
+      "time": "守夜式翌日 · 白天",
+      "title": "媛神堂出现第三具无头尸",
+      "summary": "高屋敷进入神堂发现扭曲男尸，祭坛上另有人头；在调查前先按未确定身份标记。",
+      "source": "第18–20章",
+      "actors": {
+        "22": {
+          "place": "shrine",
+          "note": "叙述确认"
+        },
+        "26": {
+          "place": "shrine",
+          "note": "叙述确认"
+        },
+        "27": {
+          "place": "shrine",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "thirdBody",
+          "title": "第三具无头尸",
+          "place": "shrine",
+          "state": "身份尚在核实",
+          "detail": "这具身体不是仅凭祭坛头颅就能确认归属。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "headOnAltar",
+          "title": "祭坛上的头颅",
+          "place": "shrine",
+          "state": "被辨为长寿郎",
+          "detail": "头与身不是同一人的先验组合。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "hirojiMissing",
+      "day": 13,
+      "seq": 25,
+      "time": "第三案发现后",
+      "title": "二守家报告纮弍失踪",
+      "summary": "他在昨晚回家至家人睡前还被看到，今晨被褥不像有人睡过；警方据此寻找和核实。",
+      "source": "第20章",
+      "actors": {
+        "22": {
+          "place": "nimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "thirdTime",
+          "title": "第三案死亡时段",
+          "place": "shrine",
+          "state": "伊势桥推定凌晨01:00—03:00",
+          "detail": "医学推定，不是已确定的攻击时刻。",
+          "kind": "判断",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "hirojiHead",
+      "day": 13,
+      "seq": 30,
+      "time": "第三案 · 当日暮色中",
+      "title": "东侧森林找到纮弍头颅",
+      "summary": "被衣物包裹的纮弍头颅在东参道左侧森林出现；祭坛头与新男尸的身份需要分别比对。",
+      "source": "第20章",
+      "actors": {
+        "22": {
+          "place": "forest",
+          "note": "叙述确认"
+        },
+        "26": {
+          "place": "forest",
+          "note": "叙述确认"
+        },
+        "27": {
+          "place": "forest",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "hirojiHead",
+          "title": "纮弍头颅与衣物",
+          "place": "forest",
+          "state": "被包在外褂中发现",
+          "detail": "头身比对及指纹核实后再登记被害者。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "thirdBody",
+          "title": "第三具无头尸",
+          "place": "shrine",
+          "state": "据失踪、头颅与比对认作纮弍",
+          "detail": "死亡时段仍为推定，不等于发现时刚被杀。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "13": "shrine"
+      }
+    },
+    {
+      "id": "classification",
+      "day": 14,
+      "seq": 10,
+      "time": "第三案 · 翌日",
+      "title": "斧高与兰子讨论无头尸",
+      "summary": "二人在长寿郎书房讨论尸体处理差异；兰子说出警方未公开的头颅细节。",
+      "source": "第21章",
+      "actors": {
+        "7": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        },
+        "29": {
+          "place": "ichimori",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "secretDetail",
+          "title": "未公开的人头小花样",
+          "place": "ichimori",
+          "state": "兰子在讨论中提及",
+          "detail": "属于知情程度线索，不凭此单独证明完整作案路线。",
+          "kind": "证词",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "cityCase",
+      "day": 15,
+      "seq": 10,
+      "time": "双重命案后第五天夜 · 22点多—次晨02:30左右",
+      "title": "终下市另发生割喉案",
+      "summary": "四名男子被害；斧高在医院接受脑震荡治疗，小说后来称其已死亡。该案与山中案件不应强行连成同一地点动画。",
+      "source": "第22章",
+      "actors": {
+        "7": {
+          "place": "hospital",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "cityCase",
+          "title": "终下市割喉案件",
+          "place": "city",
+          "state": "另案四名死者",
+          "detail": "过程与每名死者位置没有充分叙述，采用本土地点卡片。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "futakaReport",
+      "day": 16,
+      "seq": 10,
+      "time": "终下市案件之后 · 准确日期未给",
+      "title": "斧高死亡的报道",
+      "summary": "正文转述斧高死亡消息；身体与身份的可靠性在最后仍引发疑问，不画出未描写的死亡动作。",
+      "source": "第22章；幕间（三）",
+      "actors": {},
+      "changes": [
+        {
+          "id": "futakaReport",
+          "title": "斧高死讯",
+          "place": "city",
+          "state": "被报道死亡",
+          "detail": "尾声又猜测门外来者可能是斧高，不能将猜测画成确定复活。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "writing",
+      "day": 20,
+      "seq": 10,
+      "time": "多年后 · 连载撰写时期",
+      "title": "妙子重新整理旧案",
+      "summary": "高屋敷妙子在村内出租屋写作；这不是案发当年的婚舍时间。",
+      "source": "前言；幕间（一）—（三）",
+      "actors": {
+        "23": {
+          "place": "rental",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "manuscript",
+          "title": "连载原稿",
+          "place": "rental",
+          "state": "以警方记录和斧高叙述重建",
+          "detail": "资料可信性与小说化叙述之间存在距离。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "map": null
+    },
+    {
+      "id": "visitor",
+      "day": 21,
+      "seq": 10,
+      "time": "连载后期 · 约14:30来访",
+      "title": "自称刀城言耶的来客",
+      "summary": "来客在出租屋与被认为是妙子的人交谈，提出身份互换解答；此时人物身份也需要核对。",
+      "source": "第23–24章",
+      "actors": {
+        "23": {
+          "place": "rental",
+          "note": "叙事身份标签，终篇另有翻转"
+        },
+        "31": {
+          "place": "rental",
+          "note": "叙事身份标签，终篇另有翻转"
+        }
+      },
+      "changes": [],
+      "map": null
+    }
+  ],
+  "truthOnly": [
+    {
+      "id": "twinsRestored",
+      "day": 0,
+      "seq": 690,
+      "time": "十三夜参礼 · 支走斧高后，时刻未给",
+      "title": "双胞胎临时恢复原身份",
+      "summary": "解答说明：日常扮长寿郎者其实是女生，日常扮妃女子者是男生；祭祀堂内临时换回原来的性别身份。",
+      "source": "第24章",
+      "actors": {
+        "3": {
+          "place": "ritual",
+          "note": "解答重建"
+        },
+        "4": {
+          "place": "ritual",
+          "note": "解答重建"
+        }
+      },
+      "changes": [
+        {
+          "id": "twinIdentity",
+          "title": "双胞胎身份",
+          "place": "ritual",
+          "state": "日常称呼与身体性别错位",
+          "detail": "真相层固定身体身份，避免因名字互换把同一人画成两个。",
+          "kind": "文书",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "maleInWell",
+      "day": 0,
+      "seq": 718,
+      "time": "十三夜参礼 · 井边净身之后，时刻未明",
+      "title": "井中死者是真正的哥哥",
+      "summary": "两轮解答都把井中死者识别为真正长寿郎（男）；第一轮认为纮弍所为，幕间（四）另提出斧高的可能。凶手不能一概画成已证事实。",
+      "source": "第24章；幕间（四）",
+      "actors": {},
+      "changes": [
+        {
+          "id": "wellBody",
+          "title": "真正哥哥的遗体",
+          "place": "well",
+          "state": "长寿郎（男）在井中",
+          "detail": "死亡身份重读较明确，凶手与动作时序存在不同解答。",
+          "kind": "判断",
+          "truth": true
+        },
+        {
+          "id": "riteKiller",
+          "title": "井边作案者解释",
+          "place": "well",
+          "state": "纮弍说与斧高说并存",
+          "detail": "不同时画两人作案；不把最终篇未证实的猜测当作定论。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "4": "well"
+      }
+    },
+    {
+      "id": "girlDisguise",
+      "day": 0,
+      "seq": 742,
+      "time": "十三夜参礼 · 进入神堂后",
+      "title": "女生经塔到婚舍换装",
+      "summary": "解答重建她携带哥哥灯笼与衣物，经神堂和荣螺塔到前婚舍，恢复日常的长寿郎装扮。首次、再次井边身影都是她。",
+      "source": "第24章",
+      "actors": {
+        "3": {
+          "place": "frontRoom",
+          "note": "解答重建，具体分钟未给"
+        }
+      },
+      "changes": [
+        {
+          "id": "lantern",
+          "title": "灯笼与包裹衣物",
+          "place": "frontRoom",
+          "state": "并非携带哥哥头颅",
+          "detail": "替换身份解释目击中的人头印象和塔顶失踪。",
+          "kind": "判断",
+          "truth": true
+        },
+        {
+          "id": "light",
+          "title": "灯光变化",
+          "place": "frontRoom",
+          "state": "灭灯与换装后的亮灯",
+          "detail": "来源是解答推理，不生成超出原文的连续行动轨迹。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "middleIdentity",
+      "day": 10,
+      "seq": 1645,
+      "time": "婚舍集会 · 中婚舍发生变故时段",
+      "title": "女尸实为长寿郎（女）",
+      "summary": "解答认为毬子与她推搡，导致后脑撞柱，之后斩首并伪装成毬子。具体争执过程被原文说成未明；尾声毬子承认杀了长寿郎。",
+      "source": "第24章；尾声",
+      "actors": {
+        "21": {
+          "place": "middleRoom",
+          "note": "解答重建"
+        }
+      },
+      "changes": [
+        {
+          "id": "femaleBody",
+          "title": "长寿郎（女）的遗体",
+          "place": "middleRoom",
+          "state": "伪装成古里毬子",
+          "detail": "与第二具男尸一起构成双重替换；不是毬子真的死在这里。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "3": "middleRoom"
+      }
+    },
+    {
+      "id": "ranKilled",
+      "day": 10,
+      "seq": 1718,
+      "time": "婚舍集会 · 祠堂案时段，钟点未明",
+      "title": "真正江川兰子被杀",
+      "summary": "解答说明真正的江川兰子是男性兰堂；男尸被伪装成长寿郎，毬子取得其服装和身份。",
+      "source": "第24章",
+      "actors": {
+        "21": {
+          "place": "kannon",
+          "note": "解答重建"
+        }
+      },
+      "changes": [
+        {
+          "id": "maleBody",
+          "title": "真正江川兰子遗体",
+          "place": "kannon",
+          "state": "男尸被当成长寿郎",
+          "detail": "五点十五分是原警方推定，不能当作真实精准行凶钟点。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "29": "kannon"
+      }
+    },
+    {
+      "id": "washMakeup",
+      "day": 10,
+      "seq": 1720,
+      "time": "婚舍集会 · 祠堂之后、会合之前",
+      "title": "毬子在手水舍卸妆",
+      "summary": "她洗掉浓妆、换服饰，假扮江川兰子来到神堂。手水舍痕迹属于活人洗脸，不是确定清洗毬子的人头。",
+      "source": "第24章",
+      "actors": {
+        "21": {
+          "place": "eastWater",
+          "note": "解答重建"
+        }
+      },
+      "changes": [
+        {
+          "id": "washTrace",
+          "title": "手水舍清洗痕迹",
+          "place": "eastWater",
+          "state": "毬子本人卸妆",
+          "detail": "不能把此处画成发生了另一次斩首。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "hirojiKilling",
+      "day": 13,
+      "seq": 10,
+      "time": "第三案 · 凌晨01:00—03:00为推定",
+      "title": "媛神堂再度成为案发点",
+      "summary": "解答认为毬子以兰子身份约纮弍夜间到神堂，击杀并斩首，留下长寿郎的头；攻击精确钟点未明。",
+      "source": "第20章；第24章",
+      "actors": {
+        "21": {
+          "place": "shrine",
+          "note": "解答推断"
+        }
+      },
+      "changes": [
+        {
+          "id": "thirdBody",
+          "title": "纮弍遗体",
+          "place": "shrine",
+          "state": "解答认为由毬子杀害",
+          "detail": "第一轮解答与幕间（四）的反向质疑需要同时保留。",
+          "kind": "判断",
+          "truth": true
+        },
+        {
+          "id": "headOnAltar",
+          "title": "长寿郎头颅",
+          "place": "shrine",
+          "state": "用来明确长寿郎死亡并结束继承争议",
+          "detail": "此处是头、身体来自不同死者。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "13": "shrine"
+      }
+    },
+    {
+      "id": "authorSwap",
+      "day": 20,
+      "seq": 20,
+      "time": "连载写作后期 · 第23章中途之后",
+      "title": "作者也被替换",
+      "summary": "尾声揭示：真正妙子写到第23章中途，之后由古里毬子冒充妙子续写。毬子此前已长期冒充江川兰子。",
+      "source": "尾声",
+      "actors": {
+        "21": {
+          "place": "rental",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "manuscript",
+          "title": "连载原稿",
+          "place": "rental",
+          "state": "作者从妙子变为毬子",
+          "detail": "不能把全部第一人称文字当成同一人的可靠证词。",
+          "kind": "文书",
+          "truth": true
+        },
+        {
+          "id": "myokoBody",
+          "title": "真正妙子",
+          "place": "rentalYard",
+          "state": "已被害，尸体被埋后院",
+          "detail": "作案准确日期、死亡动作及尸体完整状态未详写。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "23": "rentalYard"
+      }
+    },
+    {
+      "id": "alternative",
+      "day": 21,
+      "seq": 20,
+      "time": "出租屋解答 · 幕间（四）",
+      "title": "斧高说与证词可靠性",
+      "summary": "来客指出斧高证词可能不实，提出另一轮作案解释。尾声叙述者对前案的部分承认、来客身份猜测与这轮推理不是同等事实。",
+      "source": "幕间（四）；尾声",
+      "actors": {
+        "21": {
+          "place": "rental",
+          "note": "叙述确认"
+        },
+        "31": {
+          "place": "rental",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "alternate",
+          "title": "另一轮解答",
+          "place": "rental",
+          "state": "质疑证词并提出斧高可能",
+          "detail": "只作为解答图层，不改画成无可争议的全部历史。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "tailIdentity",
+      "day": 21,
+      "seq": 30,
+      "time": "尾声 · 日期未给",
+      "title": "叙述者与门外来客",
+      "summary": "毬子承认冒充妙子；结尾又怀疑来客是斧高或别的存在。小说没有给出确定来客身份，保留未明。",
+      "source": "尾声",
+      "actors": {
+        "21": {
+          "place": "rental",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "visitorIdentity",
+          "title": "来客身份",
+          "place": "rental",
+          "state": "最终未定",
+          "detail": "不把刀城、斧高或怪异存在任选其一画成已验证身份。",
+          "kind": "判断",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "rentalReport",
+      "day": 22,
+      "seq": 10,
+      "time": "报章附录 · 十三日下午17:20左右",
+      "title": "出租屋内无头女尸",
+      "summary": "邮递员在出租屋发现无头女尸，推定约两周前死亡。警方尚需确认身份；不要把发现日当作死亡日。",
+      "source": "民宅内发现无头女尸",
+      "actors": {},
+      "changes": [
+        {
+          "id": "rentalCorpse",
+          "title": "出租屋内无头女尸",
+          "place": "rental",
+          "state": "被发现，身份不明",
+          "detail": "不能直接将女尸一律标作妙子；附录尚在调查。",
+          "kind": "文书",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "yardReport",
+      "day": 22,
+      "seq": 20,
+      "time": "报章附录 · 随后报道",
+      "title": "后院又发现无头女尸",
+      "summary": "警方后院挖出另一具女尸，妙子与蒙面作家均下落不明；人物对应及报章具体日期没有补造。",
+      "source": "新发现又一具无头女尸；神秘的蒙面作家下落不明？",
+      "actors": {},
+      "changes": [
+        {
+          "id": "yardCorpse",
+          "title": "出租屋后院女尸",
+          "place": "rentalYard",
+          "state": "另发现一具",
+          "detail": "与室内女尸分开登记；确定身体身份需要额外证据。",
+          "kind": "文书",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    }
+  ],
+  "aliases": {},
+  "aliasRules": [
+    {
+      "from": "29",
+      "to": "21",
+      "day": 10,
+      "seq": 1725
+    },
+    {
+      "from": "23",
+      "to": "21",
+      "day": 21,
+      "seq": 0
+    }
+  ],
+  "truthNames": {
+    "3": "长寿郎（女／真正妃女子）",
+    "4": "妃女子（男／真正长寿郎）",
+    "21": "古里毬子／冒充兰子、妙子",
+    "29": "真正江川兰子／兰堂"
+  },
+  "ending": {
+    "time": "尾声与报章附录 · 日期及来客身份未完全确定",
+    "title": "保留小说的最后一层疑问",
+    "summary": "复盘使用书中解答重读身体、姓名与证词，仍把第一轮推理、斧高说、叙述者承认和结尾疑问分开。首次落井的作案者和门外来客没有被制作成唯一确定结论；附录女尸也不强行对号入座。",
+    "source": "第24章；幕间（四）；尾声；报章附录"
+  },
+  "basis": "本书活动表明确为粗略时间，正文与表中少量钟点存在差异。十年前后两次仪式分开排序，绝对年月日未给处不补造。真相复盘固定身体身份并保留解答的推理性质；所见姓名、遗体认定、实际身份不等同。村庄与塔结构有附图依据，绝对尺寸、高差、房内落点为示意。"
+}

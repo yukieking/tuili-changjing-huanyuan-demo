@@ -1,0 +1,2187 @@
+{
+  "id": "christie",
+  "title": "无人生还",
+  "author": "阿加莎·克里斯蒂",
+  "subtitle": "孤岛别墅 · 客房层 · 海边与悬崖",
+  "names": [
+    "维拉",
+    "隆巴德",
+    "沃格雷夫",
+    "阿姆斯特朗",
+    "布洛尔",
+    "布伦特",
+    "麦克阿瑟",
+    "马斯顿",
+    "罗杰斯",
+    "罗杰斯太太"
+  ],
+  "offPlaces": {
+    "mainland": "本土 · 地点未细分"
+  },
+  "dayLabels": {
+    "7": "登岛前",
+    "8": "8/08",
+    "9": "8/09",
+    "10": "8/10",
+    "11": "8/11",
+    "13": "调查"
+  },
+  "observed": [
+    {
+      "id": "arrive",
+      "day": 8,
+      "seq": 10,
+      "time": "8/08 · 午后登岛",
+      "title": "八位客人到达",
+      "summary": "客人由船抵岛，沿岩石台阶进入大厅；夫妇先已在屋中服务。",
+      "source": "第2章",
+      "actors": {
+        "0": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "hall",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "hall",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "veraRoom",
+      "day": 8,
+      "seq": 20,
+      "time": "8/08 · 到达后",
+      "title": "维拉查看卧室",
+      "summary": "维拉在走廊尽头的卧室看到海窗、相连浴室、童谣和壁炉上的熊形钟。其他客房排列原文未完整给出。",
+      "source": "第2章",
+      "actors": {
+        "0": {
+          "place": "vera",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "rhyme",
+          "title": "十个小孩子的童谣",
+          "place": "vera",
+          "state": "墙上可读",
+          "detail": "仅登记房间内物件，不把它当作已经验证的杀人预告。",
+          "kind": "文书",
+          "truth": false
+        },
+        {
+          "id": "bear",
+          "title": "熊形大理石钟",
+          "place": "vera",
+          "state": "放在壁炉上",
+          "detail": "后续位置会改变；不能一开始就放在室外。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "dinner",
+      "day": 8,
+      "seq": 30,
+      "time": "8/08 · 晚餐",
+      "title": "餐桌上的十个瓷人",
+      "summary": "八位客人晚餐，罗杰斯伺候；此处不把女管家也画成一直坐在桌前。",
+      "source": "第3章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "dining",
+          "note": "服务晚餐"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见10个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "day": 8,
+      "seq": 40,
+      "time": "8/08 · 晚餐后",
+      "title": "休息厅响起指控",
+      "summary": "众人听到控诉录音，女管家晕倒；声音的来源和指控是否属实需要分别核对。",
+      "source": "第3章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "accusation",
+          "title": "录音指控",
+          "place": "living",
+          "state": "声音响起",
+          "detail": "记录的是指控，不是法院或警方鉴定结论。",
+          "kind": "文书",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "gramophone",
+      "day": 8,
+      "seq": 45,
+      "time": "8/08 · 录音之后",
+      "title": "邻室的留声机",
+      "summary": "隆巴德在壁炉旁相通的邻室找到唱机，喇叭朝向共墙小孔；其他人的这段移动未逐个细记。",
+      "source": "第3章",
+      "actors": {
+        "1": {
+          "place": "neighbor",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "gramophone",
+          "title": "留声机与墙孔",
+          "place": "neighbor",
+          "state": "发现录音来源",
+          "detail": "邻室与休息厅的相通关系有文字依据；孔的位置和高度未明。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "mrsRest",
+      "day": 8,
+      "seq": 50,
+      "time": "8/08 · 当晚",
+      "title": "女管家被扶上楼",
+      "summary": "罗杰斯与医生把女管家安顿回床；管家房在上层，数量与内部隔间未定。",
+      "source": "第3章",
+      "actors": {
+        "3": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "9": {
+          "place": "staff",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brandy",
+          "title": "女管家的白兰地",
+          "place": "staff",
+          "state": "已饮用并卧床",
+          "detail": "当时无法由她熟睡直接确认毒物或死亡。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "marston",
+      "day": 8,
+      "seq": 60,
+      "time": "8/08 · 当晚谈话中",
+      "title": "马斯顿饮酒后倒地",
+      "summary": "马斯顿在休息厅中毒死亡；医生检查杯中余液，初步判断有氰化物。",
+      "source": "第4–5章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "7": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "glass",
+          "title": "马斯顿酒杯",
+          "place": "living",
+          "state": "中毒后被检查",
+          "detail": "毒物判断与投毒者身份分开记录。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "marstonCause",
+          "title": "马斯顿死因判断",
+          "place": "living",
+          "state": "疑似氰化物",
+          "detail": "阿姆斯特朗的现场判断。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "7": "living"
+      }
+    },
+    {
+      "id": "marstonMove",
+      "day": 8,
+      "seq": 65,
+      "time": "8/08 · 处置后",
+      "title": "遗体移到卧室",
+      "summary": "马斯顿遗体被抬回自己的卧室；该客房属于未确定排列的客房区。",
+      "source": "第5章",
+      "actors": {},
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见9个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "moveBodies": {
+        "7": "guests"
+      }
+    },
+    {
+      "id": "nightLocks",
+      "day": 8,
+      "seq": 80,
+      "time": "8/08 · 夜间",
+      "title": "各自回房",
+      "summary": "来客各自上楼，维拉在自己的卧室回想童谣；这不证明谁整夜不曾外出。",
+      "source": "第5章",
+      "actors": {
+        "0": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        },
+        "2": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        },
+        "3": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        },
+        "4": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        },
+        "5": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        },
+        "6": {
+          "place": "guests",
+          "note": "各自客房；分区示意"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "mrsFound",
+      "day": 9,
+      "seq": 10,
+      "time": "8/09 · 清晨",
+      "title": "女管家在睡眠中死亡",
+      "summary": "医生受罗杰斯呼唤，到上层房中检查已死亡的女管家；准确死亡时刻未给。",
+      "source": "第6章",
+      "actors": {
+        "3": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "staff",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "mrsCause",
+          "title": "女管家死亡",
+          "place": "staff",
+          "state": "熟睡后未醒",
+          "detail": "起初存在多种解释；不能提前判定管家杀妻。",
+          "kind": "判断",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "9": "staff"
+      }
+    },
+    {
+      "id": "breakfast2",
+      "day": 9,
+      "seq": 20,
+      "time": "8/09 · 早餐",
+      "title": "船没有如期到来",
+      "summary": "众人在餐厅得知女管家死讯，船迟迟未到；桌上小瓷人继续减少。",
+      "source": "第6章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见8个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "boat",
+          "title": "接送船",
+          "place": "landing",
+          "state": "未按约定抵岛",
+          "detail": "这是交通中断，不能据此推导藏在岛上的第三者。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "summit",
+      "day": 9,
+      "seq": 30,
+      "time": "8/09 · 早饭后",
+      "title": "维拉与布伦特登高",
+      "summary": "两人在岛顶远望来船，布伦特讲述自己旧事。",
+      "source": "第7章",
+      "actors": {
+        "0": {
+          "place": "summit",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "summit",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "macShore",
+      "day": 9,
+      "seq": 35,
+      "time": "8/09 · 午前",
+      "title": "将军独坐海边",
+      "summary": "麦克阿瑟坐在海边岩石上，维拉来到近旁交谈。",
+      "source": "第7–8章",
+      "actors": {
+        "0": {
+          "place": "shore",
+          "note": "叙述确认"
+        },
+        "6": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "islandSearch",
+      "day": 9,
+      "seq": 40,
+      "time": "8/09 · 午前搜岛",
+      "title": "三名男子寻找藏身者",
+      "summary": "隆巴德、医生与布洛尔搜寻全岛；只记录范围，不补造逐分钟行走路线。",
+      "source": "第8章",
+      "actors": {
+        "1": {
+          "place": null,
+          "note": "全岛搜索；本节点具体落点未明"
+        },
+        "3": {
+          "place": null,
+          "note": "全岛搜索；本节点具体落点未明"
+        },
+        "4": {
+          "place": null,
+          "note": "全岛搜索；本节点具体落点未明"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "staffSearch",
+      "day": 9,
+      "seq": 45,
+      "time": "8/09 · 随后搜屋",
+      "title": "楼上脚步声的来源",
+      "summary": "三名男子沿客房小楼梯到佣人房，发现罗杰斯在房中整理；并非发现未知袭击者。",
+      "source": "第8章",
+      "actors": {
+        "1": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "staff",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "staff",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "steps",
+          "title": "楼上轻微脚步声",
+          "place": "staff",
+          "state": "来源为罗杰斯",
+          "detail": "原文有上行小楼梯，不能把佣人房画在一层。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "macFound",
+      "day": 9,
+      "seq": 55,
+      "time": "8/09 · 午餐时前后",
+      "title": "医生发现将军被杀",
+      "summary": "阿姆斯特朗去叫将军，发现后脑遭击；具体行凶时间此前无人直接看见。",
+      "source": "第9章",
+      "actors": {
+        "3": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "macCause",
+          "title": "将军后脑伤口",
+          "place": "shore",
+          "state": "发现重击伤",
+          "detail": "现场检查；之后遗体搬回客房。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "6": "shore"
+      }
+    },
+    {
+      "id": "macMove",
+      "day": 9,
+      "seq": 60,
+      "time": "8/09 · 风暴开始",
+      "title": "将军遗体抬上楼",
+      "summary": "布洛尔与医生抬将军回自己的床；维拉和罗杰斯在餐厅确认瓷人只剩七个。",
+      "source": "第9章",
+      "actors": {
+        "3": {
+          "place": "guests",
+          "note": "将军卧室，排列未知"
+        },
+        "4": {
+          "place": "guests",
+          "note": "将军卧室，排列未知"
+        },
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见7个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "moveBodies": {
+        "6": "guests"
+      }
+    },
+    {
+      "id": "sevenTalk",
+      "day": 9,
+      "seq": 70,
+      "time": "8/09 · 下午",
+      "title": "凶手可能就在七人中",
+      "summary": "七人在休息厅交换信息；这是判断形成节点，不指认某人为确定凶手。",
+      "source": "第9章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "8": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "insideTheory",
+          "title": "岛上凶手猜想",
+          "place": "living",
+          "state": "认为凶手可能是内部人物",
+          "detail": "搜岛未发现额外人物，不等同穷尽一切证明。",
+          "kind": "判断",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "diningLocked",
+      "day": 9,
+      "seq": 90,
+      "time": "8/09 · 入睡前",
+      "title": "罗杰斯锁上餐厅",
+      "summary": "他布置好早餐桌、锁上餐厅并把钥匙放在口袋；其余人已各自回房。",
+      "source": "第10章",
+      "actors": {
+        "8": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "diningLock",
+          "title": "餐厅门与钥匙",
+          "place": "dining",
+          "state": "罗杰斯上锁，钥匙放口袋",
+          "detail": "次晨的瓷人变化需要结合钥匙去向理解。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "guestLocks",
+          "title": "客房门",
+          "place": "guests",
+          "state": "各自上锁并插好门栓",
+          "detail": "只是睡前观察，不证明整夜留在房内。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "lateMorning",
+      "day": 10,
+      "seq": 10,
+      "time": "8/10 · 09:35",
+      "title": "隆巴德叫醒布洛尔",
+      "summary": "隆巴德敲布洛尔房门，二人发现管家不见，水还没烧开。",
+      "source": "第11章",
+      "actors": {
+        "1": {
+          "place": "guests",
+          "note": "布洛尔房门处；客房顺序未明"
+        },
+        "4": {
+          "place": "guests",
+          "note": "布洛尔房门处；客房顺序未明"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "sixFigures",
+      "day": 10,
+      "seq": 15,
+      "time": "8/10 · 稍后早餐前",
+      "title": "餐桌只剩六个瓷人",
+      "summary": "众人走入已摆好的餐厅；瓷人数量先于管家遗体被发现。",
+      "source": "第11章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见6个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "rogersFound",
+      "day": 10,
+      "seq": 20,
+      "time": "8/10 · 上午",
+      "title": "洗衣房发现罗杰斯",
+      "summary": "管家倒在院子对面洗衣房的劈柴处，小斧子在手，大斧染血。",
+      "source": "第11章",
+      "actors": {
+        "1": {
+          "place": "laundry",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "laundry",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "laundry",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "laundry",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "axe",
+          "title": "劈柴斧",
+          "place": "laundry",
+          "state": "大斧留有血迹",
+          "detail": "死亡发生在洗衣房；不能把案发点画进厨房。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "8": "laundry"
+      }
+    },
+    {
+      "id": "brentBreakfast",
+      "day": 10,
+      "seq": 30,
+      "time": "8/10 · 早餐",
+      "title": "六人勉强进餐",
+      "summary": "维拉与布伦特准备早餐；众人在餐厅喝咖啡。",
+      "source": "第11章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "5": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "brentAlone",
+      "day": 10,
+      "seq": 35,
+      "time": "8/10 · 早餐后",
+      "title": "布伦特独留餐厅",
+      "summary": "其他人去休息厅准备讨论，她头晕，独自留在桌边。",
+      "source": "第12章",
+      "actors": {
+        "5": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brentCoffee",
+          "title": "布伦特咖啡",
+          "place": "dining",
+          "state": "她在饮后感到头晕",
+          "detail": "是否被加药要到手稿核实。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "brentFound",
+      "day": 10,
+      "seq": 40,
+      "time": "8/10 · 随后",
+      "title": "布伦特死亡与针眼",
+      "summary": "五人回餐厅发现布伦特死亡，医生观察到颈部针眼，窗旁有黄蜂。",
+      "source": "第12章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "dining",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brentNeedle",
+          "title": "颈部针眼",
+          "place": "dining",
+          "state": "不像黄蜂叮咬",
+          "detail": "医生认为毒物由针筒注入；黄蜂并非杀人凶器。",
+          "kind": "判断",
+          "truth": false
+        },
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见5个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "5": "dining"
+      }
+    },
+    {
+      "id": "syringe",
+      "day": 10,
+      "seq": 45,
+      "time": "8/10 · 检查期间",
+      "title": "针筒丢失后被找到",
+      "summary": "医生说针筒原在客房药包；众人随后在窗外找到针筒与一只瓷人。",
+      "source": "第12章",
+      "actors": {
+        "0": {
+          "place": "stepsEast",
+          "note": "窗外搜寻；具体窗口落点为示意"
+        },
+        "1": {
+          "place": "stepsEast",
+          "note": "窗外搜寻；具体窗口落点为示意"
+        },
+        "2": {
+          "place": "stepsEast",
+          "note": "窗外搜寻；具体窗口落点为示意"
+        },
+        "3": {
+          "place": "stepsEast",
+          "note": "窗外搜寻；具体窗口落点为示意"
+        },
+        "4": {
+          "place": "stepsEast",
+          "note": "窗外搜寻；具体窗口落点为示意"
+        }
+      },
+      "changes": [
+        {
+          "id": "syringe",
+          "title": "针筒与瓷人",
+          "place": "stepsEast",
+          "state": "窗外地面被发现",
+          "detail": "室外图的落点只表示来自窗外，不能当作原文确定的东侧坐标。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "gunMissing",
+      "day": 10,
+      "seq": 50,
+      "time": "8/10 · 身体与房间搜查",
+      "title": "隆巴德手枪不在抽屉",
+      "summary": "众人搜查武器；隆巴德床边抽屉空了。维拉在走廊等待男子搜查。",
+      "source": "第12章",
+      "actors": {
+        "1": {
+          "place": "guests",
+          "note": "隆巴德的卧室"
+        },
+        "2": {
+          "place": "guests",
+          "note": "隆巴德的卧室"
+        },
+        "3": {
+          "place": "guests",
+          "note": "隆巴德的卧室"
+        },
+        "4": {
+          "place": "guests",
+          "note": "隆巴德的卧室"
+        },
+        "0": {
+          "place": "corridor",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "gun",
+          "title": "隆巴德手枪",
+          "place": "guests",
+          "state": "床边抽屉内已失踪",
+          "detail": "当时并不知道谁取走，也不知道藏处。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "drugLocked",
+      "day": 10,
+      "seq": 55,
+      "time": "8/10 · 搜查后",
+      "title": "药物分两层上锁",
+      "summary": "药物放入小柜，小柜再进大碗橱；两把钥匙分别交给隆巴德与布洛尔。",
+      "source": "第12章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "drugs",
+          "title": "药物与两把钥匙",
+          "place": "living",
+          "state": "小柜和大碗橱分别锁闭",
+          "detail": "钥匙分持不等于此前投毒无法发生。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "fiveWait",
+      "day": 10,
+      "seq": 65,
+      "time": "8/10 · 15:45左右及以后",
+      "title": "五人互相监视",
+      "summary": "幸存者在室内紧张等待；时刻来自维拉看钟，之后事件不是全部发生在15:45。",
+      "source": "第13章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "seaweed",
+      "day": 10,
+      "seq": 70,
+      "time": "8/10 · 当天傍晚",
+      "title": "维拉在卧室受惊",
+      "summary": "她回卧室，黑暗中碰到悬挂的海草而尖叫；其他人赶上楼。",
+      "source": "第13章",
+      "actors": {
+        "0": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "vera",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "seaweed",
+          "title": "悬挂的海草",
+          "place": "vera",
+          "state": "黑暗中触碰后被发现",
+          "detail": "来源与布置者此时未明。",
+          "kind": "物证",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "wargraveApparent",
+      "day": 10,
+      "seq": 75,
+      "time": "8/10 · 众人返回休息厅后",
+      "title": "法官被认为中枪死亡",
+      "summary": "沃格雷夫裹红帘、戴羊毛扮成法官模样；医生宣布他死亡。只在当时所见按现场认定展示灰色。",
+      "source": "第13章",
+      "actors": {
+        "0": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "living",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "judgeCostume",
+          "title": "红帘与羊毛",
+          "place": "living",
+          "state": "法官装扮和额头红印",
+          "detail": "真正伤口还是装扮，在当时尚未核实。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见4个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "2": "living"
+      },
+      "truthDeaths": {}
+    },
+    {
+      "id": "wargraveMove",
+      "day": 10,
+      "seq": 80,
+      "time": "8/10 · 当晚",
+      "title": "把法官抬回床上",
+      "summary": "四人将被认为死亡的法官放回卧室，之后在厨房进餐。",
+      "source": "第14章",
+      "actors": {
+        "0": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "moveBodies": {
+        "2": "guests"
+      },
+      "truthActors": {
+        "0": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "2": {
+          "place": "guests",
+          "note": "实际仍活着，假装遗体"
+        }
+      }
+    },
+    {
+      "id": "gunReturned",
+      "day": 10,
+      "seq": 90,
+      "time": "8/10 · 四人回房后",
+      "title": "手枪回到隆巴德抽屉",
+      "summary": "隆巴德在自己的房里看见消失的枪又在抽屉中；不确定放回钟点。",
+      "source": "第14章",
+      "actors": {
+        "1": {
+          "place": "guests",
+          "note": "隆巴德卧室"
+        }
+      },
+      "changes": [
+        {
+          "id": "gun",
+          "title": "隆巴德手枪",
+          "place": "guests",
+          "state": "重新出现在床边抽屉",
+          "detail": "谁把它放回，只在手稿复盘揭示。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "armstrongMissing",
+      "day": 11,
+      "seq": 20,
+      "time": "8/10深夜—8/11凌晨",
+      "title": "医生房间空了",
+      "summary": "布洛尔听脚步声、看见模糊黑影走出大门；敲门后发现医生不在，叫醒隆巴德和维拉。",
+      "source": "第14章",
+      "actors": {
+        "4": {
+          "place": "corridor",
+          "note": "叙述确认"
+        },
+        "0": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "guests",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "shadow",
+          "title": "门口黑影",
+          "place": "hall",
+          "state": "仅见背影，身份未明",
+          "detail": "不能把黑影在事实层直接标成阿姆斯特朗。",
+          "kind": "证词",
+          "truth": false
+        },
+        {
+          "id": "armstrongAbsence",
+          "title": "医生失踪",
+          "place": "guests",
+          "state": "客房无人应答",
+          "detail": "此时尚未发现尸体，不能在当时所见提前标为死亡。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "searchNight",
+      "day": 11,
+      "seq": 25,
+      "time": "8/11 · 凌晨搜寻",
+      "title": "二人搜岛，维拉留在卧室",
+      "summary": "隆巴德与布洛尔在室外找人，维拉锁门留房。",
+      "source": "第14章",
+      "actors": {
+        "0": {
+          "place": "vera",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": null,
+          "note": "岛上搜索，未逐点定位"
+        },
+        "4": {
+          "place": null,
+          "note": "岛上搜索，未逐点定位"
+        }
+      },
+      "changes": [
+        {
+          "id": "window",
+          "title": "餐厅窗玻璃",
+          "place": "dining",
+          "state": "窗玻璃破碎",
+          "detail": "搜寻发现的状态不证明医生破窗逃走。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "breakfast4",
+      "day": 11,
+      "seq": 35,
+      "time": "8/11 · 日出后",
+      "title": "只剩三人吃早餐",
+      "summary": "维拉、隆巴德、布洛尔在厨房；桌上剩三个小瓷人，仍没找到医生遗体。",
+      "source": "第15章",
+      "actors": {
+        "0": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": "kitchen",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "餐桌上的小瓷人",
+          "place": "dining",
+          "state": "已见3个",
+          "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "bloreReturn",
+      "day": 11,
+      "seq": 45,
+      "time": "8/11 · 白天",
+      "title": "布洛尔独自回屋取食物",
+      "summary": "三人在岛顶商议，布洛尔决定回别墅取吃的；维拉与隆巴德留在外面。",
+      "source": "第15章",
+      "actors": {
+        "0": {
+          "place": "summit",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "summit",
+          "note": "叙述确认"
+        },
+        "4": {
+          "place": null,
+          "note": "离开岛顶返回住宅，路段未细分"
+        }
+      },
+      "changes": []
+    },
+    {
+      "id": "bloreFound",
+      "day": 11,
+      "seq": 50,
+      "time": "8/11 · 随后",
+      "title": "石阶上发现布洛尔",
+      "summary": "二人在别墅东侧石阶发现布洛尔，旁边是维拉房间的熊形大理石钟。",
+      "source": "第15章",
+      "actors": {
+        "0": {
+          "place": "stepsEast",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "stepsEast",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "bear",
+          "title": "熊形大理石钟",
+          "place": "stepsEast",
+          "state": "砸落在布洛尔近旁",
+          "detail": "来自维拉房间；谁扔下当时没有目击。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "4": "stepsEast"
+      }
+    },
+    {
+      "id": "armstrongFound",
+      "day": 11,
+      "seq": 60,
+      "time": "8/11 · 白天，海边",
+      "title": "发现被冲来的医生遗体",
+      "summary": "二人找到海边岩石间的阿姆斯特朗；从这时起当时所见才确认医生已死。",
+      "source": "第15章",
+      "actors": {
+        "0": {
+          "place": "shore",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "armstrongBody",
+          "title": "医生遗体",
+          "place": "shore",
+          "state": "海边被发现",
+          "detail": "发现时间不同于落水时间；法医的时段推算到尾声才说明。",
+          "kind": "物证",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "3": "shore"
+      }
+    },
+    {
+      "id": "bodyDrag",
+      "day": 11,
+      "seq": 65,
+      "time": "8/11 · 海边对峙时",
+      "title": "拖离潮水，维拉取枪",
+      "summary": "两人把医生拖离潮水范围，维拉借机拿走隆巴德的手枪。",
+      "source": "第16章",
+      "actors": {
+        "0": {
+          "place": "shore",
+          "note": "叙述确认"
+        },
+        "1": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "armstrongBody",
+          "title": "医生遗体",
+          "place": "shore",
+          "state": "拖到潮水冲不到处",
+          "detail": "仍属海边场景，尸体落点只作示意。",
+          "kind": "物证",
+          "truth": false
+        },
+        {
+          "id": "gun",
+          "title": "隆巴德手枪",
+          "place": "shore",
+          "state": "维拉拿到手中",
+          "detail": "取枪发生在海边，并非从房间重新取出。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "lombardShot",
+      "day": 11,
+      "seq": 70,
+      "time": "8/11 · 海边对峙后",
+      "title": "维拉射杀隆巴德",
+      "summary": "隆巴德向她扑来，她开枪，隆巴德胸部中弹身亡。",
+      "source": "第16章",
+      "actors": {
+        "0": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "gun",
+          "title": "手枪",
+          "place": "shore",
+          "state": "维拉开枪后持有",
+          "detail": "小说实际描写的开枪节点。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "1": "shore"
+      }
+    },
+    {
+      "id": "veraReturn",
+      "day": 11,
+      "seq": 80,
+      "time": "8/11 · 返回别墅后",
+      "title": "最后一个瓷人",
+      "summary": "维拉回到餐厅，砸掉两个瓷人，拿走最后一个，沿楼梯回卧室；枪在途中丢下，精确落点未给。",
+      "source": "第16章",
+      "actors": {
+        "0": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "figures",
+          "title": "最后一个小瓷人",
+          "place": "vera",
+          "state": "被维拉带上楼",
+          "detail": "图上只标目的房间，过程不是实时定位。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "gun",
+          "title": "手枪",
+          "place": "corridor",
+          "state": "上楼途中丢下",
+          "detail": "原文未指定哪级楼梯或走廊坐标；此处为楼上通行区示意。",
+          "kind": "状态",
+          "truth": false
+        }
+      ]
+    },
+    {
+      "id": "veraHanged",
+      "day": 11,
+      "seq": 85,
+      "time": "8/11 · 最后回房时",
+      "title": "卧室绳套与椅子",
+      "summary": "维拉在极度疲惫与恍惚中看见已布置的绳套和椅子，最终上吊。瓷人掉下摔碎。",
+      "source": "第16章",
+      "actors": {},
+      "changes": [
+        {
+          "id": "rope",
+          "title": "绳套与椅子",
+          "place": "vera",
+          "state": "维拉上吊，椅子被踢开",
+          "detail": "布置时间和布置者未在当时叙述中说明。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "figures",
+          "title": "最后一个小瓷人",
+          "place": "vera",
+          "state": "掉落摔碎，已无完整瓷人",
+          "detail": "不是餐桌上又出现了一个新的瓷人。",
+          "kind": "状态",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "0": "vera"
+      }
+    },
+    {
+      "id": "police",
+      "day": 13,
+      "seq": 10,
+      "time": "8/13 · 清晨尸检；尾声调查",
+      "title": "十人全已死亡",
+      "summary": "法医与警方资料确认十人都死了；具体调查谈话日期未给。警方发现维拉房内椅子已靠墙。",
+      "source": "第17章",
+      "actors": {},
+      "changes": [
+        {
+          "id": "rope",
+          "title": "绳套与椅子",
+          "place": "vera",
+          "state": "警方见椅子整齐靠墙",
+          "detail": "死亡现场被改变，不能把椅子一直留作被踢翻的状态。",
+          "kind": "状态",
+          "truth": false
+        },
+        {
+          "id": "police",
+          "title": "警方记录",
+          "place": "mainland",
+          "state": "留下无法解释的矛盾",
+          "detail": "发现、尸检与日记不等于警方已经掌握手稿真相。",
+          "kind": "文书",
+          "truth": false
+        }
+      ],
+      "deaths": {
+        "2": "guests"
+      },
+      "map": null
+    }
+  ],
+  "truthOnly": [
+    {
+      "id": "prepare",
+      "day": 7,
+      "seq": 10,
+      "time": "登岛前 · 日期未细分",
+      "title": "法官筹备孤岛邀请",
+      "summary": "沃格雷夫借莫里斯代理买岛，按各人的经历发出邀请；本土准备地点未准确建模。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "mainland",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "invites",
+          "title": "邀请与代理人",
+          "place": "mainland",
+          "state": "沃格雷夫策划",
+          "detail": "手稿自述，不能据此把其他人的旧罪全部视为独立司法事实。",
+          "kind": "文书",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "map": null
+    },
+    {
+      "id": "poisonMarston",
+      "day": 8,
+      "seq": 55,
+      "time": "8/08 · 录音引发混乱时",
+      "title": "法官向酒杯投毒",
+      "summary": "沃格雷夫利用指控后的混乱对马斯顿杯中投毒。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "glass",
+          "title": "马斯顿酒杯",
+          "place": "living",
+          "state": "沃格雷夫投毒",
+          "detail": "作案细节来自手稿，不是现场其他人的目击。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "poisonMrs",
+      "day": 8,
+      "seq": 48,
+      "time": "8/08 · 女管家晕倒之后",
+      "title": "对白兰地下药",
+      "summary": "沃格雷夫对给女管家的白兰地下致死安眠药；她随后被带回上层。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brandy",
+          "title": "女管家白兰地",
+          "place": "living",
+          "state": "法官加入安眠药",
+          "detail": "投药钟点和剂量不做数值模拟。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "killMac",
+      "day": 9,
+      "seq": 50,
+      "time": "8/09 · 午前，准确钟点未明",
+      "title": "将军在海边遇袭",
+      "summary": "法官选择离开露台的时机，在海边从后袭击将军。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "shore",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "macCause",
+          "title": "将军死亡",
+          "place": "shore",
+          "state": "沃格雷夫从后袭击",
+          "detail": "自白补述；不补造袭击准确分钟。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "6": "shore"
+      }
+    },
+    {
+      "id": "killRogers",
+      "day": 10,
+      "seq": 5,
+      "time": "8/10 · 清晨",
+      "title": "法官在劈柴处杀死管家",
+      "summary": "罗杰斯正在劈柴，法官从背后袭击，并取得管家口袋里的餐厅钥匙。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "laundry",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "diningLock",
+          "title": "餐厅钥匙",
+          "place": "laundry",
+          "state": "法官从罗杰斯口袋取得",
+          "detail": "罗杰斯锁门并没有阻止持钥匙者进餐厅。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "8": "laundry"
+      }
+    },
+    {
+      "id": "hideGun",
+      "day": 10,
+      "seq": 25,
+      "time": "8/10 · 管家遗体发现的混乱中",
+      "title": "偷枪并藏入食品罐",
+      "summary": "法官从隆巴德房中拿枪，藏在储藏室的食品罐；储藏室与小厨房分隔未知，此处标厨房存储区。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "guests",
+          "note": "隆巴德卧室"
+        }
+      },
+      "changes": [
+        {
+          "id": "gun",
+          "title": "隆巴德手枪",
+          "place": "kitchen",
+          "state": "藏在食品罐内",
+          "detail": "原文说储藏室；地图以厨房存储区表达，绝非精确藏点。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "drugBrent",
+      "day": 10,
+      "seq": 32,
+      "time": "8/10 · 早餐续咖啡时",
+      "title": "给布伦特咖啡加安眠药",
+      "summary": "法官在第二次倒咖啡时下药，让她随后昏沉。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brentCoffee",
+          "title": "布伦特咖啡",
+          "place": "dining",
+          "state": "法官加入安眠药",
+          "detail": "先镇静、后注射是两个步骤。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "killBrent",
+      "day": 10,
+      "seq": 38,
+      "time": "8/10 · 她被独留餐厅后",
+      "title": "法官返回餐厅注射毒物",
+      "summary": "沃格雷夫在她意识模糊时注射氰化物，并用黄蜂呼应童谣。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "dining",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "brentNeedle",
+          "title": "注射针眼",
+          "place": "dining",
+          "state": "法官注射造成",
+          "detail": "黄蜂只用于误导。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "5": "dining"
+      }
+    },
+    {
+      "id": "fakeDeath",
+      "day": 10,
+      "seq": 72,
+      "time": "8/10 · 维拉尖叫引开众人时",
+      "title": "法官与医生合谋假死",
+      "summary": "医生信任法官，协助他扮死；红印、帘布、羊毛和烛光让其余人误信死亡。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "living",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "judgeCostume",
+          "title": "假死装扮",
+          "place": "living",
+          "state": "额头红印并非此时中枪",
+          "detail": "真相层此刻不把法官列为死者。",
+          "kind": "状态",
+          "truth": true
+        },
+        {
+          "id": "seaweed",
+          "title": "海草",
+          "place": "vera",
+          "state": "法官预先布置以引开众人",
+          "detail": "布置准确钟点未知。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "cliffMeet",
+      "day": 11,
+      "seq": 5,
+      "time": "8/11 · 01:45（手稿自述）",
+      "title": "法官与医生在悬崖会面",
+      "summary": "两人来到房后崖边小路；这一钟点来自手稿，不是其他人的目击。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "cliff",
+          "note": "叙述确认"
+        },
+        "3": {
+          "place": "cliff",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [],
+      "truth": true
+    },
+    {
+      "id": "pushDoctor",
+      "day": 11,
+      "seq": 10,
+      "time": "8/11 · 悬崖会面后",
+      "title": "法官将医生推入海中",
+      "summary": "沃格雷夫把阿姆斯特朗推下悬崖，随后返屋制造脚步声。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "cliff",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "armstrongBody",
+          "title": "医生落水",
+          "place": "cliff",
+          "state": "从房后悬崖落水",
+          "detail": "落水点与后来海边发现遗体的位置不同。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "3": "cliff"
+      }
+    },
+    {
+      "id": "windowReturn",
+      "day": 11,
+      "seq": 23,
+      "time": "8/11 · 凌晨追踪黑影时",
+      "title": "由餐厅窗返回并再装尸体",
+      "summary": "法官诱使二人追踪，绕回餐厅窗，打碎玻璃，再到床上躺着。枪已被放回，但准确归还时刻未知。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "guests",
+          "note": "回床继续假装遗体"
+        }
+      },
+      "changes": [
+        {
+          "id": "shadow",
+          "title": "黑影",
+          "place": "hall",
+          "state": "实际为沃格雷夫",
+          "detail": "不能将医生失踪与黑影身份混为一谈。",
+          "kind": "物证",
+          "truth": true
+        },
+        {
+          "id": "window",
+          "title": "餐厅窗玻璃",
+          "place": "dining",
+          "state": "法官返回后打碎",
+          "detail": "原文给出门窗方式，具体外绕路径不明。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "dropBear",
+      "day": 11,
+      "seq": 48,
+      "time": "8/11 · 布洛尔返回住宅时",
+      "title": "熊形钟从维拉窗上方砸落",
+      "summary": "法官利用布洛尔单独回屋，将熊形大理石钟砸向东侧石阶。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "vera",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "bear",
+          "title": "熊形大理石钟",
+          "place": "stepsEast",
+          "state": "法官利用上方窗口投下",
+          "detail": "只表达窗与下方石阶关系，未经真实尺寸或物理仿真验证。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "4": "stepsEast"
+      }
+    },
+    {
+      "id": "setRope",
+      "day": 11,
+      "seq": 78,
+      "time": "8/11 · 维拉射杀隆巴德之后",
+      "title": "法官布置卧室绳套",
+      "summary": "他趁维拉还未回房布好绳套和椅子，利用她的心理状态诱发自杀。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "vera",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "rope",
+          "title": "绳套与椅子",
+          "place": "vera",
+          "state": "沃格雷夫布置",
+          "detail": "没有给出准确的安装分钟。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "chairReset",
+      "day": 11,
+      "seq": 90,
+      "time": "8/11 · 维拉死后",
+      "title": "移椅并回收手枪",
+      "summary": "法官从橱柜阴影处走出，把椅子靠墙，取回维拉丢下的枪，保留其指纹。",
+      "source": "第18章手稿",
+      "actors": {
+        "2": {
+          "place": "vera",
+          "note": "叙述确认"
+        }
+      },
+      "changes": [
+        {
+          "id": "rope",
+          "title": "椅子",
+          "place": "vera",
+          "state": "由法官移到墙边",
+          "detail": "解释警方发现的现场矛盾。",
+          "kind": "状态",
+          "truth": true
+        },
+        {
+          "id": "gun",
+          "title": "手枪",
+          "place": "guests",
+          "state": "法官取回，之后带回自己房间",
+          "detail": "地图标目的区，不补造逐步坐标。",
+          "kind": "物证",
+          "truth": true
+        }
+      ],
+      "truth": true
+    },
+    {
+      "id": "lastShot",
+      "day": 11,
+      "seq": 95,
+      "time": "8/11 · 最后；准确钟点未给",
+      "title": "法官安排自己的枪击死亡",
+      "summary": "手稿写下最后的计划：返床并留下真正的额头弹孔。警方验尸确认他最终饮弹而死；不是先前假死时便已死亡。",
+      "source": "第18章手稿；第17章警方资料",
+      "actors": {},
+      "changes": [
+        {
+          "id": "judgeCostume",
+          "title": "沃格雷夫真实枪伤",
+          "place": "guests",
+          "state": "最终枪伤与先前假死分开",
+          "detail": "计划叙述与尸检互证结局；不生成射击机关操作步骤。",
+          "kind": "状态",
+          "truth": true
+        }
+      ],
+      "truth": true,
+      "deaths": {
+        "2": "guests"
+      }
+    }
+  ],
+  "aliases": {},
+  "truthNames": {},
+  "ending": {
+    "time": "手稿与尾声 · 部分日期未明",
+    "title": "发现与真相的时间差",
+    "summary": "登岛日期和连续案件日期由手稿与正文交叉整理。法官假死不是真实死亡；医生落水点不是遗体发现点。警方谈话与瓶中手稿被发现的准确日期没有补造。",
+    "source": "第17–18章"
+  },
+  "basis": "依据所给译本。客房排列未完整说明，除维拉房与相连浴室外，其他客房只显示未定分区；遗体保留的是最后确证所在地。岛上外景落点、尺寸及窗外物证位置为示意，不能用于验证距离或耗时。"
+}
