@@ -1,0 +1,7 @@
+.DS_Store
+backend/data/
+*.class
+*.log
+node_modules/
+.env
+.env.*
