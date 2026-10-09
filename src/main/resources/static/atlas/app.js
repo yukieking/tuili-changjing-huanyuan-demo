@@ -23,7 +23,7 @@ function flat(rs,clues,positions){
  const scale=Math.min(880/(xmax-xmin||1),520/(zmax-zmin||1)),xy=(x,z)=>[500+(x-(xmin+xmax)/2)*scale,325+(z-(zmin+zmax)/2)*scale];
  let html=rs.map(r=>{const [x,y]=xy(...r.center);return `<g data-room="${r.id}" role="button" tabindex="0" aria-label="查看${esc(r.name)}立体图"><polygon points="${r.polygon.map(p=>xy(...p).join(',')).join(' ')}" fill="${r.floor===0?'#e6dec9':'#dbe4e7'}" stroke="#748b91" stroke-width="3" ${r.type==='passage'?'stroke-dasharray="8 6"':''}/><text x="${x}" y="${y-12}" text-anchor="middle" fill="#314e55" font-size="19">${esc(r.name)}</text></g>`;}).join('');
  const counts={};for(const c of clues){const r=rs.find(r=>r.id===c.place);if(!r)continue;const n=counts[r.id]||0;counts[r.id]=n+1;const [x,y]=xy(...r.center);html+=`<g data-clue="${c.id}"><circle cx="${x-24+n%4*24}" cy="${y+18+Math.floor(n/4)*25}" r="11" fill="#b46953"/><text x="${x-24+n%4*24}" y="${y+22+Math.floor(n/4)*25}" fill="white" text-anchor="middle" font-size="13">${c.number}</text><title>${esc(c.title+'：'+c.state)}</title></g>`;}
- for(const [id,p] of Object.entries(positions)){const r=rs.find(r=>r.id===p.room);if(!r)continue;const [x,y]=xy(r.x+p.u*r.w,r.z+p.v*r.d);html+=`<g transform="translate(${x},${y})" opacity="${snap.dead.includes(id)?.45:1}">${characterIcon(roles[id],colors[id],work==='kubi')}<title>${esc(label(id))}</title></g><text x="${x}" y="${y+30}" font-size="13" text-anchor="middle">${esc(label(id))}</text>`;}
+ for(const [id,p] of Object.entries(positions)){const r=rs.find(r=>r.id===p.room);if(!r)continue;const [x,y]=xy(r.x+p.u*r.w,r.z+p.v*r.d);html+=`<g pointer-events="none" transform="translate(${x},${y})" opacity="${snap.dead.includes(id)?.45:1}">${characterIcon(roles[id],colors[id],work==='kubi')}<title>${esc(label(id))}</title></g><text pointer-events="none" x="${x}" y="${y+30}" font-size="13" text-anchor="middle">${esc(label(id))}</text>`;}
  $('#flat').innerHTML=html;
 }
 function render(){
@@ -55,7 +55,7 @@ $('#enter').onclick=()=>{entered=true;$('#spoiler-gate').hidden=true;$('#atlas')
 $('#maps').onclick=e=>{const b=e.target.closest('[data-map]');if(b){map=b.dataset.map==='mainland'?null:Number(b.dataset.map);focus=null;render();}};
 $('#room-list').onclick=e=>{const b=e.target.closest('[data-room]');if(b){focus=b.dataset.room;render();}};
 $('#overview').onclick=()=>{focus=null;render();};$('#clues').onclick=e=>{const b=e.target.closest('[data-place]');if(b)choose(b.dataset.place);};
-$('#flat').onclick=e=>{const r=e.target.closest('[data-room]'),c=e.target.closest('[data-clue]');if(r){focus=r.dataset.room;view='three';render();scene?.resize();}else if(c){const clue=snap.clues.find(x=>x.id===c.dataset.clue);if(clue)choose(clue.place);}};
+$('#flat').onclick=e=>{const r=e.target.closest('[data-room]'),c=e.target.closest('[data-clue]');if(r){focus=r.dataset.room;view='three';render();scene?.resize();}else if(c){const clue=snap.clues.find(x=>x.id===c.dataset.clue);if(clue){view='three';choose(clue.place);scene?.resize();}}};
 $('#flat').onkeydown=e=>{if(e.key==='Enter')e.target.closest('[data-room]')?.dispatchEvent(new MouseEvent('click',{bubbles:true}));};
 for(const v of ['three','two'])$('#'+v).onclick=()=>{view=v;render();if(v==='three')scene?.resize();};
 $('#previous').onclick=()=>{stop();seek(index-1);};$('#next').onclick=()=>{stop();seek(index+1);};$('#scrubber').oninput=e=>{stop();seek(Number(e.target.value));};
