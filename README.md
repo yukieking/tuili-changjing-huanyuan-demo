@@ -27,7 +27,7 @@ IDEA 直接打开根目录 `pom.xml`，运行 `com.mijing.MijingApplication`。
 ```sh
 ./mvnw test
 ./mvnw package
-java -jar target/mijing-demo-0.5.0.jar
+java -jar target/mijing-demo-0.6.0.jar
 ```
 
 集成测试启动真实 HTTP 服务、使用临时数据目录，覆盖首页内容类型、静态资源、健康接口、保存恢复、新路线/区间/门窗状态、输入验证、请求大小、跨域写入拒绝和数据目录隔离。
@@ -121,3 +121,9 @@ node --test tests/frontend/domain.test.mjs
 点「体验双螺旋路线」可创建一份独立体验假说；点「塔内结构」查看 A / B 两条斜道。原《无人生还》与原假说继续保留。默认不展示结局，阅读范围可展开第八章以前的部分约时记录。
 
 空间关系有书前图示与正文依据，全部绝对尺寸、高度及材质为展示推定。细节、来源、限制与测试见 [场景模型说明](docs/kubi-scene.md)。仓库不包含用户提供的 EPUB 或原书图像。
+
+## 推理书架
+
+`http://localhost:8080/recommendations.html` 收录 11 部推理与悬疑作品，提供书名、作者、类型、推荐理由及空间适配建议。按用户要求不展示来源。支持搜索、筛选与浏览器本地“想读”收藏；现有两个作品均有导航入口。
+
+`GET /api/recommendations` 返回随项目发布的书单；静态 JSON 作为前端回退，不依赖外部平台在线加载。

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>谜境 · 推理书架</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="recommendations/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
+      >
+      <nav>
+        <a href="index.html">场景工作台</a
+        ><a href="index.html?library=1">作品档案</a
+        ><a class="active" href="recommendations.html" aria-current="page"
+          >推理书架</a
+        >
+      </nav>
+      <span class="demo">DISCOVER / READ</span>
+    </header>
+    <main class="r-main">
+      <section class="r-hero">
+        <div>
+          <div class="eyebrow">A MYSTERY FOR YOUR NEXT EVENING</div>
+          <h1>下一本，走进哪场谜？</h1>
+          <p>
+            从孤岛与奇异建筑，到人物背后的隐秘人生。<br />挑一本值得读的推理小说，留下你的下一个“想读”。
+          </p>
+          <div class="r-shortcuts">
+            <button data-preset="space">我想研究空间诡计 ↗</button
+            ><button data-preset="intro">第一次读推理 →</button>
+          </div>
+        </div>
+        <div class="r-hero-art" aria-hidden="true">
+          <div class="r-spine">M I J I N G</div>
+          <div class="r-art-text">
+            一座馆<br />一群人<br /><span>无数种可能</span>
+          </div>
+          <svg viewBox="0 0 260 180">
+            <path
+              d="M30 130 130 165 230 130 130 95Z M30 130V55L130 20l100 35v75 M130 20v75 M130 165V95 M30 55l100 35 100-35 M80 38v75 M180 38v75 M55 65v75 M205 65v75"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+            />
+          </svg>
+        </div>
+      </section>
+      <section class="r-controls" aria-label="筛选书单">
+        <div class="r-controls-top">
+          <div class="r-tabs">
+            <button id="all" class="active">全部推荐</button
+            ><button id="saved">
+              我的想读 <span id="saved-count">0</span>
+            </button>
+          </div>
+          <label class="r-search"
+            ><span>⌕</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="搜索书名、作者或类型"
+              aria-label="搜索书名作者类型"
+          /></label>
+        </div>
+        <div class="r-filters">
+          <label
+            >类型
+            <select id="genre">
+              <option value="">全部类型</option>
+            </select></label
+          ><label
+            >阅读门槛
+            <select id="level">
+              <option value="">不限</option>
+              <option>入门</option>
+              <option>进阶</option>
+            </select></label
+          ><label
+            >空间推演
+            <select id="space">
+              <option value="">不限</option>
+              <option value="高">优先适合</option>
+              <option value="中">可作补充</option>
+              <option value="低">以阅读为主</option>
+            </select></label
+          ><button id="reset">重置筛选</button>
+        </div>
+      </section>
+      <div class="r-results">
+        <h2 id="result-count">正在整理书架…</h2>
+        <span>按阅读兴趣挑选 · 不含谜底</span>
+      </div>
+      <div id="books" class="r-grid" aria-live="polite"></div>
+      <p id="message" role="status"></p>
+      <section class="r-existing">
+        <div>
+          <div class="eyebrow">READ IT. WALK INTO IT.</div>
+          <h2>读过之后，把推理放进场景。</h2>
+          <p>已有两个可探索的作品：海岛别墅与媛首山仪式建筑群。</p>
+        </div>
+        <div>
+          <a href="index.html">无人生还 · 进入 Demo ↗</a
+          ><a href="kubi.html">如首无作祟之物 · 进入场景 ↗</a>
+        </div>
+      </section>
+      <footer>
+        阅读门槛与空间适配为编辑建议。书架中的推荐作品尚未制作场景模型；“想读”仅保存在当前浏览器。
+      </footer>
+    </main>
+    <script type="module" src="recommendations/app.js"></script>
+  </body>
+</html>

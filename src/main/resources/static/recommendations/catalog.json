@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "researchedAt": "2026-10-09",
+  "books": [
+    {
+      "id": "ark",
+      "title": "方舟",
+      "author": "夕木春央",
+      "genre": "封闭空间",
+      "level": "入门",
+      "space": "高",
+      "reason": "地下建筑中的封闭危机，节奏紧凑，适合想一口气读完的读者。",
+      "color": "#7fa799",
+      "mark": "ARK"
+    },
+    {
+      "id": "glass",
+      "title": "玻璃之锤",
+      "author": "贵志祐介",
+      "genre": "密室推理",
+      "level": "进阶",
+      "space": "高",
+      "reason": "从物理条件入手拆解密室，适合喜欢逐条检验假说的人。",
+      "color": "#93afbf",
+      "mark": "GLASS"
+    },
+    {
+      "id": "decagon",
+      "title": "十角馆事件",
+      "author": "绫辻行人",
+      "genre": "封闭空间",
+      "level": "入门",
+      "space": "高",
+      "reason": "孤岛与奇异建筑的经典组合，适合作为馆系列的阅读起点。",
+      "color": "#c4ac81",
+      "mark": "TEN"
+    },
+    {
+      "id": "clock",
+      "title": "钟表馆事件",
+      "author": "绫辻行人",
+      "genre": "建筑推理",
+      "level": "进阶",
+      "space": "高",
+      "reason": "建筑氛围与时间谜题交织，适合愿意细读、整理人物行动的读者。",
+      "color": "#b2a3c6",
+      "mark": "CLOCK"
+    },
+    {
+      "id": "crooked",
+      "title": "斜屋犯罪",
+      "author": "岛田庄司",
+      "genre": "建筑推理",
+      "level": "进阶",
+      "space": "高",
+      "reason": "奇异建筑带来的空间谜题，适合喜欢画地图和琢磨三维关系的人。",
+      "color": "#be987c",
+      "mark": "SLANT"
+    },
+    {
+      "id": "zodiac",
+      "title": "占星术杀人魔法",
+      "author": "岛田庄司",
+      "genre": "本格推理",
+      "level": "进阶",
+      "space": "中",
+      "reason": "华丽谜面与大胆构思，适合想体验经典本格推理的读者。",
+      "color": "#8c9eb3",
+      "mark": "ZODIAC"
+    },
+    {
+      "id": "notice",
+      "title": "死亡通知单",
+      "author": "周浩晖",
+      "genre": "犯罪悬疑",
+      "level": "入门",
+      "space": "中",
+      "reason": "调查者与对手持续交锋，适合偏爱快节奏国产犯罪悬疑的人。",
+      "color": "#b38a87",
+      "mark": "NOTICE"
+    },
+    {
+      "id": "south",
+      "title": "食南之徒",
+      "author": "马伯庸",
+      "genre": "历史悬疑",
+      "level": "入门",
+      "space": "低",
+      "reason": "以饮食切入历史悬疑，适合想换一种谜题口味的读者。",
+      "color": "#aeb184",
+      "mark": "SOUTH"
+    },
+    {
+      "id": "train",
+      "title": "火车",
+      "author": "宫部美雪",
+      "genre": "社会派",
+      "level": "入门",
+      "space": "低",
+      "reason": "从追查人物身份走入社会处境，适合看重故事与人物的读者。",
+      "color": "#8faba9",
+      "mark": "TRAIN"
+    },
+    {
+      "id": "suspect-x",
+      "title": "嫌疑人X的献身",
+      "author": "东野圭吾",
+      "genre": "社会派",
+      "level": "入门",
+      "space": "中",
+      "reason": "逻辑与情感相互牵引，适合初次接触推理小说的读者。",
+      "color": "#b99f97",
+      "mark": "X"
+    },
+    {
+      "id": "longnight",
+      "title": "长夜难明",
+      "author": "紫金陈",
+      "genre": "社会派",
+      "level": "入门",
+      "space": "低",
+      "reason": "国产社会派作品，调查过程与人物命运并重，适合喜欢现实题材的人。",
+      "color": "#979dbb",
+      "mark": "NIGHT"
+    }
+  ]
+}
