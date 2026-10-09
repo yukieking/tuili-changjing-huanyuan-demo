@@ -1,0 +1,72 @@
+.primary-nav a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+.primary-nav a.active {
+  color: var(--text);
+  border-bottom: 2px solid var(--gold);
+}
+.primary-nav .workspace-link {
+  font-size: 11px;
+  opacity: 0.7;
+  padding: 8px !important;
+}
+svg#map,
+#flat {
+  background: #eee9db !important;
+}
+#map .room {
+  cursor: pointer;
+}
+#map .room:hover rect:first-child {
+  fill: #d6dfc7;
+}
+@media (max-width: 760px) {
+  .primary-nav a {
+    font-size: 11px;
+    padding: 7px;
+  }
+  .primary-nav .workspace-link {
+    font-size: 10px;
+  }
+  header .demo {
+    display: none;
+  }
+}
+
+.character-portrait {
+  width: 30px;
+  height: 38px;
+  flex-shrink: 0;
+  overflow: visible;
+  margin-right: 4px;
+}
+.scene-first .character {
+  display: flex;
+  align-items: center;
+}
+.scene-first .character small {
+  display: none;
+}
+.scene-first .k-person .character-portrait {
+  width: 32px;
+  height: 40px;
+}
+.scene-first:has(#view2d.active) .compass,
+.scene-first:has(#view2d.active) .island-label {
+  display: none;
+}
+
+.scene-first:has(#view2d.active) .scene-caption {
+  display: none;
+}
+
+.k-canvas:has(#flat:not([hidden])) .k-legend {
+  color: #49676c;
+}
+.k-canvas:has(#flat:not([hidden])) .k-legend small {
+  color: #627c79;
+}

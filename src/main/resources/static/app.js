@@ -1,3 +1,4 @@
+import { characterIcon } from "./character-model.js";
 import {
   SCENE_VERSION,
   people,
@@ -181,7 +182,7 @@ function renderLeft() {
   $("#characters").innerHTML = people
     .map(
       (p, i) =>
-        `<button data-person="${i}" class="character ${selectedPerson === i ? "selected" : ""}" style="--c:${p[2]}"><span class="chip">${p[0][0]}</span>${p[0]}<small>${p[1]}</small></button>`,
+        `<button data-person="${i}" class="character ${selectedPerson === i ? "selected" : ""}" style="--c:${p[2]}"><svg class="character-portrait" viewBox="-16 -25 32 40" aria-hidden="true">${characterIcon(p[1], p[2])}</svg>${p[0]}<small>${p[1]}</small></button>`,
     )
     .join("");
   $("#placed-count").textContent = Object.keys(node().positions).length;
@@ -249,9 +250,19 @@ function renderScene() {
 function render2d() {
   let f = floor < 0 ? 0 : floor,
     visible = rooms.filter((r) => r.floor === f),
-    svg = `<rect width="1000" height="620" fill="#192e25"/><g id="world" transform="translate(60 25)">`;
+    svg = `<defs><pattern id="plan-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#afbeb5" stroke-width=".4"/></pattern><pattern id="wall-hatch" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 5L5 0" stroke="#6f8587" stroke-width=".7"/></pattern></defs><rect width="1000" height="620" fill="#eee9db"/><rect x="20" y="20" width="960" height="580" fill="url(#plan-grid)" stroke="#748a8b"/><text x="42" y="55" fill="#375861" font-size="12" letter-spacing="3">SOLDIER ISLAND / SPATIAL STUDY</text><path d="M905 110V65M897 77L905 65L913 77" fill="none" stroke="#375861" stroke-width="2"/><text x="900" y="55" fill="#375861">N</text><text x="42" y="578" fill="#526b6e" font-size="12">兵岛别墅 · ${f === 0 ? "公共空间" : "客房层"} / 示意平面，无比例尺</text><text x="680" y="578" fill="#526b6e" font-size="11">布局与陈设为演示推定 · 服饰按身份设计</text><g id="world" transform="translate(60 25)">`;
   for (let r of visible)
-    svg += `<g data-maproom="${r.id}" class="room"><rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${selectedRoom === r.id ? "#687e55" : "#425b42"}" stroke="#acb895" stroke-width="3"/><text x="${r.x + 12}" y="${r.y + 27}" fill="#dce5cc" font-size="14">${r.name}</text></g>`;
+    svg += `<g data-maproom="${r.id}" class="room"><rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${selectedRoom === r.id ? "#d6dfc7" : "#e4e4d2"}" stroke="#3d6068" stroke-width="4"/><text x="${r.x + 12}" y="${r.y + 27}" fill="#34565e" font-size="14">${r.name}</text></g>`;
+  visible.forEach((r, i) => {
+    svg += `<text x="${r.x + r.w - 28}" y="${r.y + 27}" fill="#829693" font-size="11">${String(i + 1).padStart(2, "0")}</text>`;
+    if (r.kind === "bedroom")
+      svg += `<g pointer-events="none" fill="none" stroke="#859793" stroke-width="1.5"><rect x="${r.x + 30}" y="${r.y + 55}" width="52" height="65"/><path d="M${r.x + 30} ${r.y + 73}h52"/><rect x="${r.x + 36}" y="${r.y + 59}" width="18" height="10"/><rect x="${r.x + 58}" y="${r.y + 59}" width="18" height="10"/></g>`;
+    if (["dining", "lounge"].includes(r.kind))
+      svg += `<rect x="${r.x + r.w * 0.35}" y="${r.y + r.h * 0.42}" width="${r.w * 0.32}" height="${r.h * 0.3}" rx="${r.kind === "dining" ? 12 : 3}" fill="none" stroke="#859793" stroke-width="1.5" pointer-events="none"/>`;
+    if (r.kind === "stairs")
+      for (let step = 0; step < 9; step++)
+        svg += `<path d="M${r.x + 42} ${r.y + 25 + step * 8}h55" stroke="#859793" pointer-events="none"/>`;
+  });
   for (let e of connections.filter((e) => !e.stairs)) {
     let r = roomById(e.a);
     if (r.floor !== f) continue;
@@ -260,7 +271,7 @@ function render2d() {
     let path = pathPoints({ path: [a.id, b.id] });
     let gate = path.find((p) => p.door);
     if (gate)
-      svg += `<circle cx="${gate.x}" cy="${gate.z}" r="7" fill="${node().environment.doors[e.id] === "locked" ? "#d38471" : "#d9bd7f"}" data-mapdoor="${e.id}" style="cursor:pointer"/>`;
+      svg += `<path d="M${gate.x - 14} ${gate.z}v-25a25 25 0 0 1 25 25" fill="none" stroke="#70888c" stroke-width="1.2" pointer-events="none"/><circle cx="${gate.x}" cy="${gate.z}" r="7" fill="${node().environment.doors[e.id] === "locked" ? "#d38471" : "#d9bd7f"}" data-mapdoor="${e.id}" style="cursor:pointer"/>`;
   }
   if (showTrails)
     for (let r of plan().routes) {
@@ -274,7 +285,7 @@ function render2d() {
     let r = roomById(pos.room);
     if (!r || r.floor !== f) continue;
     let p = pos.world;
-    svg += `<g data-pawn="${id}" class="pawn" transform="translate(${p.x} ${p.z})"><circle r="12" fill="${people[id][2]}" stroke="#1c2b1b" stroke-width="2"/><text y="-18" fill="${people[id][2]}" text-anchor="middle" font-size="12">${people[id][0]}</text></g>`;
+    svg += `<g data-pawn="${id}" class="pawn" transform="translate(${p.x} ${p.z})">${characterIcon(people[id][1], people[id][2])}<text y="-27" fill="#34565e" text-anchor="middle" font-size="12">${people[id][0]}</text></g>`;
   }
   $("#map").innerHTML = svg + "</g>";
 }

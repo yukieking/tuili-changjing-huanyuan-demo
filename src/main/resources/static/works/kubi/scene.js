@@ -1,3 +1,4 @@
+import { createCharacter } from "../../character-model.js";
 import * as T from "three";
 import { OrbitControls } from "../../vendor/OrbitControls.js";
 import {
@@ -40,6 +41,7 @@ export class MountainScene {
     this.scene.add(sun);
     this.base = new T.Group();
     this.scene.add(this.base);
+    this.pawnModels = new Map();
     this.pawns = new T.Group();
     this.scene.add(this.pawns);
     this.routeGroup = new T.Group();
@@ -515,6 +517,66 @@ export class MountainScene {
     this.box(0.8, 0.8, 1.4, "#a39a7f", room.x - 1.6, 0.9, p.z + 0.8, group);
     this.box(2, 0.8, 0.7, "#a99b7b", p.x, 0.95, p.z - 1.6, group);
     this.box(0.9, 0.36, 0.7, "#695743", p.x, 0.76, p.z, group);
+    // Tatami seams and shoji frames are illustrative furnishings.
+    for (let row = 0; row < 2; row++)
+      for (let column = 0; column < 3; column++) {
+        this.box(
+          1.35,
+          0.035,
+          1.65,
+          (row + column) % 2 ? "#b5bd91" : "#c6c8a2",
+          room.x - 1.4 + column * 1.4,
+          0.56,
+          p.z - 0.85 + row * 1.7,
+          group,
+        );
+        this.box(
+          0.035,
+          0.045,
+          1.65,
+          "#788365",
+          room.x - 2.08 + column * 1.4,
+          0.585,
+          p.z - 0.85 + row * 1.7,
+          group,
+        );
+      }
+    for (const z of [-1.95, 1.95]) {
+      const frame = new T.Group();
+      group.add(frame);
+      this.shells.push(frame);
+      for (let column = 0; column < 5; column++)
+        this.box(
+          0.025,
+          1.3,
+          0.025,
+          "#776d55",
+          room.x - 0.9 + column * 0.45,
+          1.8,
+          p.z + z,
+          frame,
+        );
+      for (let row = 0; row < 4; row++)
+        this.box(
+          1.8,
+          0.025,
+          0.025,
+          "#776d55",
+          room.x,
+          1.15 + row * 0.43,
+          p.z + z,
+          frame,
+        );
+    }
+    this.mesh(
+      new T.CylinderGeometry(0.12, 0.15, 0.16, 16),
+      "#d6ccb0",
+      p.x,
+      0.99,
+      p.z,
+      group,
+    );
+    this.box(0.7, 0.04, 0.55, "#a37e65", p.x, 0.57, p.z + 0.85, group);
     this.roof(8, 4, center, p.z, group);
     this.label(p.name.split(" · ")[0], center, 6, p.z, group);
     this.box(
@@ -585,25 +647,18 @@ export class MountainScene {
     this.controls.update();
   }
   update(plan, t, selected) {
-    this.clear(this.pawns);
     people.forEach((p) => {
       const pos = positionAt(plan, p.id, t);
-      if (!pos) return;
-      const g = new T.Group();
-      g.position.set(pos.x, pos.y + 0.4, pos.z);
-      this.pawns.add(g);
-      this.mesh(
-        new T.CylinderGeometry(0.32, 0.52, 0.7, 16),
-        p.color,
-        0,
-        0.4,
-        0,
-        g,
-      );
-      this.mesh(new T.SphereGeometry(0.29, 16, 10), p.color, 0, 1.05, 0, g);
-      if (selected === p.id) {
+      let g = this.pawnModels.get(p.id);
+      if (!g && pos) {
+        g = createCharacter(p.role, p.color, true);
+        g.scale.setScalar(1.7);
+        this.pawns.add(g);
+        this.pawnModels.set(p.id, g);
+        const label = this.label(p.name, 0, 1.5, 0, g);
+        label.scale.set(4.3, 0.81, 1);
         const ring = this.mesh(
-          new T.TorusGeometry(0.7, 0.05, 8, 32),
+          new T.TorusGeometry(0.4, 0.025, 8, 32),
           "#f3d08b",
           0,
           0.06,
@@ -611,8 +666,12 @@ export class MountainScene {
           g,
         );
         ring.rotation.x = Math.PI / 2;
+        g.userData.ring = ring;
       }
-      this.label(p.name, 0, 2.3, 0, g);
+      if (!g) return;
+      g.visible = !!pos;
+      if (pos) g.position.set(pos.x, pos.y + 0.12, pos.z);
+      g.userData.ring.visible = selected === p.id;
     });
     this.clear(this.routeGroup);
     for (const r of plan.routes)

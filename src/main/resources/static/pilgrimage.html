@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>谜境 · 日本文学巡礼</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="visual-system.css" />
+    <link rel="stylesheet" href="pilgrimage/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
+      >
+      <nav class="primary-nav">
+        <a href="recommendations.html">推理书架</a
+        ><a href="pilgrimage.html" class="active" aria-current="page"
+          >文学巡礼</a
+        ><a href="index.html?library=1">场景与推演</a>
+      </nav>
+      <span class="demo">READ / WALK / IMAGINE</span>
+    </header>
+    <main class="p-main">
+      <section class="p-heading">
+        <div>
+          <div class="eyebrow">A LITERARY ATLAS OF JAPAN</div>
+          <h1>从书页，走到地图上。</h1>
+          <p>推理小说的关联地域，与作家留下的创作空间。</p>
+        </div>
+        <button id="saved-filter" aria-pressed="false">♡ 我的想去</button>
+      </section>
+      <div class="p-filters" aria-label="巡礼地点筛选">
+        <button data-filter="全部" class="active">全部</button
+        ><button data-filter="小说关联地">小说关联地</button
+        ><button data-filter="创作旧居">创作旧居</button
+        ><button data-filter="作家纪念地">作家纪念地</button
+        ><span id="count"></span>
+      </div>
+      <section class="p-atlas">
+        <div class="p-map">
+          <div class="map-caption">
+            JAPAN / MYSTERY LITERATURE<br /><small
+              >点击地点，开启一段阅读之旅</small
+            >
+          </div>
+          <svg
+            id="atlas"
+            viewBox="0 0 800 590"
+            aria-label="日本推理文学巡礼地图"
+          ></svg>
+          <div class="map-foot">
+            城市示意位置 · 非导航坐标 <span>01 — 05</span>
+          </div>
+          <div id="map-status" role="status"></div>
+        </div>
+        <aside id="place-detail" aria-live="polite"></aside>
+      </section>
+      <section
+        class="p-list"
+        id="place-list"
+        aria-label="巡礼地点列表"
+      ></section>
+      <footer class="p-footer">
+        首批收录 5
+        个已核实的文学关联地点。真实地点与作品内的虚构场景分别展示。<br />日本轮廓：Natural
+        Earth（公共领域）；出行安排请查看地点官方信息。
+      </footer>
+    </main>
+    <script type="module" src="pilgrimage/app.js"></script>
+  </body>
+</html>

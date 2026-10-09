@@ -1,0 +1,325 @@
+body {
+  background: #122623;
+}
+.p-main {
+  max-width: 1440px;
+  padding: 38px 48px;
+  margin: auto;
+}
+.p-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.p-heading h1 {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 14px 0;
+}
+.p-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.p-heading button,
+.p-filters button {
+  background: transparent;
+  border: 1px solid #42564c;
+  padding: 10px 16px;
+  border-radius: 30px;
+  color: #cbd6c5;
+  cursor: pointer;
+}
+.p-filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 25px 0 18px;
+  flex-wrap: wrap;
+}
+.p-filters button.active,
+#saved-filter[aria-pressed="true"] {
+  background: #d4c198;
+  color: #243a34;
+  border-color: #d4c198;
+}
+.p-filters span {
+  margin-left: auto;
+  font-size: 12px;
+  color: #91a99a;
+}
+.p-atlas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  border: 1px solid #40534a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.p-map {
+  position: relative;
+  background: #eee9db;
+  min-width: 0;
+  color: #385860;
+}
+.p-map svg {
+  display: block;
+  width: 100%;
+  height: 530px;
+}
+.map-caption {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+.map-caption small {
+  display: block;
+  letter-spacing: 0;
+  font-size: 12px;
+  margin-top: 8px;
+  color: #748680;
+}
+.map-foot {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  right: 28px;
+  font-size: 11px;
+  color: #697e7b;
+  display: flex;
+  justify-content: space-between;
+}
+#map-status {
+  position: absolute;
+  bottom: 45px;
+  left: 28px;
+  color: #8c5943;
+  font-size: 12px;
+}
+.map-pin {
+  cursor: pointer;
+  outline: none;
+}
+.map-pin:focus circle,
+.map-pin:hover circle {
+  stroke: #b97451;
+  stroke-width: 3;
+}
+.map-pin text {
+  font-size: 12px;
+  fill: #375960;
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: #eee9db;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.map-pin.active text {
+  fill: #a1573a;
+}
+.p-atlas aside {
+  padding: 32px 26px;
+  background: #1c302b;
+}
+.p-atlas aside .p-number {
+  color: #c3af83;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.p-atlas aside h2 {
+  font-family: "Songti SC", serif;
+  font-size: 25px;
+  line-height: 1.5;
+  margin: 22px 0 8px;
+}
+.p-city {
+  font-size: 13px;
+  color: #a4b8a6;
+}
+.p-tag {
+  display: inline-block;
+  color: #d3c49e;
+  background: #ffffff09;
+  font-size: 11px;
+  padding: 5px 8px;
+  border: 1px solid #5b6250;
+  border-radius: 4px;
+  margin-top: 22px;
+}
+.p-book {
+  font-size: 13px;
+  color: #d4c198;
+  line-height: 1.7;
+  margin: 16px 0;
+}
+.p-description {
+  font-size: 13px;
+  color: #b5c4b8;
+  line-height: 1.95;
+}
+.p-detail {
+  font-size: 11px;
+  color: #8fa597;
+  line-height: 1.7;
+  border-top: 1px solid #3b5146;
+  padding-top: 15px;
+}
+.p-save {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #d4c198;
+  color: #243a34;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.p-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+.p-links a {
+  color: #aabfaf;
+  font-size: 12px;
+  text-decoration: none;
+}
+.p-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+.p-list button {
+  text-align: left;
+  background: #1a3028;
+  border: 1px solid #40574a;
+  border-radius: 8px;
+  padding: 18px 15px;
+  cursor: pointer;
+  color: #dfe4ce;
+  line-height: 1.7;
+}
+.p-list button.active {
+  border-color: #c3af83;
+  background: #2b3b2f;
+}
+.p-list small {
+  display: block;
+  color: #8ea798;
+  font-size: 11px;
+}
+.p-list .list-name {
+  display: block;
+  font-size: 13px;
+  margin: 7px 0;
+}
+.p-footer {
+  text-align: center;
+  font-size: 11px;
+  color: #81998a;
+  line-height: 1.9;
+  margin: 30px 0 12px;
+}
+.p-empty {
+  grid-column: 1/-1;
+  padding: 25px;
+  color: #a6b9a8;
+}
+.p-blank {
+  padding: 30px !important;
+  color: #a6b9a8;
+}
+.p-blank h2 {
+  font-size: 20px !important;
+}
+@media (max-width: 900px) {
+  .p-main {
+    padding: 26px 20px;
+  }
+  .p-atlas {
+    grid-template-columns: 1fr 280px;
+  }
+  .p-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .p-map svg {
+    height: 510px;
+  }
+}
+@media (max-width: 650px) {
+  header {
+    padding: 12px 16px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  header .brand {
+    font-size: 18px;
+  }
+  header nav {
+    order: 2;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .p-main {
+    padding: 20px 14px;
+  }
+  .p-heading h1 {
+    font-size: 26px;
+  }
+  .p-heading button {
+    font-size: 11px;
+    padding: 9px;
+    white-space: nowrap;
+  }
+  .p-heading .eyebrow {
+    font-size: 9px;
+  }
+  .p-atlas {
+    grid-template-columns: 1fr;
+  }
+  .p-map svg {
+    height: 370px;
+  }
+  .p-atlas aside {
+    padding: 24px;
+  }
+  .p-atlas aside h2 {
+    margin-top: 12px;
+  }
+  .p-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .map-caption {
+    top: 16px;
+    left: 17px;
+    font-size: 9px;
+  }
+  .map-foot {
+    left: 17px;
+    right: 17px;
+    font-size: 9px;
+    bottom: 12px;
+  }
+  .p-filters button {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .p-filters span {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .p-heading h1 {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+  .p-heading {
+    gap: 8px;
+  }
+}

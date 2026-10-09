@@ -1,3 +1,4 @@
+import { characterIcon } from "../../character-model.js";
 import {
   people,
   places,
@@ -290,7 +291,7 @@ function render() {
     )
     .map(
       (x) =>
-        `<button class="k-person ${person === x.id ? "active" : ""}" data-person="${x.id}"><i style="background:${x.color}">${esc(x.name[0])}</i><span>${esc(x.name)}<small>${esc(x.group)} · ${esc(x.role)}</small></span>${positionAt(p, x.id, t) ? '<span class="status">已放置</span>' : ""}</button>`,
+        `<button class="k-person ${person === x.id ? "active" : ""}" data-person="${x.id}"><svg class="character-portrait" viewBox="-16 -25 32 40" aria-hidden="true">${characterIcon(x.role, x.color, true)}</svg><span>${esc(x.name)}<small>${esc(x.group)} · ${esc(x.role)}</small></span>${positionAt(p, x.id, t) ? '<span class="status">已放置</span>' : ""}</button>`,
     )
     .join("");
   $$("[data-person]").forEach(
@@ -386,14 +387,17 @@ function renderMap() {
           : mode === "room"
             ? `${byId(focus && byId(focus)?.kind === "room" ? focus : "middleRoom").x - 6} ${byId(focus && byId(focus)?.kind === "room" ? focus : "middleRoom").z - 6} 16 12`
             : "-28 -17 55 34";
-  let svg = `<svg viewBox="${v}" aria-label="媛首山关系平面图"><defs><pattern id="gravel" width="1.8" height="1.8" patternUnits="userSpaceOnUse"><circle cx=".4" cy=".4" r=".06" fill="#acb49b"/></pattern></defs><rect x="-60" y="-50" width="120" height="100" fill="#183630"/><ellipse cx="-3" cy="0" rx="29" ry="14" fill="#4d6154"/><ellipse cx="-3" cy="0" rx="29" ry="14" fill="url(#gravel)"/>`;
+  let svg = `<svg viewBox="${v}" aria-label="媛首山关系平面图"><defs><pattern id="k-grid" width="2" height="2" patternUnits="userSpaceOnUse"><path d="M2 0H0V2" fill="none" stroke="#9dac9a" stroke-width=".025"/></pattern><pattern id="gravel" width="1.8" height="1.8" patternUnits="userSpaceOnUse"><circle cx=".4" cy=".4" r=".06" fill="#acb49b"/></pattern></defs><rect x="-60" y="-50" width="120" height="100" fill="#eee9db"/><rect x="-60" y="-50" width="120" height="100" fill="url(#k-grid)"/><ellipse cx="-3" cy="0" rx="29" ry="14" fill="#d6ddc9"/><ellipse cx="-3" cy="0" rx="29" ry="14" fill="url(#gravel)"/>`;
+  if (mode === "village")
+    for (let contour = 0; contour < 5; contour++)
+      svg += `<ellipse cx="-3" cy="0" rx="${30 + contour * 2.3}" ry="${15 + contour * 1.8}" fill="none" stroke="#8eaa94" stroke-width=".08"/>`;
   for (const [a, b] of edges) {
     if (a.startsWith("tower") && b.startsWith("tower")) continue;
     const points = routePoints([a, b]);
-    svg += `<polyline points="${points.map((x) => `${x.x},${x.z}`).join(" ")}" fill="none" stroke="#b8a57d" stroke-width=".4"/>`;
+    svg += `<polyline points="${points.map((x) => `${x.x},${x.z}`).join(" ")}" fill="none" stroke="#8b9785" stroke-width=".4"/>`;
   }
   svg +=
-    '<polygon points="1,0 -1,-4 -5,-4 -7,0 -5,4 -1,4" fill="#8b876c" stroke="#cbb890" stroke-width=".15"/>';
+    '<polygon points="1,0 -1,-4 -5,-4 -7,0 -5,4 -1,4" fill="#c9c9b2" stroke="#49676c" stroke-width=".15"/>';
   for (const id of [
     "shrine",
     "frontTea",
@@ -404,12 +408,16 @@ function renderMap() {
     "rearRoom",
   ]) {
     const x = byId(id);
-    svg += `<rect x="${x.x - (id === "shrine" ? 5 : 1.8)}" y="${x.z - (id === "shrine" ? 4.5 : 1.9)}" width="${id === "shrine" ? 10 : 3.6}" height="${id === "shrine" ? 9 : 3.8}" fill="${id.endsWith("Room") ? "#b9bc92" : "#a39371"}" stroke="#dbcba1" stroke-width=".1"/>`;
+    svg += `<rect x="${x.x - (id === "shrine" ? 5 : 1.8)}" y="${x.z - (id === "shrine" ? 4.5 : 1.9)}" width="${id === "shrine" ? 10 : 3.6}" height="${id === "shrine" ? 9 : 3.8}" fill="${id.endsWith("Room") ? "#dfdfc8" : "#d9cbb7"}" stroke="#49676c" stroke-width=".1"/>`;
+  }
+  for (const id of ["frontRoom", "middleRoom", "rearRoom"]) {
+    const r = byId(id);
+    svg += `<g fill="none" stroke="#7f9388" stroke-width=".06" pointer-events="none"><rect x="${r.x - 1.55}" y="${r.z - 1.65}" width="3.1" height="3.3"/><path d="M${r.x - 1.55} ${r.z}h3.1M${r.x - 0.52} ${r.z - 1.65}v3.3M${r.x + 0.52} ${r.z - 1.65}v3.3"/></g>`;
   }
   for (const prefix of ["front", "middle", "rear"]) {
     const room = byId(prefix + "Room"),
       tea = byId(prefix + "Tea");
-    svg += `<text x="${(room.x + tea.x) / 2}" y="${room.z - 3}" text-anchor="middle" fill="#ddc993" font-size=".9">${esc(tea.name.split(" · ")[0])}</text>`;
+    svg += `<text x="${(room.x + tea.x) / 2}" y="${room.z - 3}" text-anchor="middle" fill="#49676c" font-size=".9">${esc(tea.name.split(" · ")[0])}</text>`;
   }
   for (const x of places) {
     if (["towerEntry", "towerExit"].includes(x.id)) continue;
@@ -426,7 +434,7 @@ function renderMap() {
               : x.id === "courtyard"
                 ? "玉砂利"
                 : x.name.replace(" · ", " / ");
-    svg += `<g data-map-place="${x.id}" style="cursor:pointer"><circle cx="${x.x}" cy="${x.z}" r="${focus === x.id ? 0.7 : 0.4}" fill="${focus === x.id ? "#ffdb91" : "#e5d3ac"}"/><text x="${x.x}" y="${x.z - 1.1}" fill="#f3e5c8" text-anchor="middle" font-size="${mode === "village" ? 1.2 : 0.75}" stroke="#17322b" stroke-width=".2" paint-order="stroke">${esc(label)}</text></g>`;
+    svg += `<g data-map-place="${x.id}" style="cursor:pointer"><circle cx="${x.x}" cy="${x.z}" r="${focus === x.id ? 0.7 : 0.4}" fill="${focus === x.id ? "#ba7958" : "#49676c"}"/><text x="${x.x}" y="${x.z - 1.1}" fill="#34565e" text-anchor="middle" font-size="${mode === "village" ? 1.2 : 0.75}" stroke="#eee9db" stroke-width=".2" paint-order="stroke">${esc(label)}</text></g>`;
   }
   for (const r of p.routes)
     svg += `<polyline points="${routePoints(r.path)
@@ -437,10 +445,11 @@ function renderMap() {
   for (const x of people) {
     const pos = positionAt(p, x.id, t);
     if (pos)
-      svg += `<circle cx="${pos.x}" cy="${pos.z}" r=".5" fill="${x.color}" stroke="#fff" stroke-width=".12"/><text x="${pos.x + 0.7}" y="${pos.z + 0.4}" font-size="1" fill="#fff">${esc(x.name)}</text>`;
+      svg += `<g transform="translate(${pos.x} ${pos.z}) scale(.055)">${characterIcon(x.role, x.color, true)}</g><text x="${pos.x + 0.7}" y="${pos.z + 0.4}" font-size="1" fill="#34565e">${esc(x.name)}</text>`;
   }
-  svg +=
-    '<text x="-51" y="-40" fill="#d2c8a9" font-size="2">北 ↑</text><text x="-51" y="40" fill="#9db6a4" font-size="1.4">方位 / 连通关系图 · 无比例尺</text></svg>';
+  const [vx, vy, vw, vh] = v.split(" ").map(Number),
+    font = vw / 70;
+  svg += `<rect x="${vx + 0.6}" y="${vy + 0.6}" width="${vw - 1.2}" height="${vh - 1.2}" fill="none" stroke="#7f9388" stroke-width="${vw / 1100}" pointer-events="none"/><text x="${vx + vw * 0.04}" y="${vy + vh * 0.09}" fill="#49676c" font-size="${font}">媛首山 / ${mode === "village" ? "地域关系" : mode === "tower" ? "双螺旋塔" : mode === "room" ? "婚舍结构" : "境内总图"}</text><text x="${vx + vw * 0.91}" y="${vy + vh * 0.09}" fill="#49676c" font-size="${font}">北 ↑</text><text x="${vx + vw * 0.04}" y="${vy + vh * 0.95}" fill="#49676c" font-size="${font * 0.7}">连通关系图 · 无比例尺 · 材质与服饰为展示推定</text></svg>`;
   $("#flat").innerHTML = svg;
   $$("[data-map-place]").forEach(
     (g) => (g.onclick = () => selectPlace(g.dataset.mapPlace)),

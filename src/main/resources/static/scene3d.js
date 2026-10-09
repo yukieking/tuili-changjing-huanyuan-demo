@@ -1,3 +1,4 @@
+import { createCharacter } from "./character-model.js";
 import * as THREE from "three";
 import { OrbitControls } from "./vendor/OrbitControls.js";
 import {
@@ -334,6 +335,49 @@ export class VillaScene {
             "#a9b394",
           );
       }
+      if (r.floor < 2 && !["terrace", "stairs", "corridor"].includes(r.kind)) {
+        this.box(
+          g,
+          Math.min(2.6, r.w * SCALE * 0.55),
+          0.025,
+          Math.min(1.7, r.h * SCALE * 0.45),
+          c.x,
+          0.065,
+          c.z,
+          "#8d7966",
+        );
+        const bx = c.x - (r.w * SCALE) / 2 + 0.3,
+          bz = c.z - (r.h * SCALE) / 2 + 0.6;
+        this.box(g, 0.38, 1.6, 1.15, bx, 0.85, bz, "#7a654f");
+        for (let shelf = 0; shelf < 3; shelf++)
+          for (let book = 0; book < 6; book++)
+            this.box(
+              g,
+              0.11,
+              0.27,
+              0.1,
+              bx + 0.2,
+              0.36 + shelf * 0.43,
+              bz - 0.45 + book * 0.17,
+              ["#727d78", "#a58665", "#6c6c83"][book % 3],
+            );
+        const lamp = new THREE.Mesh(
+          new THREE.ConeGeometry(0.3, 0.32, 20),
+          this.material("#e9d8ac"),
+        );
+        lamp.position.set(c.x + (r.w * SCALE) / 2 - 0.6, 1.43, c.z - 0.4);
+        g.add(lamp);
+        this.box(
+          g,
+          0.035,
+          1.3,
+          0.035,
+          lamp.position.x,
+          0.72,
+          lamp.position.z,
+          "#685a49",
+        );
+      }
       for (let o of g.children.slice(firstChild))
         if (!o.userData.kind)
           o.userData = { kind: "furniture", room: r.id, floor: r.floor };
@@ -405,23 +449,7 @@ export class VillaScene {
       this.pickables.push(t);
     }
     people.forEach((p, i) => {
-      let g = new THREE.Group(),
-        base = new THREE.Mesh(
-          new THREE.CylinderGeometry(0.23, 0.3, 0.13, 18),
-          this.material(p[2]),
-        ),
-        body = new THREE.Mesh(
-          new THREE.ConeGeometry(0.2, 0.55, 18),
-          this.material(p[2]),
-        ),
-        head = new THREE.Mesh(
-          new THREE.SphereGeometry(0.16, 16, 12),
-          this.material(p[2]),
-        );
-      base.position.y = 0.12;
-      body.position.y = 0.39;
-      head.position.y = 0.8;
-      g.add(base, body, head);
+      let g = createCharacter(p[1], p[2]);
       let label = this.label(p[0], p[2], 1.5);
       label.position.y = 1.2;
       g.add(label);
@@ -525,6 +553,31 @@ export class VillaScene {
               (z - 295) * SCALE,
               "#83b6b4",
               { transparent: true, opacity: 0.5, metalness: 0.3 },
+            );
+          const wx = (x - 407) * SCALE,
+            wz = (z - 295) * SCALE,
+            ww = hole.width * SCALE;
+          for (const offset of [-ww / 2, 0, ww / 2])
+            this.box(
+              g,
+              0.055,
+              hole.height + 0.1,
+              0.055,
+              wx + (horizontal ? offset : 0),
+              hole.bottom + hole.height / 2,
+              wz + (horizontal ? 0 : offset),
+              "#e0d7be",
+            );
+          for (const wy of [hole.bottom, hole.bottom + hole.height])
+            this.box(
+              g,
+              horizontal ? ww + 0.15 : 0.18,
+              0.055,
+              horizontal ? 0.18 : ww + 0.15,
+              wx,
+              wy,
+              wz,
+              "#e0d7be",
             );
           win.userData = {
             kind: "window",

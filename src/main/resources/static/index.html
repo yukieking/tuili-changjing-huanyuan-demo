@@ -6,26 +6,19 @@
     <title>谜境 · 无人生还</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="scene-layout.css" />
+    <link rel="stylesheet" href="visual-system.css" />
   </head>
   <body class="scene-first villa">
     <header>
       <a class="brand" href="#"
         ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
       >
-      <nav>
-        <button data-page="desk" class="active">场景工作台</button
-        ><button data-page="library">作品档案</button
-        ><button data-page="plans">我的假说</button
-        ><a
-          href="recommendations.html"
-          style="
-            color: var(--muted);
-            font-size: 13px;
-            padding: 10px;
-            text-decoration: none;
-          "
-          >推理书架</a
-        >
+      <nav class="primary-nav">
+        <a href="recommendations.html">推理书架</a
+        ><a href="pilgrimage.html">文学巡礼</a
+        ><button data-page="desk" class="active">场景与推演</button
+        ><button data-page="library" class="workspace-link">作品</button
+        ><button data-page="plans" class="workspace-link">假说</button>
       </nav>
       <div class="head-right">
         <span class="demo">PROTOTYPE / 01</span><span class="avatar">探</span>
@@ -63,7 +56,7 @@
             <div class="panel-title characters-title">
               人物棋子 <span id="placed-count">10</span>
             </div>
-            <p class="muted small">选择人物，再点击场景放置</p>
+            <p class="muted small">服饰按角色身份设计 · 点击场景放置</p>
             <div id="characters"></div>
             <button id="finish-placement" class="wide">结束放置</button>
           </section>
