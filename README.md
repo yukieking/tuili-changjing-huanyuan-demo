@@ -158,3 +158,5 @@ node --test tests/frontend/domain.test.mjs
 ## 阅读地图对照实验
 
 新增独立入口 `/reading.html`，保留现有版本。以《无人生还》为例，使用固定视角的三维分层与房间图；平面图点击房间进入立体图。读者设置已读章节，自行放置人物、记随记、保存位置快照。轮廓与尺寸为示意，完整依据和限制见 [阅读地图说明](docs/reading-house.md)。
+
+《十角馆事件》阅读图鉴入口：`/decagon.html`，包含十角馆多边形平面 / 立体模型和角岛地图，依据与限制见 [图鉴说明](docs/decagon-atlas.md)。
