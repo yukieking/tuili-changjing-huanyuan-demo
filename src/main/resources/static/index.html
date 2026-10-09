@@ -1,8 +1,184 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>谜境 · 无人生还</title><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="#"><span class="logo">◇</span> 谜境 <small>MIJING</small></a><nav><button data-page="desk" class="active">场景工作台</button><button data-page="library">作品档案</button><button data-page="plans">我的假说</button></nav><div class="head-right"><span class="demo">PROTOTYPE / 01</span><span class="avatar">探</span></div></header>
-<div id="desk"><section class="projectbar"><div><div class="eyebrow">AGATHA CHRISTIE / 1939</div><h1>无人生还 <span>兵岛 · 海岛别墅</span></h1></div><div class="project-actions"><label>阅读进度 <select id="progress"><option value="1">抵达兵岛</option><option value="2" selected>晚餐之后</option></select></label><button id="mode" class="subtle">◈ 自由推演</button><button id="save" class="primary">保存假说 ↗</button></div></section>
-<main class="workspace"><aside class="left-panel"><div class="panel-title">场景探索 <span>01</span></div><div class="floor-buttons"><button data-floor="0" class="active">一层</button><button data-floor="1">二层</button><button data-floor="2">岛屿</button></div><div id="rooms" class="rooms"></div><div class="panel-title characters-title">人物棋子 <span id="placed-count">10</span></div><p class="muted small">选择人物，再点击场景放置</p><div id="characters"></div><div class="left-bottom"><span class="dot"></span> 正在连接 Java 后端</div></aside>
-<section class="stage-panel"><div class="stage-top"><div><span class="live-dot"></span> <span id="stage-label">别墅一层</span><span class="tag">空间推定</span></div><div class="segmented"><button id="view3d" class="active">立体</button><button id="view2d">俯视</button></div></div><div class="scene" id="scene"><svg id="map" viewBox="0 0 900 620" role="img" aria-label="可交互海岛别墅示意图"></svg><div class="compass">N<br>↑<br><span>◇</span></div><div class="scene-caption"><span>兵岛 / SOLDIER ISLAND</span><p>十位访客，一座与世隔绝的岛屿。</p></div><div class="map-tools"><button id="zoomout" aria-label="缩小">−</button><button id="zoomin" aria-label="放大">＋</button><button id="resetview" aria-label="重置视角">⌖</button><button id="rotate" aria-label="旋转场景">↻</button></div><div class="scene-hint" id="hint">点击房间查看 · 选择棋子后点击放置 · 拖动棋子移动</div></div><div class="scene-footer"><span><i class="dot"></i> 已知空间</span><span><i class="dot amber"></i> 用户假设</span><button id="trails">◎ 显示轨迹</button><button id="undo">↶ 撤销</button></div>
-<section class="timeline"><div class="timeline-heading"><div><strong>行动时间线</strong><span class="tag">用户假设</span></div><div><select id="plan-select" aria-label="选择假说"></select><button id="newplan">＋ 新假说</button><button id="addnode">＋ 时间节点</button></div></div><div class="timeline-controls"><button id="play" class="play" aria-label="播放">▶</button><div class="time-now" id="time-now">20:00</div><select id="speed" aria-label="播放速度"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select><input id="scrubber" type="range" min="0" max="120" value="0" aria-label="时间轴"><span class="endtime">22:00</span></div><div id="nodes" class="nodes"></div></section></section>
-<aside class="right-panel"><div class="inspector-tabs"><button class="active" data-tab="object">对象信息</button><button data-tab="clues">线索笔记</button></div><div id="inspector"></div><div class="check-card"><div class="eyebrow">DEDUCTION ASSISTANT</div><h3>让你的假说，经得起推敲。</h3><p>检查人物跨楼层移动是否记录了路线。结果仅基于你的设定。</p><button id="check">检查当前假说 →</button><div id="check-result"></div></div><div class="source-note">内容标记<br><span>原作背景</span> 人物与兵岛<br><span>编辑推定</span> 房间布局与尺寸<br><span>用户假设</span> 位置、路线与时间</div></aside></main></div>
-<section id="other-page" hidden></section><div id="toast" role="status"></div><dialog id="modal"><form method="dialog"><button class="close" aria-label="关闭">×</button></form><div id="modal-content"></div></dialog><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>谜境 · 无人生还</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#"
+        ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
+      >
+      <nav>
+        <button data-page="desk" class="active">场景工作台</button
+        ><button data-page="library">作品档案</button
+        ><button data-page="plans">我的假说</button>
+      </nav>
+      <div class="head-right">
+        <span class="demo">PROTOTYPE / 01</span><span class="avatar">探</span>
+      </div>
+    </header>
+    <div id="desk">
+      <section class="projectbar">
+        <div>
+          <div class="eyebrow">AGATHA CHRISTIE / 1939</div>
+          <h1>无人生还 <span>兵岛 · 海岛别墅</span></h1>
+        </div>
+        <div class="project-actions">
+          <label
+            >阅读进度
+            <select id="progress">
+              <option value="1">抵达兵岛</option>
+              <option value="2" selected>晚餐之后</option>
+            </select></label
+          ><button id="mode" class="subtle">◈ 自由推演</button
+          ><button id="save" class="primary">保存假说 ↗</button>
+        </div>
+      </section>
+      <main class="workspace">
+        <aside class="left-panel">
+          <div class="panel-title">场景探索 <span>01</span></div>
+          <div class="floor-buttons">
+            <button data-floor="-1" class="active">整体</button
+            ><button data-floor="0">一层</button
+            ><button data-floor="1">二层</button
+            ><button data-floor="2">岛屿</button>
+          </div>
+          <div id="rooms" class="rooms"></div>
+          <div class="panel-title characters-title">
+            人物棋子 <span id="placed-count">10</span>
+          </div>
+          <p class="muted small">选择人物，再点击场景放置</p>
+          <div id="characters"></div>
+          <div class="left-bottom">
+            <span class="dot"></span> 正在连接 Java 后端
+          </div>
+        </aside>
+        <section class="stage-panel">
+          <div class="stage-top">
+            <div>
+              <span class="live-dot"></span>
+              <span id="stage-label">建筑整体</span
+              ><span class="tag">空间推定</span>
+            </div>
+            <div class="segmented">
+              <button id="view3d" class="active">3D</button
+              ><button id="view2d">俯视</button>
+            </div>
+          </div>
+          <div id="breadcrumb" class="breadcrumb"></div>
+          <div class="scene-options">
+            <button id="roof-toggle">隐藏屋顶</button
+            ><button id="wall-toggle">隐藏外墙</button
+            ><button id="explode-toggle">展开楼层</button
+            ><button id="ghost-toggle">透明其他层</button
+            ><button id="example">体验楼梯路线</button>
+          </div>
+          <p id="migration-note" class="migration-note" hidden>
+            旧方案按房间标识映射到新版布局。房间比例和二层布局已更新，请核对位置。
+          </p>
+          <div class="scene" id="scene">
+            <div id="webgl"></div>
+            <div id="scene-error" hidden></div>
+            <svg
+              id="map"
+              viewBox="0 0 1000 620"
+              role="img"
+              aria-label="可交互海岛别墅示意图"
+            ></svg>
+            <div class="compass">N<br />↑<br /><span>◇</span></div>
+            <div class="scene-caption">
+              <span>兵岛 / SOLDIER ISLAND</span>
+              <p>十位访客，一座与世隔绝的岛屿。</p>
+            </div>
+            <div class="map-tools">
+              <button id="zoomout" aria-label="缩小">−</button
+              ><button id="zoomin" aria-label="放大">＋</button
+              ><button id="resetview" aria-label="重置视角">⌖</button
+              ><button id="rotate" aria-label="旋转场景">↻</button>
+            </div>
+            <div class="scene-hint" id="hint">
+              点击房间查看 · 选择棋子后点击放置 · 拖动棋子移动
+            </div>
+          </div>
+          <div class="scene-footer">
+            <span><i class="dot"></i> 已知空间</span
+            ><span><i class="dot amber"></i> 用户假设</span
+            ><button id="trails">◎ 显示轨迹</button
+            ><button id="undo">↶ 撤销</button>
+          </div>
+          <section class="timeline">
+            <div class="timeline-heading">
+              <div>
+                <strong>行动时间线</strong><span class="tag">用户假设</span>
+              </div>
+              <div>
+                <select id="plan-select" aria-label="选择假说"></select
+                ><button id="newplan">＋ 新假说</button
+                ><button id="addnode">＋ 时间节点</button>
+              </div>
+            </div>
+            <div class="timeline-controls">
+              <button id="play" class="play" aria-label="播放">▶</button>
+              <div class="time-now" id="time-now">20:00</div>
+              <select id="speed" aria-label="播放速度">
+                <option value="1">1×</option>
+                <option value="2">2×</option>
+                <option value="4">4×</option></select
+              ><input
+                id="scrubber"
+                type="range"
+                min="0"
+                max="120"
+                value="0"
+                aria-label="时间轴"
+              /><span class="endtime">22:00</span>
+            </div>
+            <div id="nodes" class="nodes"></div>
+            <div class="action-toolbar">
+              <button id="add-route">＋ 行动路线</button
+              ><button id="add-interval">＋ 停留 / 证词</button>
+            </div>
+            <div id="action-list"></div>
+          </section>
+        </section>
+        <aside class="right-panel">
+          <div class="inspector-tabs">
+            <button class="active" data-tab="object">对象信息</button
+            ><button data-tab="clues">线索笔记</button>
+          </div>
+          <div id="inspector"></div>
+          <div class="check-card">
+            <div class="eyebrow">DEDUCTION ASSISTANT</div>
+            <h3>让你的假说，经得起推敲。</h3>
+            <p>
+              检查路线连接、门锁、时间重叠，以及证词与假设的差异。仅基于录入条件。
+            </p>
+            <button id="check">检查当前假说 →</button>
+            <div id="check-result"></div>
+          </div>
+          <div class="source-note">
+            内容标记<br /><span>原作背景</span> 人物与兵岛<br /><span
+              >编辑推定</span
+            >
+            房间布局与尺寸<br /><span>用户假设</span> 位置、路线与时间
+          </div>
+        </aside>
+      </main>
+    </div>
+    <section id="other-page" hidden></section>
+    <div id="toast" role="status"></div>
+    <dialog id="modal">
+      <form method="dialog">
+        <button class="close" aria-label="关闭">×</button>
+      </form>
+      <div id="modal-content"></div>
+    </dialog>
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

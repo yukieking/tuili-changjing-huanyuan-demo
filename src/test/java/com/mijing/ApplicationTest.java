@@ -49,4 +49,16 @@ class ApplicationTest {
         assertEquals(413,request("PUT","/api/state","x".repeat(2*1024*1024+1),"application/json",null).statusCode());
         assertEquals(mapper.readTree(SNAPSHOT),mapper.readTree(Files.readString(file)));
     }
+    @Test void persistsRoutesIntervalsAndEnvironment() throws Exception {
+        var tree = mapper.readTree(SNAPSHOT);
+        var plan = (tools.jackson.databind.node.ObjectNode) tree.get("plans").get(0);
+        plan.set("routes", mapper.readTree("[{\"person\":0,\"start\":0,\"end\":10,\"path\":[\"living\",\"hall\",\"corridor\",\"stairs\",\"upper5\",\"upper0\"]}]"));
+        plan.set("intervals", mapper.readTree("[{\"person\":0,\"start\":0,\"end\":10,\"room\":\"living\",\"type\":\"testimony\",\"approx\":true}]"));
+        ((tools.jackson.databind.node.ObjectNode) plan.get("nodes").get(0)).set("environment", mapper.readTree("{\"doors\":{\"door-0\":\"locked\"},\"windows\":{},\"keyHolder\":\"0\"}"));
+        var body = mapper.writeValueAsString(tree);
+        assertEquals(200, request("PUT", "/api/state", body, "application/json", null).statusCode());
+        assertEquals(tree, mapper.readTree(request("GET", "/api/state", null, null, null).body()));
+        assertEquals(400, request("PUT", "/api/state", body.replace("\"person\":0", "\"person\":99"), "application/json", null).statusCode());
+        assertEquals(tree, mapper.readTree(Files.readString(file)));
+    }
 }
