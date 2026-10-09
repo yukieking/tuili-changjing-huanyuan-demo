@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>谜境 · 十角馆推理图鉴</title>
+    <link rel="stylesheet" href="experiments/reading-house/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html">◇ 谜境 <small>READING ATLAS</small></a
+      ><a href="reading.html" class="old-version">无人生还图鉴 ↗</a>
+    </header>
+    <main>
+      <section class="heading">
+        <div>
+          <div class="eyebrow">YUKITO AYATSUJI / THE DECAGON HOUSE</div>
+          <h1>十角馆事件 <span>阅读时，给空间一个位置。</span></h1>
+          <p>固定视角立体图 · 空间关系有据，轮廓与尺寸为推定</p>
+        </div>
+        <label class="chapter"
+          >已读章节<select id="chapter" aria-label="已读章节"></select
+        ></label>
+      </section>
+      <section class="workspace">
+        <aside class="places">
+          <p class="eyebrow">先看建筑，再看房间</p>
+          <button data-floor="all" class="floor">十角馆全景</button>
+          <div id="floors"></div>
+          <div id="room-list"></div>
+          <div class="aside-foot">
+            只展开已读范围的场景。<br />没有预置人物位置、凶手或结局。
+          </div>
+        </aside>
+        <section class="stage">
+          <div class="stage-head">
+            <div id="breadcrumb"></div>
+            <div class="views">
+              <button id="isometric" class="active">立体图</button
+              ><button id="plan">平面图</button>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <div id="scene" aria-label="固定视角三维建筑" role="img"></div>
+            <svg
+              id="flat"
+              viewBox="0 0 1000 650"
+              aria-label="点击房间查看立体场景的平面图"
+              hidden
+            ></svg>
+            <div class="drawing-title">
+              <span id="drawing-label">十角馆 · 完整剖面</span
+              ><small>ILLUSTRATIVE / NOT TO SCALE</small>
+            </div>
+            <div class="zoom">
+              <button id="zoom-out" aria-label="缩小">−</button
+              ><button id="zoom-in" aria-label="放大">＋</button
+              ><button id="reset" aria-label="适配视图">⌖</button>
+            </div>
+            <div id="placement" hidden>
+              <span id="placement-text"></span
+              ><button id="cancel">结束放置</button>
+            </div>
+            <span class="north">N ↑<small>方位示意</small></span>
+            <p class="canvas-help" id="hint">
+              固定视角 · 滚轮缩放 · 点击区域或房间查看
+            </p>
+          </div>
+          <div class="stage-foot">
+            <span
+              ><i></i>实线：原图可确认的空间关系 <i class="dashed"></i>比例 /
+              家具：示意</span
+            ><button id="toggle-people">显示我的人物</button>
+          </div>
+        </section>
+      </section>
+      <section class="under-scene">
+        <div class="scene-description" id="description"></div>
+        <div class="tools">
+          <button data-tool="people">人物棋子</button
+          ><button data-tool="notes">随手记</button
+          ><button data-tool="timeline">位置记录</button>
+        </div>
+      </section>
+      <section id="tool-panel" hidden>
+        <div class="panel-head">
+          <h2 id="tool-title"></h2>
+          <button id="close-tool" aria-label="收起工具">×</button>
+        </div>
+        <div id="tool-content"></div>
+      </section>
+      <details class="basis">
+        <summary>怎么看这张图？ / 原文依据与推定</summary>
+        <p>
+          馆内结构与客房排列核对第1章及原书图一；角岛地点关系核对第1章及图二。使用自绘模型，不复制电子书插图。十角馆只有一层，“角岛”是另一张地点地图。
+        </p>
+        <p>
+          图中比例、墙高与岛上距离是示意，不能验证行走耗时。第3章之后显示客房家具；人物位置、时间和随记由你添加。降低阅读进度会隐藏后续细节并保留记录。不展示本名对应、凶手或结局。
+        </p>
+        <div id="evidence-list"></div>
+        <p id="later-spaces" hidden></p>
+        <a href="reading.html">无人生还 · 阅读图鉴 →</a>
+      </details>
+      <p id="save-status" role="status">
+        个人记录保存在当前浏览器；与原版独立。
+      </p>
+    </main>
+    <dialog id="node-dialog">
+      <form method="dialog">
+        <h2>新增一个位置记录</h2>
+        <label
+          >时间或章节（可留空）<input
+            id="node-time"
+            placeholder="例如 第5章 / 20:10 / 晚餐后" /></label
+        ><label
+          >这时发生了什么？<input
+            id="node-label"
+            placeholder="例如 核对各人的位置"
+            maxlength="80"
+        /></label>
+        <p>复制当前人物位置，再根据读到的内容调整。</p>
+        <div>
+          <button value="cancel">取消</button
+          ><button id="add-node" type="button" class="primary">保存记录</button>
+        </div>
+      </form>
+    </dialog>
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+    <script type="module" src="experiments/decagon/app.js"></script>
+  </body>
+</html>

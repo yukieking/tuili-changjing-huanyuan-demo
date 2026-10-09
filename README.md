@@ -160,3 +160,7 @@ node --test tests/frontend/domain.test.mjs
 新增独立入口 `/reading.html`，保留现有版本。以《无人生还》为例，使用固定视角的三维分层与房间图；平面图点击房间进入立体图。读者设置已读章节，自行放置人物、记随记、保存位置快照。轮廓与尺寸为示意，完整依据和限制见 [阅读地图说明](docs/reading-house.md)。
 
 《十角馆事件》阅读图鉴入口：`/decagon.html`，包含十角馆多边形平面 / 立体模型和角岛地图，依据与限制见 [图鉴说明](docs/decagon-atlas.md)。
+
+### 十角馆事件时间图鉴
+
+`/decagon.html` 已改为书中事件时间轴：自动定位人物、记录遗体搬运和物证变化，支持当时所见与真相复盘，平面图可进入固定视角立体场景。旧版仍在 `/decagon-reading.html`。整理原则与事件表见 [时间图鉴说明](docs/decagon-timeline.md)。
