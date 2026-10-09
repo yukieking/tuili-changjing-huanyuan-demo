@@ -433,3 +433,18 @@ header nav a.active {
     transform: none;
   }
 }
+
+.r-reading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+.r-reading a {
+  color: #c4b48d;
+  text-decoration: none;
+  font-size: 12px;
+}
+.r-reading a:hover {
+  text-decoration: underline;
+}

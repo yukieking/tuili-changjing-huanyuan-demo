@@ -34,7 +34,7 @@ function render() {
       (!level || b.level === level) &&
       (!space || b.space === space) &&
       (!search ||
-        `${b.title} ${b.author} ${b.genre}`
+        `${b.title} ${b.author} ${b.genre} ${b.aliases || ""}`
           .toLocaleLowerCase()
           .includes(search)),
   );
@@ -49,7 +49,7 @@ function render() {
     ? books
         .map(
           (b) =>
-            `<article class="r-card"><div class="r-card-head"><div class="r-cover" style="--book-color:${b.color}" aria-hidden="true"><b>${esc(b.mark)}</b><span>${esc(b.title)}</span></div><div><h3>${esc(b.title)}</h3><p class="r-author">${esc(b.author)}</p><div class="r-tags"><span>${esc(b.genre)}</span><span>${esc(b.level)}</span></div></div></div><p class="r-reason">${esc(b.reason)}</p><p class="r-study"><b>${b.space === "高" ? "◇ 优先适合空间推演" : b.space === "中" ? "◈ 可作为推演补充" : "○ 以阅读与线索研究为主"}</b></p><button data-save="${b.id}" aria-pressed="${saved.has(b.id)}" aria-label="${saved.has(b.id) ? "移除想读" : "加入想读"}：${esc(b.title)}">${saved.has(b.id) ? "✓ 已加入想读" : "＋ 加入想读"}</button></article>`,
+            `<article class="r-card"><div class="r-card-head"><div class="r-cover" style="--book-color:${b.color}" aria-hidden="true"><b>${esc(b.mark)}</b><span>${esc(b.title)}</span></div><div><h3>${esc(b.title)}</h3><p class="r-author">${esc(b.author)}</p><div class="r-tags"><span>${esc(b.genre)}</span><span>${esc(b.level)}</span></div></div></div><p class="r-reason">${esc(b.reason)}</p><p class="r-study"><b>${b.space === "高" ? "◇ 优先适合空间推演" : b.space === "中" ? "◈ 可作为推演补充" : "○ 以阅读与线索研究为主"}</b></p><div class="r-reading"><a href="${esc(b.readingUrl)}" target="_blank" rel="noopener noreferrer">${esc(b.readingLabel)} ↗</a>${b.sceneUrl ? `<a href="${esc(b.sceneUrl)}">进入场景 →</a>` : ""}</div><button data-save="${b.id}" aria-pressed="${saved.has(b.id)}" aria-label="${saved.has(b.id) ? "移除想读" : "加入想读"}：${esc(b.title)}">${saved.has(b.id) ? "✓ 已加入想读" : "＋ 加入想读"}</button></article>`,
         )
         .join("")
     : '<div class="r-empty">' +
