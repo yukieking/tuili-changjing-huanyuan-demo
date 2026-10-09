@@ -1,30 +1,70 @@
 # 推理场景还原demo
 
-谜境 ·《无人生还》交互原型
+谜境 ·《无人生还》空间推演原型。前端静态页面 + Spring Boot 4.1.1 + Maven + Java 17。
 
-前端 + Java 17 后端 Demo，无需 Maven、Spring 或 npm 依赖。
+## 启动
 
-在 Finder 中双击 `start.command`，保持终端窗口运行，然后打开 http://localhost:8080 。
+需要 JDK 17 或以上版本。项目自带 Maven Wrapper，无需单独安装 Maven；首次构建需要联网下载 Maven 和依赖。
 
-也可在项目文件夹执行：
+macOS 在 Finder 中双击 `start.command`，或在项目根目录执行：
 
 ```sh
-java --add-modules jdk.httpserver backend/src/MijingServer.java "$PWD" 8080
+./mvnw spring-boot:run
 ```
 
-如果端口被占用，把最后的 8080 改成 8081，访问相应地址。关闭终端或按 Ctrl+C 停止服务。
+Windows：`mvnw.cmd spring-boot:run`。
 
-## Java 后端
+访问 http://localhost:8080 ，保持终端运行，Ctrl+C 停止。端口占用时：
+
+```sh
+PORT=8081 ./mvnw spring-boot:run
+```
+
+IDEA 直接打开根目录 `pom.xml`，运行 `com.mijing.MijingApplication`。
+
+## 测试与打包
+
+```sh
+./mvnw test
+./mvnw package
+java -jar target/mijing-demo-0.3.0.jar
+```
+
+集成测试启动真实 HTTP 服务、使用临时数据目录，覆盖首页内容类型、静态资源、健康接口、保存恢复、输入验证、请求大小、跨域写入拒绝和数据目录隔离。
+
+## 代码结构
+
+```text
+pom.xml
+mvnw / mvnw.cmd / .mvn/             Maven Wrapper
+src/main/java/com/mijing/
+  MijingApplication.java            Spring Boot 入口
+  api/                              REST 接口与异常处理
+  service/HypothesisService.java     假说校验与原子文件保存
+  config/RequestFilter.java          请求头与同源写入检查
+src/main/resources/
+  application.properties            端口与存储配置
+  static/                           index.html、app.js、style.css
+src/test/java/com/mijing/            HTTP 集成测试
+backend/data/state.json              本地运行数据，不提交 Git
+start.command                       macOS 启动脚本
+```
+
+## 后端接口与兼容
 
 - `GET /api/health`：服务健康状态。
-- `GET /api/state`：读取已保存的全部假说；首次启动返回 null。
-- `PUT /api/state`：保存完整 JSON 快照，最大 2 MB。
-- 页面、CSS 和 JS 由同一个 Java 服务提供。
-- 保存路径：`backend/data/state.json`，采用临时文件 + 原子替换。
-- 前端自动同步并保留浏览器本地副本；点击保存会立即同步。
-- 再次启动服务后恢复已有后端方案。首次没有后端数据时，将当前浏览器方案同步到后端。
+- `GET /api/state`：读取完整假说快照；首次返回 JSON `null`。
+- `PUT /api/state`：保存快照，要求 `application/json`，最大 2 MB。
+- 校验方案列表、当前方案索引、阅读进度、时间节点范围与重复时间。
+- 使用 Jackson 解析 JSON，替代原来的手写解析器。
+- 前端由 Spring Boot 静态资源机制提供，同源访问后端。
+- 原有快照格式和 `backend/data/state.json` 路径保留；从项目根目录启动即可恢复旧数据。
+- 可以通过 `MIJING_STATE_FILE` 环境变量或 `--mijing.state-file=/absolute/path/state.json` 指定数据文件。
+- 浏览器本地副本仍保留。后端存在快照时优先加载后端；后端首次无数据时同步浏览器副本。
 
-这是单用户本机原型，未实现账号、数据库或多用户写入冲突控制。不要将服务作为公开生产系统。读取旧版浏览器副本须使用原来的访问地址；5173 和 8080 的浏览器本地存储不互通。
+这是单用户本机原型，默认监听 127.0.0.1，未实现账号、数据库或多用户冲突控制。Google Drive 中应保持文件离线可用，避免多设备同时写入同一个数据文件。
+
+从旧版迁移后，前端文件统一放入 `src/main/resources/static/`，不再维护根目录的重复前端文件。旧 Java HttpServer、Node 服务器和 npm 启动入口已移除。此次迁移只改变工程结构和后端实现，场景仍为 SVG 概念模型。
 
 ## 已完成
 
@@ -52,13 +92,5 @@ java --add-modules jdk.httpserver backend/src/MijingServer.java "$PWD" 8080
 
 阅读进度仅控制界面线索，不构成服务端防剧透权限。Demo 不包含凶手、结局或真相复盘。当前无登录、后台、云端同步、公开分享和完整路线编辑；这些适合下一阶段扩展。
 
-## 文件
 
-- `index.html`：页面框架
-- `style.css`：视觉与响应式布局
-- `app.js`：场景数据、棋子编辑与假说管理
-- `backend/src/MijingServer.java`：Java 页面服务和保存接口
-- `start.command`：一键启动 Java 服务
-- `server.mjs`：旧版 Node 静态服务器，可选保留
-
-无需安装 npm 依赖。字体使用系统字体，启动后无需联网。
+字体使用系统字体。完成首次构建后，可使用已打包的 JAR 离线启动。
