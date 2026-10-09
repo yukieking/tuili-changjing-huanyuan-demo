@@ -518,3 +518,15 @@ export const formatTime = (t) => {
   let total = Math.round(t);
   return `${20 + Math.floor(total / 60)}:${String(total % 60).padStart(2, "0")}`;
 };
+
+// One followed character prevents competing routes from flipping the map each frame.
+export function playbackMapTarget(p, t, preferred = null) {
+  const positions = positionsAt(p, t);
+  const id =
+    preferred !== null && positions[preferred]
+      ? preferred
+      : Object.keys(positions).find((id) => positions[id].moving);
+  if (id === undefined) return null;
+  const room = roomById(positions[id].room);
+  return room ? { person: Number(id), floor: room.floor } : null;
+}

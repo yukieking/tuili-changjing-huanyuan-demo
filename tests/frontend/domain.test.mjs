@@ -135,3 +135,26 @@ test("adding a state node during movement snapshots the current route location",
   assert.equal(n.positions[0].world, undefined);
   assert.ok(!conflicts(p).some((s) => s.includes("快照与行动路线不一致")));
 });
+
+test("flat playback follows a character across floors and retains their destination", async () => {
+  const { playbackMapTarget } =
+    await import("../../src/main/resources/static/domain.js");
+  const p = emptyPlan();
+  addRoute(p, {
+    person: 0,
+    start: 0,
+    end: 10,
+    path: suggestedPath("living", "upper0"),
+  });
+  assert.deepEqual(playbackMapTarget(p, 0), { person: 0, floor: 0 });
+  assert.deepEqual(playbackMapTarget(p, 9, 0), { person: 0, floor: 1 });
+  assert.deepEqual(playbackMapTarget(p, 10, 0), { person: 0, floor: 1 });
+  addRoute(p, {
+    person: 0,
+    start: 10,
+    end: 20,
+    path: suggestedPath("upper0", "living"),
+  });
+  assert.deepEqual(playbackMapTarget(p, 19, 0), { person: 0, floor: 0 });
+  assert.equal(playbackMapTarget(emptyPlan(), 0), null);
+});

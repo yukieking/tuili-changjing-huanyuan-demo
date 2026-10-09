@@ -15,6 +15,7 @@ import {
   emptyPlan,
   nodeAt,
   positionsAt,
+  playbackMapTarget,
   ensureNode,
   addRoute,
   conflicts,
@@ -41,6 +42,7 @@ let floor = -1,
   selectedRoom = null,
   selectedPerson = null,
   selectedObject = null,
+  followedPerson = null,
   time = 0,
   tab = "object",
   view = "3d",
@@ -196,6 +198,20 @@ function renderLeft() {
   $$("[data-room]").forEach(
     (b) => (b.onclick = () => selectRoom(b.dataset.room)),
   );
+}
+function syncPlaybackFloor() {
+  if (view !== "2d") return;
+  const target = playbackMapTarget(plan(), time, followedPerson);
+  if (!target) return;
+  followedPerson = target.person;
+  showPeople = true;
+  if (floor === target.floor) return;
+  floor = target.floor;
+  focus = null;
+  selectedRoom = null;
+  syncFloors();
+  renderLeft();
+  $("#map").setAttribute("viewBox", "0 0 1000 620");
 }
 function renderScene() {
   $("#people-toggle").textContent = showPeople ? "隐藏人物" : "显示人物";
@@ -510,6 +526,7 @@ function renderTimeline() {
       (b.onclick = () => {
         stop();
         time = Number(b.dataset.time);
+        syncPlaybackFloor();
         render();
       }),
   );
@@ -517,7 +534,7 @@ function renderTimeline() {
     plan()
       .routes.map(
         (r) =>
-          `<div class="action-row"><span style="color:${people[r.person][2]}">${people[r.person][0]}</span> ${formatTime(r.start)}—${formatTime(r.end)} <span>${r.path.map((id) => roomById(id)?.name || id).join(" → ")}</span><button data-route-time="${r.start}">定位</button><button data-edit-route="${r.id}">编辑</button><button data-delete-route="${r.id}">删除</button></div>`,
+          `<div class="action-row"><span style="color:${people[r.person][2]}">${people[r.person][0]}</span> ${formatTime(r.start)}—${formatTime(r.end)} <span>${r.path.map((id) => roomById(id)?.name || id).join(" → ")}</span><button data-route-time="${r.start}" data-follow-person="${r.person}">定位</button><button data-edit-route="${r.id}">编辑</button><button data-delete-route="${r.id}">删除</button></div>`,
       )
       .join("") ||
     '<p class="muted small">还没有行动路线。先选择人物，再指定经过的门、走廊与楼梯。</p>';
@@ -525,9 +542,11 @@ function renderTimeline() {
     (b) =>
       (b.onclick = () => {
         time = Number(b.dataset.routeTime);
+        followedPerson = Number(b.dataset.followPerson);
         setFloor(-1);
         hideRoof = true;
         explode = true;
+        syncPlaybackFloor();
         render();
       }),
   );
@@ -857,6 +876,7 @@ $("#progress").onchange = (e) => {
 $("#scrubber").oninput = (e) => {
   stop();
   time = Number(e.target.value);
+  syncPlaybackFloor();
   renderScene();
   renderTimeline();
   renderInspector();
@@ -864,10 +884,14 @@ $("#scrubber").oninput = (e) => {
 $("#play").onclick = () => {
   if (playing) return stop();
   if (time >= 120) time = 0;
+  followedPerson = selectedPerson ?? followedPerson;
+  syncPlaybackFloor();
+  renderScene();
   $("#play").textContent = "Ⅱ";
   $("#play").setAttribute("aria-label", "暂停");
   playing = setInterval(() => {
     time = Math.min(120, time + 0.2 * Number($("#speed").value));
+    syncPlaybackFloor();
     renderScene();
     renderTimeline();
     if (time >= 120) stop();
@@ -876,6 +900,7 @@ $("#play").onclick = () => {
 $("#plan-select").onchange = (e) => {
   stop();
   data.active = Number(e.target.value);
+  followedPerson = null;
   selectedPerson = null;
   selectedObject = null;
   time = 0;
@@ -1039,6 +1064,7 @@ $("#scene-play").onclick = () => $("#play").click();
 $("#scene-scrubber").oninput = (e) => {
   stop();
   time = Number(e.target.value);
+  syncPlaybackFloor();
   renderScene();
   renderTimeline();
   renderInspector();
