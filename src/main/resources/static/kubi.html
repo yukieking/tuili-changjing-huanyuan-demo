@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>谜境 · 如首无作祟之物</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="works/kubi/style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
+      >
+      <nav>
+        <a href="index.html?library=1">作品档案</a
+        ><a href="index.html">无人生还 Demo</a
+        ><button id="about">还原依据</button>
+      </nav>
+      <div class="head-right">
+        <span class="demo">WORK / 02</span><span class="avatar">首</span>
+      </div>
+    </header>
+    <section class="projectbar">
+      <div>
+        <div class="eyebrow">MITSUDA SHINZO / HIMEKUBI VILLAGE</div>
+        <h1>如首无作祟之物 <span>媛首山 · 仪式建筑群</span></h1>
+      </div>
+      <div class="project-actions">
+        <label
+          >阅读范围
+          <select id="reading">
+            <option value="map">人物与书前地图</option>
+            <option value="eight">已读至第八章 · 十三夜记录</option>
+          </select></label
+        ><button id="save" class="primary">保存假说 ↗</button>
+      </div>
+    </section>
+    <main class="k-workspace">
+      <aside class="k-left">
+        <div class="panel-title">空间探索 <span>02</span></div>
+        <div class="k-views">
+          <button data-view="village" class="active">村域整体</button
+          ><button data-view="compound">境内建筑</button
+          ><button data-view="tower">塔内结构</button
+          ><button data-view="room">婚舍内部</button>
+        </div>
+        <div class="k-places" id="places"></div>
+        <div class="panel-title characters-title">
+          人物棋子 <span id="count">36</span>
+        </div>
+        <select id="group" aria-label="人物分组">
+          <option>全部人物</option>
+          <option>一守家</option>
+          <option>二守家</option>
+          <option>三守家</option>
+          <option>古里家</option>
+          <option>警察</option>
+          <option>其他</option>
+        </select>
+        <p class="muted small">选人物，再点地点放置。位置属于你的假说。</p>
+        <div id="people"></div>
+        <div id="sync" class="k-sync">正在连接 Java 后端…</div>
+      </aside>
+      <section class="k-stage">
+        <div class="stage-top">
+          <div>
+            <span class="live-dot"></span
+            ><span id="view-label">媛首村 · 整体方位</span>
+            <span class="tag">关系有据 · 尺寸推定</span>
+          </div>
+          <div class="segmented">
+            <button id="three" class="active">3D</button
+            ><button id="map">平面地图</button>
+          </div>
+        </div>
+        <div class="k-toolbar">
+          <button id="whole">↖ 返回整体</button
+          ><label><input type="checkbox" id="cut" /> 打开屋顶 / 外墙</label
+          ><button id="demo">体验双螺旋路线</button>
+        </div>
+        <div class="k-canvas">
+          <div id="scene"></div>
+          <div id="flat" hidden></div>
+          <div class="k-legend">
+            <span><i style="background: #dbac6e"></i>神堂侧斜道 A</span
+            ><span><i style="background: #77c8bb"></i>婚舍侧斜道 B</span
+            ><small>拖动旋转 · 滚轮缩放 · 点击建筑查看</small>
+          </div>
+          <div id="selection" class="k-selection" hidden></div>
+        </div>
+        <div class="k-time">
+          <div class="k-time-head">
+            <button id="play">▶ 播放</button
+            ><strong id="time-label">18:30</strong
+            ><select id="period" aria-label="推演时段">
+              <option value="free">自由推演 · 18:30—21:30</option>
+              <option value="thirteen">十三夜参礼 · 18:30—21:30</option>
+              <option value="wedding">
+                十年后婚舍集会 · 15:30—18:30
+              </option></select
+            ><span class="muted small">播放按用户指定时段；不推定真实步速</span>
+          </div>
+          <input
+            id="time"
+            type="range"
+            min="0"
+            max="180"
+            value="0"
+            step="1"
+            aria-label="时间线"
+          />
+          <div id="time-ticks" class="k-ticks"></div>
+          <div id="events" class="k-events"></div>
+        </div>
+      </section>
+      <aside class="k-right">
+        <div class="panel-title">推演笔记 <span>HYPOTHESIS</span></div>
+        <label class="k-field">当前假说<select id="plans"></select></label>
+        <div class="k-row">
+          <button id="new">新建</button><button id="copy">复制</button
+          ><button id="export">导出</button><button id="delete">删除</button>
+        </div>
+        <label class="k-field"
+          >假说名称<input id="name" maxlength="100"
+        /></label>
+        <section class="k-detail">
+          <span class="eyebrow">SPACE / SOURCE</span>
+          <h2 id="place-title">看懂入口，再推演行动。</h2>
+          <p id="place-detail">
+            从村域整体进入境内，再打开塔内双螺旋。点击婚舍可聚焦室内。
+          </p>
+          <small id="place-source">空间依据：书前四幅图与正文空间描述</small>
+        </section>
+        <section class="k-action">
+          <h3>人物与行动</h3>
+          <div id="person-detail" class="muted small">尚未选择人物</div>
+          <label class="k-field"
+            >放置地点<select id="destination"></select
+          ></label>
+          <div class="k-row">
+            <button id="place" class="primary">在当前时刻放置</button
+            ><button id="remove">移除本时刻位置</button>
+          </div>
+          <h3>指定路线</h3>
+          <label class="k-field">从<select id="from"></select></label
+          ><label class="k-field">到<select id="to"></select></label>
+          <div class="k-row">
+            <label class="k-field"
+              >开始
+              <input
+                id="start"
+                type="number"
+                min="0"
+                max="179"
+                value="30" /></label
+            ><label class="k-field"
+              >结束 <input id="end" type="number" min="1" max="180" value="60"
+            /></label>
+          </div>
+          <p class="muted small">时间填写相对本时段起点的分钟数。</p>
+          <p id="path" class="k-path"></p>
+          <button id="add-route" class="primary">确认连接路线</button>
+          <div id="routes"></div>
+        </section>
+        <section>
+          <h3>假说注记</h3>
+          <label class="k-field"
+            >记录解释与依据<textarea
+              id="note"
+              rows="3"
+              placeholder="例如：假设从北路进入；监视未必连续。"
+            ></textarea></label
+          ><button id="add-note">添加当前时刻注记</button>
+          <div id="notes"></div>
+        </section>
+        <section>
+          <h3>空间检查</h3>
+          <button id="check">检查路线与时间</button>
+          <div id="checks" class="muted small">
+            检查连接、路线重叠与位置记录；不裁定凶手。
+          </div>
+        </section>
+        <section id="evidence">
+          <h3>书中记录</h3>
+          <p class="muted small">
+            默认仅开放人物和地图。切换到已读第八章，可查看十三夜的约时记录；不自动转为棋子位置。
+          </p>
+        </section>
+      </aside>
+    </main>
+    <dialog id="source-dialog">
+      <div class="eyebrow">RECONSTRUCTION NOTES</div>
+      <h2>从地图关系，到可探索的空间。</h2>
+      <p>
+        参考用户提供的张舟译本：书前《媛首村地图》《媛神堂·荣螺塔·婚舍示意图》《参道示意图》《荣螺塔构造图》，以及第一、三、五、十二、十七章的空间描述。模型使用重新绘制的几何与概述，未内置电子书或原图。
+      </p>
+      <p>
+        <b>书中明确：</b
+        >三侧入口与参道、北路水井、东南手水舍、北向神堂格子门、西侧荣螺塔、前中后三婚舍、双螺旋斜道、四叠半茶室与六叠间、外部厕所的返回路径。
+      </p>
+      <p>
+        <b>展示推定：</b
+        >所有绝对坐标、距离、建筑高度、螺旋圈数与坡度、植被、材质、家具及宅邸轮廓。平面地图用于表达方位与连通关系，不是比例尺地图。
+      </p>
+      <p>
+        <b>推理边界：</b
+        >人物按登场介绍显示；目击中的人物名称不是身份鉴定。时间表以五分钟整理，属于约时证词。十年后的仪式另设假说时段，避免与十三夜混淆。隐藏身份、结局及凶手信息没有载入页面。
+      </p>
+      <button id="close-source" class="primary">返回场景</button>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="works/kubi/app.js"></script>
+  </body>
+</html>

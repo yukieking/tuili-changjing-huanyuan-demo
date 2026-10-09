@@ -13,7 +13,7 @@ public class HypothesisController {
     private final HypothesisService service;
     public HypothesisController(HypothesisService service) { this.service = service; }
     @GetMapping("/health")
-    public Map<String, String> health() { return Map.of("status", "ok", "service", "mijing-spring-boot", "version", "0.4.0"); }
+    public Map<String, String> health() { return Map.of("status", "ok", "service", "mijing-spring-boot", "version", "0.5.0"); }
     @GetMapping(value = "/state", produces = "application/json")
     public JsonNode load() throws IOException { return service.load(); }
     @PutMapping(value = "/state", consumes = "application/json", produces = "application/json")

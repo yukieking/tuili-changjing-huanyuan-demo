@@ -631,7 +631,7 @@ function openPage(page) {
   }
   if (page === "library") {
     $("#other-page").innerHTML =
-      `<div class="eyebrow">THE CASE LIBRARY</div><h2>走进建筑，摆出行动。</h2><article class="book-card"><div class="book-cover">无人生还</div><h3>阿加莎·克里斯蒂 / 兵岛</h3><p>孤岛上的多人行动推演案例。整体 3D → 楼层 → 房间 → 路线与证词。</p><p>原作背景：十位访客、孤岛与别墅。<br>编辑推定：全部尺寸、房间布局、门窗位置及连接。<br>展示补全：家具造型与岩石地形。<br>用户假设：行动、时间、门窗状态、演示钥匙。</p><button id="enter" class="primary">进入工作台</button></article><p class="muted">尚未绑定特定译本，模型不能作为精确原作还原。没有提供真相与凶手信息。</p><a href="https://www.agathachristie.com/en/stories/and-then-there-were-none" style="color:var(--mint)">作者官网背景来源</a>`;
+      `<div class="eyebrow">THE CASE LIBRARY</div><h2>走进建筑，摆出行动。</h2><article class="book-card"><div class="book-cover">无人生还</div><h3>阿加莎·克里斯蒂 / 兵岛</h3><p>孤岛上的多人行动推演案例。整体 3D → 楼层 → 房间 → 路线与证词。</p><p>原作背景：十位访客、孤岛与别墅。<br>编辑推定：全部尺寸、房间布局、门窗位置及连接。<br>展示补全：家具造型与岩石地形。<br>用户假设：行动、时间、门窗状态、演示钥匙。</p><button id="enter" class="primary">进入工作台</button></article><article class="book-card k-book-card"><div class="book-cover" style="background:linear-gradient(135deg,#596452,#182d2d)">如首无作祟之物</div><h3>三津田信三 / 媛首村</h3><p>三条参道、双螺旋荣螺塔与三座婚舍。以书前图示和正文空间描述建立关系模型。</p><p>独立作品档案 · 36 位人物 · 村域 / 境内 / 塔内 / 婚舍<br>默认无真相剧透；可展开十三夜的约时证词。</p><a href="kubi.html" class="primary" style="display:inline-block;padding:12px;border-radius:8px;text-decoration:none">进入媛首山 ↗</a></article><p class="muted">《无人生还》Demo 尚未绑定特定译本，模型不能作为精确原作还原。没有提供真相与凶手信息。</p><a href="https://www.agathachristie.com/en/stories/and-then-there-were-none" style="color:var(--mint)">作者官网背景来源</a>`;
     $("#enter").onclick = () => openPage("desk");
   } else renderPlans();
 }
@@ -927,3 +927,6 @@ async function init() {
   }
 }
 init();
+
+if (new URLSearchParams(location.search).get("library") === "1")
+  openPage("library");

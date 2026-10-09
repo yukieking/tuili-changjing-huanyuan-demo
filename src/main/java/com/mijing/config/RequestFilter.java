@@ -10,7 +10,7 @@ public class RequestFilter extends OncePerRequestFilter {
         res.setHeader("X-Content-Type-Options", "nosniff");
         if (req.getRequestURI().startsWith("/api/")) res.setHeader("Cache-Control", "no-store");
         String origin = req.getHeader("Origin");
-        if ("PUT".equals(req.getMethod()) && req.getRequestURI().equals("/api/state")
+        if ("PUT".equals(req.getMethod()) && (req.getRequestURI().equals("/api/state") || req.getRequestURI().equals("/api/works/kubi/state"))
             && origin != null && !origin.equals(req.getScheme() + "://" + req.getHeader("Host"))) {
             res.setStatus(403);res.setContentType("application/json");res.getWriter().write("{\"error\":\"origin_rejected\"}");return;
         }
