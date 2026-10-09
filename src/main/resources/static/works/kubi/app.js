@@ -195,7 +195,26 @@ function setView(value, id = null) {
       : id || focus;
   scene?.view(value, target);
   if (value === "room") focus = target;
-  renderMap();
+  if (!id) {
+    const hints = {
+      village: ["村域与三侧入口", "先看各家与山的相对位置，再进入境内。"],
+      compound: [
+        "神堂、荣螺塔与婚舍",
+        "点击建筑进入；打开屋顶和外墙可查看内部。",
+      ],
+      tower: [
+        "两条斜道 · 顶部转接",
+        "金色由神堂侧进入，青色由婚舍侧进入；两条斜道在顶部转接。",
+      ],
+      room: [
+        "茶室与六叠间",
+        "左侧选择前、中、后婚舍；剖切后查看隔间与出入口。",
+      ],
+    };
+    $("#place-title").textContent = hints[value][0];
+    $("#place-detail").textContent = hints[value][1];
+  }
+  render();
 }
 function place(id) {
   if (person === null) return toast("请先选择一个人物");
@@ -203,9 +222,13 @@ function place(id) {
   p.placements = p.placements.filter(
     (x) => !(x.person === person && x.t === t),
   );
+  const placedPerson = person;
   p.placements.push({ person, t, place: id });
+  if (matchMedia("(max-width: 760px)").matches) person = null;
   changed();
-  toast(`${people[person].name} · ${clock(t, p.period)} · ${byId(id).name}`);
+  toast(
+    `${people[placedPerson].name} · ${clock(t, p.period)} · ${byId(id).name}`,
+  );
 }
 function render() {
   const p = plan();
@@ -235,17 +258,26 @@ function render() {
     ],
     ["塔与婚舍", (p) => ["tower", "room"].includes(p.kind)],
   ];
+  const relevant = (x) =>
+    mode === "village"
+      ? ["village", "gate"].includes(x.kind) && !x.id.endsWith("Inner")
+      : mode === "tower"
+        ? ["tower", "room"].includes(x.kind)
+        : mode === "room"
+          ? x.kind === "room"
+          : x.kind !== "village";
   $("#places").innerHTML = order
-    .map(
-      ([title, test]) =>
-        `<small>${title}</small>${places
-          .filter(test)
-          .map(
-            (x) =>
-              `<button data-place="${x.id}" class="${focus === x.id ? "active" : ""}">${esc(x.name)}</button>`,
-          )
-          .join("")}`,
-    )
+    .map(([title, test]) => {
+      const items = places.filter((x) => test(x) && relevant(x));
+      return items.length
+        ? `<small>${title}</small>${items
+            .map(
+              (x) =>
+                `<button data-place="${x.id}" class="${focus === x.id ? "active" : ""}">${esc(x.name)}</button>`,
+            )
+            .join("")}`
+        : "";
+    })
     .join("");
   $$("[data-place]").forEach(
     (b) => (b.onclick = () => selectPlace(b.dataset.place)),
@@ -266,6 +298,7 @@ function render() {
       (b.onclick = () => {
         person =
           person === Number(b.dataset.person) ? null : Number(b.dataset.person);
+        if (matchMedia("(max-width: 760px)").matches) openKTool(null, true);
         render();
       }),
   );
@@ -325,7 +358,7 @@ function render() {
   $("#evidence").innerHTML =
     state.reading === "eight"
       ? `<h3>十三夜 · 约时记录</h3><p class="muted small">第六章整理的时间表，非精确测时。目击名称不自动确定身份；不会添加棋子或路线。与十年后婚舍集会分开。</p>${observations.map((o, i) => `<div class="k-record"><button data-observation="${i}">看地点</button><b>约 ${clock(o.t, "thirteen")}</b><br>${esc(o.text)}<small>${esc(o.source)}</small></div>`).join("")}`
-      : '<h3>书中记录</h3><p class="muted small">默认仅展示人物与书前空间关系。阅读至第八章后，可在顶部展开十三夜的约时证词。</p>';
+      : '<h3>书中记录</h3><p class="muted small">默认仅展示人物与书前空间关系。阅读至第八章后，可在随记面板展开十三夜的约时证词。</p>';
   $$("[data-observation]").forEach(
     (b) =>
       (b.onclick = () => {
@@ -619,6 +652,58 @@ $("#export").onclick = () => {
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
+
+const kDrawer = $(".k-right");
+kDrawer.insertBefore($("#k-people-tool"), $(".k-action"));
+kDrawer.append($(".k-time"));
+$(".k-stage").append($(".k-detail"));
+const readingLabel = $("#reading").closest("label");
+kDrawer.append(readingLabel);
+function openKTool(tool, keepSelection = false) {
+  kDrawer.hidden = !tool;
+  document.body.classList.toggle("tools-open", !!tool);
+  $("#k-tool-title").textContent =
+    { people: "人物", notes: "随记", actions: "推演" }[tool] || "";
+  $("#k-people-tool").hidden = tool !== "people";
+  $(".optional-route").open = tool === "actions";
+  $(".k-action").hidden = tool !== "people" && tool !== "actions";
+  // Route configuration is optional even while placing people.
+  $(".k-time").hidden = tool !== "actions";
+  $("#k-check").hidden = tool !== "actions";
+  $("#k-notes").hidden = tool !== "notes";
+  $("#evidence").hidden = tool !== "notes";
+  readingLabel.hidden = tool !== "notes";
+  $$("[data-k-tool]").forEach((b) => {
+    b.classList.toggle("active", b.dataset.kTool === tool);
+    b.setAttribute("aria-expanded", String(b.dataset.kTool === tool));
+  });
+  if (!tool) {
+    if (!keepSelection) person = null;
+    stop();
+    render();
+  }
+  requestAnimationFrame(() => scene?.resize());
+}
+$$("[data-k-tool]").forEach(
+  (b) =>
+    (b.onclick = () =>
+      openKTool(b.classList.contains("active") ? null : b.dataset.kTool)),
+);
+$("#k-close").onclick = () => openKTool(null);
+$("#selection").onclick = () => {
+  person = null;
+  render();
+};
+$("#k-finish").onclick = () => {
+  person = null;
+  render();
+  toast("已结束放置");
+};
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") openKTool(null);
+});
+openKTool(null);
+
 try {
   const local = JSON.parse(localStorage.getItem(KEY) || "null");
   if (valid(local)) state = local;
@@ -629,6 +714,7 @@ try {
     showFlat(true);
     toast("3D 上下文已失效，已切换到平面图。");
   });
+  scene.view(mode, focus);
   scene.update(plan(), t, person);
 } catch {
   showFlat(true);
@@ -645,7 +731,7 @@ try {
     state = remote;
     render();
   }
-  $("#sync").textContent = "● Java 后端 · 独立作品档案";
+  $("#sync").textContent = "已连接";
 } catch {
   $("#sync").textContent = "● 本地浏览器模式 · 可导出假说";
 }

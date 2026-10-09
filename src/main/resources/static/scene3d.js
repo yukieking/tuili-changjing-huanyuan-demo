@@ -32,6 +32,7 @@ export class VillaScene {
     this.ghost = false;
     this.top = false;
     this.roomMeshes = new Map();
+    this.roomOutlines = new Map();
     this.floorGroups = [];
     this.walls = [];
     this.doors = [];
@@ -140,7 +141,7 @@ export class VillaScene {
     );
     island.scale.z = 0.8;
     island.rotation.y = 0.2;
-    island.position.y = -0.7;
+    island.position.y = -0.9;
     island.receiveShadow = true;
     this.scene.add(island);
     this.island = island;
@@ -155,6 +156,7 @@ export class VillaScene {
       "#596455",
     );
     foundation.castShadow = false;
+    this.foundation = foundation;
     let grid = new THREE.GridHelper(80, 50, "#678778", "#355c51");
     grid.position.y = -0.91;
     grid.material.transparent = true;
@@ -202,10 +204,38 @@ export class VillaScene {
       slab.userData = { kind: "room", room: r.id, floor: r.floor };
       this.pickables.push(slab);
       this.roomMeshes.set(r.id, slab);
+      const outline = new THREE.LineLoop(
+        new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(
+            c.x - (r.w * SCALE) / 2,
+            0.05,
+            c.z - (r.h * SCALE) / 2,
+          ),
+          new THREE.Vector3(
+            c.x + (r.w * SCALE) / 2,
+            0.05,
+            c.z - (r.h * SCALE) / 2,
+          ),
+          new THREE.Vector3(
+            c.x + (r.w * SCALE) / 2,
+            0.05,
+            c.z + (r.h * SCALE) / 2,
+          ),
+          new THREE.Vector3(
+            c.x - (r.w * SCALE) / 2,
+            0.05,
+            c.z + (r.h * SCALE) / 2,
+          ),
+        ]),
+        new THREE.LineBasicMaterial({ color: "#e4ddbd" }),
+      );
+      outline.userData = { kind: "outline", room: r.id };
+      g.add(outline);
+      this.roomOutlines.set(r.id, outline);
       const tag = this.label(
         r.name,
         "#e6edcc",
-        Math.min(3.3, r.w * SCALE * 0.65),
+        Math.min(3.3, r.w * SCALE * 0.7),
       );
       tag.position.set(c.x, 0.19, c.z);
       tag.userData = { kind: "room", room: r.id, floor: r.floor };
@@ -326,6 +356,8 @@ export class VillaScene {
         "#ae8d5c",
       );
       leaf.userData = { kind: "door", id: e.id, floor: a.floor, room: a.id };
+      leaf.userData.rest = leaf.position.clone();
+      leaf.userData.side = side;
       this.doors.push(leaf);
       this.pickables.push(leaf);
     }
@@ -464,7 +496,7 @@ export class VillaScene {
           (z - 295) * SCALE,
           outer ? "#c3c7ad" : "#b1b79d",
         );
-        m.userData = { kind: "wall", room: r.id, floor: r.floor, outer };
+        m.userData = { kind: "wall", room: r.id, floor: r.floor, outer, side };
         this.walls.push(m);
         this.pickables.push(m);
       };
@@ -514,8 +546,13 @@ export class VillaScene {
     this.state = state;
     let { floor, focus, explode, cut, hideRoof, ghost, top } = state;
     let cameraChange =
-      this.floor !== floor || this.focus !== focus || this.top !== top;
+      this.floor !== floor ||
+      this.focus !== focus ||
+      this.top !== top ||
+      this.explode !== explode;
     Object.assign(this, { floor, focus, explode, cut, hideRoof, ghost, top });
+    this.island.visible = floor < 0 || floor === 2;
+    this.foundation.visible = floor < 0;
     this.floorGroups.forEach((g, f) => {
       g.position.y = this.floorOffset(f);
       g.visible = floor < 0 || floor === f || ghost;
@@ -531,15 +568,18 @@ export class VillaScene {
     for (let w of this.walls) {
       w.visible =
         !(cut && w.userData.outer) && (!focus || w.userData.room === focus);
+      w.castShadow = !focus;
       if (focus) {
         w.material.transparent = true;
-        w.material.opacity = 0.25;
+        w.material.opacity = 0.12;
+        w.visible = w.visible && !["bottom", "right"].includes(w.userData.side);
         w.material.depthWrite = false;
       }
     }
     for (let [id, m] of this.roomMeshes) {
       m.visible =
         floor === 2 ? roomById(id).floor === 2 : !focus || id === focus;
+      this.roomOutlines.get(id).visible = m.visible;
       m.material.color.set(
         id === state.selectedRoom
           ? "#c5ba85"
@@ -551,14 +591,16 @@ export class VillaScene {
     this.floorGroups.forEach((g) =>
       g.children.forEach((o) => {
         if (o.userData.kind === "furniture" || o.userData.kind === "object")
-          o.visible = !focus || o.userData.room === focus;
+          o.visible =
+            (!focus || o.userData.room === focus) &&
+            (o.userData.kind !== "object" || state.revealObjects);
       }),
     );
     this.roof.visible = floor < 0 && !hideRoof && !focus;
     this.roof.position.y = explode ? 4.6 : 0;
     this.labels.forEach(
       ({ tag, room, floor: f }) =>
-        (tag.visible = (floor === f || explode) && (!focus || room === focus)),
+        (tag.visible = (floor === f || explode) && !focus),
     );
     this.floorTags.forEach((tag, f) => {
       tag.visible = floor < 0;
@@ -567,6 +609,12 @@ export class VillaScene {
     for (let d of this.doors) {
       let env = nodeAt(state.plan, state.time).environment;
       let locked = env?.doors?.[d.userData.id] === "locked";
+      d.rotation.y = locked ? 0 : Math.PI / 3;
+      d.position.copy(d.userData.rest);
+      if (!locked) {
+        if (d.userData.side === "x") d.position.z += 0.3;
+        else d.position.x += 0.3;
+      }
       d.material.color.set(locked ? "#c07d68" : "#ae8d5c");
       d.visible =
         (!focus || d.userData.room === focus) &&
@@ -625,6 +673,7 @@ export class VillaScene {
         floor = p?.world?.floor || 0;
       g.visible =
         !!p?.world &&
+        this.state.showPeople &&
         !(this.floor < 0 && !this.hideRoof && !this.explode) &&
         (this.floor < 0 ||
           (this.floor === 2 && roomById(p.room)?.floor === 2) ||
@@ -648,7 +697,7 @@ export class VillaScene {
           : this.floorOffset(this.floor === 2 ? 0 : this.floor),
         0,
       ),
-      size = this.floor < 0 ? 24 : 19;
+      size = this.floor < 0 ? (this.explode ? 23 : 18) : 14;
     if (this.focus) {
       target = world(center(this.focus));
       target.y = this.floorOffset(
@@ -657,13 +706,18 @@ export class VillaScene {
       size =
         Math.max(roomById(this.focus).w, roomById(this.focus).h) * SCALE * 1.3;
     }
+    size *= Math.max(1, 0.9 / (this.host.clientWidth / this.host.clientHeight));
     this.controls.target.copy(target);
     this.camera.position
       .copy(target)
       .add(
         this.top
           ? new THREE.Vector3(0, size * 1.65, 0.01)
-          : new THREE.Vector3(size * 0.8, size * 0.7, size),
+          : new THREE.Vector3(
+              size * 0.7,
+              size * (this.focus ? 1.35 : 0.95),
+              size * 0.85,
+            ),
       );
     this.controls.enableRotate = !this.top;
     this.controls.update();

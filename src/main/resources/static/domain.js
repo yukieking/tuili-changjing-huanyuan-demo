@@ -298,6 +298,7 @@ export const nodeAt = (p, t) =>
     .filter((n) => n.t <= t)
     .at(-1) || p.nodes[0];
 export function normalizePlan(p) {
+  p.demo = p.demo === true || p.name?.startsWith("演示假说") === true;
   p.sceneVersion = p.sceneVersion || "soldier-island-prototype-v1";
   p.routes = Array.isArray(p.routes) ? p.routes : [];
   p.intervals = p.intervals || [];
@@ -311,7 +312,7 @@ export function normalizePlan(p) {
   });
   return p;
 }
-export function blankPlan(name = "假说 A · 晚餐之后") {
+export function blankPlan(name = "演示假说 · 晚餐之后") {
   let pos = Object.fromEntries(
     people.map((_, i) => [
       i,
@@ -327,6 +328,7 @@ export function blankPlan(name = "假说 A · 晚餐之后") {
   return normalizePlan({
     id: crypto.randomUUID(),
     sceneVersion: SCENE_VERSION,
+    demo: true,
     name,
     note: "",
     nodes: [
@@ -334,6 +336,18 @@ export function blankPlan(name = "假说 A · 晚餐之后") {
       { t: 30, label: "自由调查", positions: structuredClone(pos) },
       { t: 60, label: "集合讨论", positions: structuredClone(pos) },
     ],
+    routes: [],
+    intervals: [],
+  });
+}
+// Personal hypotheses start without editorial positions or story-like events.
+export function emptyPlan(name = "我的记录") {
+  return normalizePlan({
+    id: crypto.randomUUID(),
+    sceneVersion: SCENE_VERSION,
+    name,
+    note: "",
+    nodes: [{ t: 0, label: "开始记录", positions: {} }],
     routes: [],
     intervals: [],
   });
@@ -380,8 +394,14 @@ export function ensureNode(p, t, label) {
   for (const position of Object.values(positions)) {
     const room = roomById(position.room);
     if (position.world && room) {
-      position.u = Math.max(0, Math.min(1, (position.world.x - room.x) / room.w));
-      position.v = Math.max(0, Math.min(1, (position.world.z - room.y) / room.h));
+      position.u = Math.max(
+        0,
+        Math.min(1, (position.world.x - room.x) / room.w),
+      );
+      position.v = Math.max(
+        0,
+        Math.min(1, (position.world.z - room.y) / room.h),
+      );
     }
     delete position.world;
     delete position.moving;

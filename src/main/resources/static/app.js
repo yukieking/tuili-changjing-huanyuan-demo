@@ -11,6 +11,7 @@ import {
   pathPoints,
   normalizePlan,
   blankPlan,
+  emptyPlan,
   nodeAt,
   positionsAt,
   ensureNode,
@@ -28,7 +29,7 @@ const escape = (s) =>
         c
       ],
   );
-let data = { plans: [blankPlan()], active: 0, progress: 2 };
+let data = { plans: [emptyPlan()], active: 0, progress: 1 };
 try {
   let saved = JSON.parse(localStorage.getItem("mijing-v1"));
   if (saved?.plans?.length && saved.plans[saved.active]) data = saved;
@@ -42,7 +43,9 @@ let floor = -1,
   time = 0,
   tab = "object",
   view = "3d",
-  showTrails = true,
+  showTrails = false,
+  showPeople = false,
+  activeTool = null,
   explode = false,
   cut = false,
   hideRoof = false,
@@ -90,10 +93,10 @@ function syncBackend() {
           body,
         });
         if (!r.ok) throw Error();
-        $(".left-bottom").textContent = "Spring Boot · 已同步";
+        $(".left-bottom").textContent = "已保存";
         return true;
       } catch {
-        $(".left-bottom").textContent = "后端不可用 · 浏览器副本已保存";
+        $(".left-bottom").textContent = "已保存在此浏览器";
         return false;
       }
     });
@@ -115,10 +118,10 @@ async function loadBackend() {
       data.plans.forEach(normalizePlan);
     }
     backendReady = true;
-    $(".left-bottom").textContent = "Spring Boot · 已连接";
+    $(".left-bottom").textContent = "已连接";
     persist();
   } catch {
-    $(".left-bottom").textContent = "本地模式 · 后端未连接";
+    $(".left-bottom").textContent = "本地保存";
   }
   render();
 }
@@ -129,6 +132,7 @@ function render() {
   renderInspector();
   renderTimeline();
   $("#progress").value = data.progress;
+  $("#demo-notice").hidden = !plan().demo;
   $("#migration-note").hidden = plan().sceneVersion === SCENE_VERSION;
 }
 function syncFloors() {
@@ -148,6 +152,8 @@ function selectPerson(i) {
   selectedPerson = i;
   selectedObject = null;
   tab = "object";
+  openTool("people", true);
+  if (matchMedia("(max-width: 760px)").matches) openTool(null, true);
   syncTabs();
   render();
 }
@@ -191,6 +197,8 @@ function renderLeft() {
   );
 }
 function renderScene() {
+  $("#people-toggle").textContent = showPeople ? "隐藏人物" : "显示人物";
+  $("#cancel-placement").hidden = selectedPerson === null;
   $("#stage-label").textContent = focus
     ? roomById(focus).name
     : ["建筑整体", "别墅一层", "别墅二层", "兵岛外部"][floor + 1];
@@ -206,14 +214,19 @@ function renderScene() {
     ["trails", showTrails],
   ])
     $("#" + id).classList.toggle("active", on);
+  $("#rotate").hidden = view === "2d";
   $("#view3d").classList.toggle("active", view === "3d");
   $("#view2d").classList.toggle("active", view === "2d");
   $("#webgl").hidden = view !== "3d" || !scene;
   $("#map").toggleAttribute("hidden", view !== "2d" && !!scene);
   $("#hint").textContent =
     view === "3d" && scene
-      ? "拖动旋转 · 滚轮缩放 · 点击楼层或房间 · 拖动棋子放置"
-      : "选择人物后点击房间放置 · 点击房间聚焦";
+      ? selectedPerson !== null
+        ? `正在放置 ${people[selectedPerson][0]} · 点击地面 · Esc 结束`
+        : "拖动旋转 · 滚轮缩放 · 点击房间进入"
+      : selectedPerson !== null
+        ? `正在放置 ${people[selectedPerson][0]} · 点击房间 · Esc 结束`
+        : "点击房间查看 · 可切换 3D";
   if (scene)
     scene.setState({
       floor,
@@ -227,7 +240,9 @@ function renderScene() {
       selectedPerson,
       time,
       showTrails,
+      revealObjects: data.progress >= 2,
       plan: plan(),
+      showPeople,
     });
   if (view === "2d" || !scene) render2d();
 }
@@ -253,7 +268,9 @@ function render2d() {
       if (pts.length > 1)
         svg += `<polyline points="${pts.map((p) => `${p.x},${p.z}`).join(" ")}" fill="none" stroke="${people[r.person][2]}" stroke-width="3" stroke-dasharray="7 4"/>`;
     }
-  for (let [id, pos] of Object.entries(positionsAt(plan(), time))) {
+  for (let [id, pos] of Object.entries(
+    showPeople ? positionsAt(plan(), time) : {},
+  )) {
     let r = roomById(pos.room);
     if (!r || r.floor !== f) continue;
     let p = pos.world;
@@ -273,9 +290,10 @@ function placePerson(id, room, u = 0.5, v = 0.5) {
   time = edit.t;
   selectedPerson = id;
   selectedRoom = room;
-  focus = null;
+  if (focus !== room) focus = null;
   floor = roomById(room).floor;
   plan().sceneVersion = SCENE_VERSION;
+  if (matchMedia("(max-width: 760px)").matches) selectedPerson = null;
   changed();
   toast("已记录 " + formatTime(time) + " 的位置；相关路线如不一致将提示检查");
 }
@@ -326,21 +344,30 @@ function roomOptions(value) {
 }
 function renderInspector() {
   const host = $("#inspector");
+  if (activeTool === "people" && selectedPerson === null) {
+    host.innerHTML =
+      "<p>选择人物后，点击房间地面放置。位置仅代表你的记录。</p>";
+    return;
+  }
   if (tab === "clues") {
-    host.innerHTML = `<div class="eyebrow">EVIDENCE / USER HYPOTHESIS</div><h2>线索与证词</h2><p><span class="tag">原作背景</span> 十位访客来到孤岛。人物身份为背景信息。</p>${data.progress >= 2 ? "<p>餐桌雕像、客厅留声机：原作场景概念；不复述情节与录音。</p>" : ""}<button id="add-testimony" class="wide">＋ 录入证词 / 停留区间</button>${plan()
-      .intervals.filter((i) => (i.progress || 1) <= data.progress)
-      .map(
+    host.innerHTML = `<div class="eyebrow">EVIDENCE / USER HYPOTHESIS</div><h2>随手记下疑点</h2><p><span class="tag">原作背景</span> 十位访客来到孤岛。人物身份为背景信息。</p>${data.progress >= 2 ? "<p>餐桌雕像、客厅留声机：原作场景概念；不复述情节与录音。</p>" : ""}<button id="add-testimony" class="wide">＋ 录入证词 / 停留区间</button>${plan()
+      .intervals.map(
         (i) =>
           `<div class="clue"><small>${i.type === "testimony" ? "人物证词 · 未验证" : "用户假设"} ${i.approx ? "约 " : ""}${formatTime(i.start)}—${formatTime(i.end)}</small><p><strong>${people[i.person][0]} · ${roomById(i.room)?.name}</strong></p><p>${escape(i.content)}</p><p>来源：${escape(i.source || "用户录入")}</p><button data-delete-interval="${i.id}" class="small">删除记录</button></div>`,
       )
       .join(
         "",
-      )}<label class="field">推理笔记<textarea id="plan-note">${escape(plan().note)}</textarea></label>`;
+      )}<label class="field">随记 · 不必先确定人物或时间<textarea id="plan-note" placeholder="记下章节、疑点或待核对的细节…">${escape(plan().note)}</textarea></label>`;
     $("#add-testimony").onclick = () => intervalEditor();
-    $("#plan-note").onchange = (e) => {
-      checkpoint();
+    let noteCheckpoint = false;
+    $("#plan-note").oninput = (e) => {
+      if (!noteCheckpoint) {
+        checkpoint();
+        noteCheckpoint = true;
+      }
       plan().note = e.target.value;
-      changed();
+      $("#check-result").textContent = "";
+      persist();
     };
     $$("[data-delete-interval]").forEach(
       (b) =>
@@ -376,20 +403,27 @@ function renderInspector() {
   if (selectedPerson !== null) {
     let person = people[selectedPerson],
       pos = node().positions[selectedPerson];
-    host.innerHTML = `<div class="object-icon" style="color:${person[2]}">♟</div><h2>${person[0]}</h2><p>${person[1]} · ${formatTime(node().t)} 节点</p><label class="field">位置<select id="person-room">${roomOptions(pos?.room)}</select></label><label class="field">朝向<select id="angle">${[0, 90, 180, 270].map((a) => `<option value="${a}" ${pos?.angle === a ? "selected" : ""}>${a}°</option>`).join("")}</select></label><label class="field">备注<textarea id="person-note">${escape(pos?.note)}</textarea></label><button id="person-route" class="primary wide">＋ 规划行动路线</button><button id="person-stay" class="wide">＋ 停留 / 证词区间</button><button id="remove-person" class="wide">移除当前节点棋子</button><p>直接改位置是快照编辑；动画只播放已确认、且与节点一致的路线。</p>`;
-    $("#person-room").onchange = (e) =>
-      placePerson(selectedPerson, e.target.value);
+    host.innerHTML = `<div class="object-icon" style="color:${person[2]}">♟</div><h2>${person[0]}</h2><p>${person[1]} · ${formatTime(node().t)} 节点</p><label class="field">位置<select id="person-room"><option value="" ${!pos ? "selected" : ""}>尚未放置</option>${roomOptions(pos?.room)}</select></label><label class="field" hidden>朝向<select id="angle">${[0, 90, 180, 270].map((a) => `<option value="${a}" ${pos?.angle === a ? "selected" : ""}>${a}°</option>`).join("")}</select></label><label class="field">备注<textarea id="person-note">${escape(pos?.note)}</textarea></label><details class="optional-route"><summary>推演与移除（可选）</summary><button id="person-route" class="primary wide">＋ 规划行动路线</button><button id="person-stay" class="wide">＋ 停留 / 证词区间</button><button id="remove-person" class="wide">移除当前节点棋子</button><p>直接改位置是快照编辑；动画只播放已确认、且与节点一致的路线。</p></details>`;
+    $("#person-room").onchange = (e) => {
+      if (e.target.value) placePerson(selectedPerson, e.target.value);
+    };
     $("#angle").onchange = (e) => {
       if (!pos) return;
       checkpoint();
       pos.angle = Number(e.target.value);
       changed();
     };
-    $("#person-note").onchange = (e) => {
+    let personNoteCheckpoint = false;
+    $("#person-note").oninput = (e) => {
       if (!pos) return;
-      checkpoint();
-      pos.note = e.target.value;
-      changed();
+      if (!personNoteCheckpoint) {
+        checkpoint();
+        personNoteCheckpoint = true;
+      }
+      ensureNode(plan(), Math.round(time), "人物备注").positions[
+        selectedPerson
+      ].note = e.target.value;
+      persist();
     };
     $("#person-route").onclick = () => routeEditor(selectedPerson);
     $("#person-stay").onclick = () => intervalEditor(selectedPerson);
@@ -443,6 +477,9 @@ function renderInspector() {
 }
 function renderTimeline() {
   $("#time-now").textContent = formatTime(time);
+  $("#scene-time").textContent = formatTime(time);
+  $("#scene-scrubber").value = time;
+  $("#scene-play").textContent = playing ? "Ⅱ" : "▶";
   $("#scrubber").value = time;
   $("#plan-select").innerHTML = data.plans
     .map(
@@ -469,7 +506,7 @@ function renderTimeline() {
     plan()
       .routes.map(
         (r) =>
-          `<div class="action-row"><span style="color:${people[r.person][2]}">${people[r.person][0]}</span> ${formatTime(r.start)}—${formatTime(r.end)} <span>${r.path.map((id) => roomById(id)?.name || id).join(" → ")}</span><button data-route-time="${r.start}">定位</button><button data-delete-route="${r.id}">删除</button></div>`,
+          `<div class="action-row"><span style="color:${people[r.person][2]}">${people[r.person][0]}</span> ${formatTime(r.start)}—${formatTime(r.end)} <span>${r.path.map((id) => roomById(id)?.name || id).join(" → ")}</span><button data-route-time="${r.start}">定位</button><button data-edit-route="${r.id}">编辑</button><button data-delete-route="${r.id}">删除</button></div>`,
       )
       .join("") ||
     '<p class="muted small">还没有行动路线。先选择人物，再指定经过的门、走廊与楼梯。</p>';
@@ -481,6 +518,13 @@ function renderTimeline() {
         hideRoof = true;
         explode = true;
         render();
+      }),
+  );
+  $$("[data-edit-route]").forEach(
+    (b) =>
+      (b.onclick = () => {
+        const r = plan().routes.find((r) => r.id === b.dataset.editRoute);
+        routeEditor(r.person, r);
       }),
   );
   $$("[data-delete-route]").forEach(
@@ -498,6 +542,8 @@ function stop() {
   clearInterval(playing);
   playing = null;
   $("#play").textContent = "▶";
+  $("#scene-play").textContent = "▶";
+  $("#play").setAttribute("aria-label", "播放");
 }
 function modal(html) {
   stop();
@@ -508,12 +554,12 @@ const parseTime = (value) => {
   let [h, m] = value.split(":").map(Number);
   return (h - 20) * 60 + m;
 };
-function routeEditor(person = selectedPerson ?? 0) {
-  let start = Math.min(119, Math.round(time)),
-    from = node().positions[person]?.room || "living",
-    draft = [from];
+function routeEditor(person = selectedPerson ?? 0, existing = null) {
+  let start = existing?.start ?? Math.min(119, Math.round(time)),
+    from = existing?.path[0] || node().positions[person]?.room || "living",
+    draft = existing ? [...existing.path] : [from];
   modal(
-    `<div class="eyebrow">ACTION ROUTE / USER HYPOTHESIS</div><h2>指定一条真正经过的路线</h2><p>位置、经过路径和耗时都是你的设定。系统不把最短路径认作原作行动。</p><label class="field">人物<select id="route-person">${people.map((p, i) => `<option value="${i}" ${i === person ? "selected" : ""}>${p[0]}</option>`).join("")}</select></label><div class="field-grid"><label class="field">开始<input id="route-start" type="time" value="${formatTime(start)}"></label><label class="field">结束<input id="route-end" type="time" value="${formatTime(Math.min(120, start + 10))}"></label></div><label class="field">起点<select id="route-from">${roomOptions(from)}</select></label><label class="field">目的地<select id="route-to">${roomOptions("upper0")}</select></label><button id="suggest-route" class="wide">生成建议路径（确认前不保存）</button><div id="route-preview" class="route-preview"></div><label class="field">选择下一个相邻空间<select id="route-next"></select></label><div class="field-grid"><button id="append-route">加入路径</button><button id="back-route">撤回一步</button></div><p id="route-error" class="error" role="alert"></p><button id="confirm-route" class="primary wide">确认路径并保存行动</button>`,
+    `<div class="eyebrow">ACTION ROUTE / USER HYPOTHESIS</div><h2>指定一条真正经过的路线</h2><p>位置、经过路径和耗时都是你的设定。系统不把最短路径认作原作行动。</p><label class="field">人物<select id="route-person">${people.map((p, i) => `<option value="${i}" ${i === person ? "selected" : ""}>${p[0]}</option>`).join("")}</select></label><div class="field-grid"><label class="field">开始<input id="route-start" type="time" value="${formatTime(start)}"></label><label class="field">结束<input id="route-end" type="time" value="${formatTime(existing?.end ?? Math.min(120, start + 10))}"></label></div><label class="field">起点<select id="route-from">${roomOptions(from)}</select></label><label class="field">目的地<select id="route-to">${roomOptions(existing?.path.at(-1) || "upper0")}</select></label><button id="suggest-route" class="wide">生成建议路径（确认前不保存）</button><div id="route-preview" class="route-preview"></div><label class="field">选择下一个相邻空间<select id="route-next"></select></label><div class="field-grid"><button id="append-route">加入路径</button><button id="back-route">撤回一步</button></div><p id="route-error" class="error" role="alert"></p><button id="confirm-route" class="primary wide">确认路径并保存行动</button>`,
   );
   const update = () => {
     $("#route-preview").textContent = draft
@@ -564,15 +610,14 @@ function routeEditor(person = selectedPerson ?? 0) {
       if (draft.at(-1) !== $("#route-to").value)
         throw Error("路径尚未到达所选目的地");
       let next = structuredClone(plan());
+      if (existing)
+        next.routes = next.routes.filter((r) => r.id !== existing.id);
       addRoute(next, { person, start, end, path: [...draft] });
       checkpoint();
       data.plans[data.active] = next;
-      selectedPerson = person;
+      selectedPerson = activeTool === "people" ? person : null;
       time = start;
-      floor = -1;
-      focus = null;
-      hideRoof = true;
-      explode = true;
+      showPeople = true;
       showTrails = true;
       $("#modal").close();
       changed();
@@ -613,6 +658,7 @@ function intervalEditor(person = selectedPerson ?? 0) {
     });
     $("#modal").close();
     tab = "clues";
+    openTool("notes");
     syncTabs();
     changed();
   };
@@ -637,7 +683,7 @@ function openPage(page) {
 }
 function renderPlans() {
   $("#other-page").innerHTML =
-    `<div class="eyebrow">YOUR HYPOTHESES</div><h2>保存每一种可能。</h2>${data.plans.map((p, i) => `<article class="plan-card"><h3>${escape(p.name)}</h3><p>${p.nodes.length} 个节点 · ${p.routes.length} 条路线 · ${p.intervals.length} 条区间记录</p><p class="muted small">${escape(p.note)}</p><button data-openplan="${i}" class="primary">继续推演</button> <button data-rename="${i}">重命名</button> <button data-export="${i}">导出 JSON</button> <button data-delete="${i}" ${data.plans.length === 1 ? "disabled" : ""}>删除</button></article>`).join("")}`;
+    `<div class="eyebrow">YOUR HYPOTHESES</div><h2>保存每一种可能。</h2>${data.plans.map((p, i) => `<article class="plan-card"><h3>${escape(p.name)}</h3><p>${p.nodes.length} 个节点 · ${p.routes.length} 条路线 · ${p.intervals.length} 条区间记录</p><p class="muted small">${escape(p.note)}</p><button data-openplan="${i}" class="primary">继续推演</button> <button data-copy="${i}">复制</button> <button data-rename="${i}">重命名</button> <button data-export="${i}">导出 JSON</button> <button data-delete="${i}" ${data.plans.length === 1 ? "disabled" : ""}>删除</button></article>`).join("")}`;
   $$("[data-openplan]").forEach(
     (b) =>
       (b.onclick = () => {
@@ -647,6 +693,20 @@ function renderPlans() {
         selectedObject = null;
         changed();
         openPage("desk");
+      }),
+  );
+  $$("[data-copy]").forEach(
+    (b) =>
+      (b.onclick = () => {
+        checkpoint();
+        const p = structuredClone(data.plans[Number(b.dataset.copy)]);
+        p.id = crypto.randomUUID();
+        p.name += " · 副本";
+        data.plans.push(p);
+        data.active = data.plans.length - 1;
+        changed();
+        renderPlans();
+        toast("已创建副本");
       }),
   );
   $$("[data-rename]").forEach(
@@ -751,9 +811,23 @@ $("#trails").onclick = () => {
   showTrails = !showTrails;
   renderScene();
 };
-$("#resetview").onclick = () => scene?.reset();
-$("#zoomin").onclick = () => scene?.zoomBy(0.85);
-$("#zoomout").onclick = () => scene?.zoomBy(1.15);
+function zoomMap(factor) {
+  const b = $("#map").viewBox.baseVal;
+  const w = Math.max(250, Math.min(1600, b.width * factor)),
+    h = w * 0.62;
+  $("#map").setAttribute(
+    "viewBox",
+    `${b.x + (b.width - w) / 2} ${b.y + (b.height - h) / 2} ${w} ${h}`,
+  );
+}
+$("#resetview").onclick = () =>
+  view === "2d"
+    ? $("#map").setAttribute("viewBox", "0 0 1000 620")
+    : scene?.reset();
+$("#zoomin").onclick = () =>
+  view === "2d" ? zoomMap(0.85) : scene?.zoomBy(0.85);
+$("#zoomout").onclick = () =>
+  view === "2d" ? zoomMap(1.15) : scene?.zoomBy(1.15);
 $("#rotate").onclick = () => scene?.rotate();
 $("#undo").onclick = () => {
   stop();
@@ -780,6 +854,7 @@ $("#play").onclick = () => {
   if (playing) return stop();
   if (time >= 120) time = 0;
   $("#play").textContent = "Ⅱ";
+  $("#play").setAttribute("aria-label", "暂停");
   playing = setInterval(() => {
     time = Math.min(120, time + 0.2 * Number($("#speed").value));
     renderScene();
@@ -819,13 +894,15 @@ $("#addnode").onclick = () => {
 };
 $("#newplan").onclick = () => {
   modal(
-    '<h2>复制当前假说</h2><input id="plan-name" maxlength="50" placeholder="新假说名称"><button id="confirm-plan" class="primary wide">复制并创建</button>',
+    '<h2>创建空白假说</h2><input id="plan-name" maxlength="50" placeholder="记录名称"><button id="confirm-plan" class="primary wide">创建</button>',
   );
   $("#confirm-plan").onclick = () => {
     checkpoint();
-    let p = structuredClone(plan());
-    p.id = crypto.randomUUID();
-    p.name = $("#plan-name").value.trim() || `假说 ${data.plans.length + 1}`;
+    let p = emptyPlan(
+      $("#plan-name").value.trim() || `假说 ${data.plans.length + 1}`,
+    );
+    time = 0;
+    selectedPerson = null;
     data.plans.push(p);
     data.active = data.plans.length - 1;
     $("#modal").close();
@@ -857,6 +934,7 @@ $("#example").onclick = () => {
     hideRoof = true;
     explode = true;
     showTrails = true;
+    showPeople = true;
     $("#modal").close();
     changed();
   };
@@ -867,8 +945,8 @@ $("#save").onclick = async () => {
   toast(
     backendReady
       ? (await syncBackend())
-        ? "已保存到 Spring Boot 后端"
-        : "后端保存失败，本地副本已保留"
+        ? "已保存"
+        : "同步暂不可用，已保存在本机"
       : "已保存浏览器副本",
   );
 };
@@ -882,6 +960,86 @@ $("#mode").onclick = () =>
   modal(
     "<h2>空间推演操作</h2><p>1. 从完整建筑进入楼层，再聚焦房间。<br>2. 选择人物，在楼层地面点击放置。<br>3. 指定起止时间，预览并确认经过门、走廊和楼梯的路线。<br>4. 播放行动，记录证词或停留区间。<br>5. 在时间节点编辑门窗状态，检查冲突并保存。</p><p>直接修改节点不会自动创建行动路线。约略时间只作为区间标记，不计算精确速度。</p>",
   );
+
+const drawer = $(".right-panel");
+drawer.insertBefore($("#people-tool"), $("#inspector"));
+drawer.append($(".timeline"));
+drawer.append($(".check-card"));
+const progressLabel = $("#progress").closest("label");
+progressLabel.firstChild.textContent = "背景提示";
+$("#progress").options[0].textContent = "人物与岛屿";
+$("#progress").options[1].textContent = "晚餐场景物件";
+drawer.append(progressLabel);
+function openTool(tool, keepSelection = false) {
+  if (tool !== "actions") stop();
+  activeTool = tool;
+  drawer.hidden = !tool;
+  document.body.classList.toggle("tools-open", !!tool);
+  $("#tool-title").textContent =
+    { people: "人物", notes: "随记", actions: "推演", info: "场景说明" }[
+      tool
+    ] || "";
+  $("#people-tool").hidden = tool !== "people";
+  $(".timeline").hidden = tool !== "actions";
+  $(".check-card").hidden = tool !== "actions";
+  $(".scene-playback").hidden = tool !== "actions";
+  $(".source-note").hidden = tool !== "info";
+  progressLabel.hidden = tool !== "info";
+  $(".inspector-tabs").hidden = true;
+  $("#inspector").hidden = !["people", "notes", "info"].includes(tool);
+  if (tool === "notes") tab = "clues";
+  else tab = "object";
+  if (tool === "people" || tool === "actions") showPeople = true;
+  if (tool !== "people" && !keepSelection) selectedPerson = null;
+  $$("[data-tool]").forEach((b) => {
+    b.classList.toggle("active", b.dataset.tool === tool);
+    b.setAttribute("aria-expanded", String(b.dataset.tool === tool));
+  });
+  renderInspector();
+  renderScene();
+  requestAnimationFrame(() => scene?.resize());
+}
+$$("[data-tool]").forEach(
+  (b) =>
+    (b.onclick = () =>
+      openTool(activeTool === b.dataset.tool ? null : b.dataset.tool)),
+);
+$("#close-tools").onclick = () => {
+  stop();
+  openTool(null);
+};
+$("#cancel-placement").onclick = () => {
+  selectedPerson = null;
+  render();
+};
+$("#finish-placement").onclick = () => {
+  selectedPerson = null;
+  render();
+  toast("已结束放置，可以继续查看场景");
+};
+$("#people-toggle").onclick = () => {
+  showPeople = !showPeople;
+  if (!showPeople) selectedPerson = null;
+  $("#people-toggle").textContent = showPeople ? "隐藏人物" : "显示人物";
+  $("#cancel-placement").hidden = selectedPerson === null;
+  renderScene();
+};
+$("#scene-play").onclick = () => $("#play").click();
+$("#scene-scrubber").oninput = (e) => {
+  stop();
+  time = Number(e.target.value);
+  renderScene();
+  renderTimeline();
+  renderInspector();
+};
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !$("#modal").open) {
+    stop();
+    openTool(null);
+  }
+});
+openTool(null);
+
 async function init() {
   render();
   $("#desk").inert = true;
@@ -900,6 +1058,7 @@ async function init() {
       onRoom: selectRoom,
       onPerson: selectPerson,
       onObject: (o) => {
+        openTool("info");
         selectedObject = o;
         selectedPerson = null;
         tab = "object";
@@ -917,6 +1076,7 @@ async function init() {
       },
     });
     renderScene();
+    scene.reset();
   } catch (e) {
     console.error(e);
     view = "2d";

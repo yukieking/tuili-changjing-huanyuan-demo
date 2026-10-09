@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   blankPlan,
+  emptyPlan,
   addRoute,
   suggestedPath,
   validRoute,
@@ -12,6 +13,29 @@ import {
   edgeBetween,
   ensureNode,
 } from "../../src/main/resources/static/domain.js";
+test("personal records have no demo positions or invented events, but accept a confirmed route", () => {
+  const p = emptyPlan("读者自己的疑点");
+  assert.deepEqual(positionsAt(p, 0), {});
+  assert.equal(p.nodes.length, 1);
+  assert.equal(p.nodes[0].label, "开始记录");
+  addRoute(p, {
+    person: 0,
+    start: 0,
+    end: 10,
+    path: suggestedPath("living", "upper0"),
+  });
+  assert.equal(p.routes.length, 1);
+  assert.ok(validRoute(p, p.routes[0]));
+  assert.equal(positionsAt(p, 10)[0].room, "upper0");
+  assert.deepEqual(conflicts(p), []);
+});
+test("demo status survives a rename without being applied to empty personal records", () => {
+  const demo = blankPlan();
+  demo.name = "重命名的结构体验";
+  normalizePlan(demo);
+  assert.equal(demo.demo, true);
+  assert.equal(emptyPlan().demo, false);
+});
 test("confirmed multi-floor route interpolates through stairwell in both directions", () => {
   let p = blankPlan(),
     path = suggestedPath("living", "upper0");
@@ -99,10 +123,15 @@ test("old snapshot is upgraded without losing positions or notes", () => {
 
 test("adding a state node during movement snapshots the current route location", () => {
   const p = blankPlan();
-  addRoute(p, {person:0, start:0, end:10, path:suggestedPath("living", "upper0")});
+  addRoute(p, {
+    person: 0,
+    start: 0,
+    end: 10,
+    path: suggestedPath("living", "upper0"),
+  });
   const expected = positionsAt(p, 5)[0].room;
   const n = ensureNode(p, 5, "开窗");
   assert.equal(n.positions[0].room, expected);
   assert.equal(n.positions[0].world, undefined);
-  assert.ok(!conflicts(p).some(s => s.includes("快照与行动路线不一致")));
+  assert.ok(!conflicts(p).some((s) => s.includes("快照与行动路线不一致")));
 });

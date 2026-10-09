@@ -6,11 +6,12 @@
     <title>谜境 · 如首无作祟之物</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="works/kubi/style.css" />
+    <link rel="stylesheet" href="scene-layout.css" />
     <script type="importmap">
       { "imports": { "three": "./vendor/three.module.js" } }
     </script>
   </head>
-  <body>
+  <body class="scene-first kubi">
     <header>
       <a class="brand" href="index.html"
         ><span class="logo">◇</span> 谜境 <small>MIJING</small></a
@@ -37,7 +38,7 @@
             <option value="map">人物与书前地图</option>
             <option value="eight">已读至第八章 · 十三夜记录</option>
           </select></label
-        ><button id="save" class="primary">保存假说 ↗</button>
+        ><button id="save" class="primary">保存</button>
       </div>
     </section>
     <main class="k-workspace">
@@ -50,20 +51,23 @@
           ><button data-view="room">婚舍内部</button>
         </div>
         <div class="k-places" id="places"></div>
-        <div class="panel-title characters-title">
-          人物棋子 <span id="count">36</span>
-        </div>
-        <select id="group" aria-label="人物分组">
-          <option>全部人物</option>
-          <option>一守家</option>
-          <option>二守家</option>
-          <option>三守家</option>
-          <option>古里家</option>
-          <option>警察</option>
-          <option>其他</option>
-        </select>
-        <p class="muted small">选人物，再点地点放置。位置属于你的假说。</p>
-        <div id="people"></div>
+        <section id="k-people-tool" hidden>
+          <div class="panel-title characters-title">
+            人物棋子 <span id="count">36</span>
+          </div>
+          <select id="group" aria-label="人物分组">
+            <option>全部人物</option>
+            <option>一守家</option>
+            <option>二守家</option>
+            <option>三守家</option>
+            <option>古里家</option>
+            <option>警察</option>
+            <option>其他</option>
+          </select>
+          <p class="muted small">选人物，再点地点放置。位置属于你的假说。</p>
+          <div id="people"></div>
+          <button id="k-finish" class="wide">结束放置</button>
+        </section>
         <div id="sync" class="k-sync">正在连接 Java 后端…</div>
       </aside>
       <section class="k-stage">
@@ -80,8 +84,12 @@
         </div>
         <div class="k-toolbar">
           <button id="whole">↖ 返回整体</button
-          ><label><input type="checkbox" id="cut" /> 打开屋顶 / 外墙</label
-          ><button id="demo">体验双螺旋路线</button>
+          ><label><input type="checkbox" id="cut" /> 打开屋顶 / 外墙</label>
+          <div class="tool-launchers">
+            <button data-k-tool="people">人物</button
+            ><button data-k-tool="notes">随记</button
+            ><button data-k-tool="actions">推演</button>
+          </div>
         </div>
         <div class="k-canvas">
           <div id="scene"></div>
@@ -93,7 +101,7 @@
           </div>
           <div id="selection" class="k-selection" hidden></div>
         </div>
-        <div class="k-time">
+        <div class="k-time" hidden>
           <div class="k-time-head">
             <button id="play">▶ 播放</button
             ><strong id="time-label">18:30</strong
@@ -118,8 +126,12 @@
           <div id="events" class="k-events"></div>
         </div>
       </section>
-      <aside class="k-right">
-        <div class="panel-title">推演笔记 <span>HYPOTHESIS</span></div>
+      <aside class="k-right" hidden>
+        <div class="drawer-heading">
+          <strong id="k-tool-title">人物</strong
+          ><button id="k-close" aria-label="关闭辅助面板">×</button>
+        </div>
+
         <label class="k-field">当前假说<select id="plans"></select></label>
         <div class="k-row">
           <button id="new">新建</button><button id="copy">复制</button
@@ -146,29 +158,32 @@
             <button id="place" class="primary">在当前时刻放置</button
             ><button id="remove">移除本时刻位置</button>
           </div>
-          <h3>指定路线</h3>
-          <label class="k-field">从<select id="from"></select></label
-          ><label class="k-field">到<select id="to"></select></label>
-          <div class="k-row">
-            <label class="k-field"
-              >开始
-              <input
-                id="start"
-                type="number"
-                min="0"
-                max="179"
-                value="30" /></label
-            ><label class="k-field"
-              >结束 <input id="end" type="number" min="1" max="180" value="60"
-            /></label>
-          </div>
-          <p class="muted small">时间填写相对本时段起点的分钟数。</p>
-          <p id="path" class="k-path"></p>
-          <button id="add-route" class="primary">确认连接路线</button>
-          <div id="routes"></div>
+          <details class="optional-route">
+            <summary>行动路线（可选）</summary>
+            <label class="k-field">从<select id="from"></select></label
+            ><label class="k-field">到<select id="to"></select></label>
+            <div class="k-row">
+              <label class="k-field"
+                >开始
+                <input
+                  id="start"
+                  type="number"
+                  min="0"
+                  max="179"
+                  value="30" /></label
+              ><label class="k-field"
+                >结束
+                <input id="end" type="number" min="1" max="180" value="60"
+              /></label>
+            </div>
+            <p class="muted small">时间填写相对本时段起点的分钟数。</p>
+            <p id="path" class="k-path"></p>
+            <button id="add-route" class="primary">确认连接路线</button>
+            <div id="routes"></div>
+          </details>
         </section>
-        <section>
-          <h3>假说注记</h3>
+        <section id="k-notes">
+          <h3>随记</h3>
           <label class="k-field"
             >记录解释与依据<textarea
               id="note"
@@ -178,9 +193,10 @@
           ><button id="add-note">添加当前时刻注记</button>
           <div id="notes"></div>
         </section>
-        <section>
+        <section id="k-check">
           <h3>空间检查</h3>
-          <button id="check">检查路线与时间</button>
+          <button id="check">检查路线与时间</button
+          ><button id="demo" class="wide">创建演示假说</button>
           <div id="checks" class="muted small">
             检查连接、路线重叠与位置记录；不裁定凶手。
           </div>

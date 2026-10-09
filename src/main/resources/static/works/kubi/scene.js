@@ -564,6 +564,11 @@ export class MountainScene {
           Math.abs(s.position.z) < 20);
     });
     this.controls.target.set(...target);
+    const fit = Math.max(
+      1,
+      1.2 / (this.host.clientWidth / this.host.clientHeight),
+    );
+    pos = pos.map((v, i) => target[i] + (v - target[i]) * fit);
     this.camera.position.set(...pos);
     this.camera.up.set(0, 1, 0);
     this.controls.update();
