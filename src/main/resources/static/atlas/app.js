@@ -1,4 +1,6 @@
 import {eventsFor as replayEvents,snapshot as replaySnapshot} from './engine.js';
+import {createPlanner} from './planner-ui.js';
+import {timeLabel} from './planning.js';
 import {characterIcon} from '../character-model.js';
 const work=['decagon','christie','kubi'].includes(document.body.dataset.work)?document.body.dataset.work:'decagon';
 let book;
@@ -6,17 +8,26 @@ for(const url of [`/api/atlas/${work}`,`atlas/${work}/events.json`]){try{const r
 if(!book)throw new Error('作品记录加载失败，请刷新页面。');
 const geometry=await import(`./${work}/geometry.js`),{ReadingScene}=await import(`./${work}/scene.js`);
 const {rooms,byId,floorNames,roles,colors,constrain}=geometry;
-const {names,ending:undatedEnding}=book;
+const {names}=book;
 const placeName=id=>byId(id)?.name||book.offPlaces[id]||'位置未明';
-const eventsFor=mode=>replayEvents(book,mode),snapshot=(mode,index)=>replaySnapshot(book,geometry,mode,index);
+const observedEvents=replayEvents(book);
+let observedIndex=0,personalIndex=0,planner;
+const eventsFor=mode=>mode==='personal'?planner.points().map(t=>({id:String(t),day:Math.floor(t/1440),seq:t,time:timeLabel(t)})):observedEvents;
+function snapshot(mode,index){
+ const base=replaySnapshot(book,geometry,'observed',mode==='personal'?observedIndex:index);
+ if(mode!=='personal')return base;
+ const points=planner.points(),i=Math.max(0,Math.min(points.length-1,index)),t=points[i],own=planner.current(t),notes=planner.records().filter(r=>r.start===t).map(r=>r.text).filter(Boolean);
+ return {...base,...own,index:i,total:points.length,event:{id:String(t),day:Math.floor(t/1440),seq:t,time:timeLabel(t),title:planner.name(),summary:notes.join('；')||'在这个时刻安排人物，或添加证词与随记。',source:'我的假说 · 参考所见：'+base.event.time},map:geometry.byId(Object.values(own.current).find(p=>geometry.byId(p.place))?.place)?.floor??base.map};
+}
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let mode='observed',index=0,map=snapshot('observed',0).map,focus=null,view='three',scene=null,timer=null,entered=false;
 let snap=snapshot(mode,index);
-const label=id=>mode==='truth'&&book.truthNames?.[id]?book.truthNames[id]:names[id];
+const label=id=>names[id];
+planner=createPlanner(book,geometry,()=>{if(mode==='personal')seek(Math.min(index,planner.points().length-1));},()=>replaySnapshot(book,geometry,'observed',observedIndex));
 function stop(){clearInterval(timer);timer=null;$('#play').textContent='▶ 播放';}
 function seek(n){index=Math.max(0,Math.min(eventsFor(mode).length-1,n));snap=snapshot(mode,index);if($('#follow').checked){map=snap.map;focus=null;}render();}
 function choose(place){const r=byId(place);map=r?.floor??null;focus=r?.id??null;render();}
-function changeMode(next){const old=snap.event;mode=next;const events=eventsFor(mode);let n=events.findIndex(e=>e.id===old.id);if(n<0){n=events.reduce((a,e,i)=>e.day<old.day||(e.day===old.day&&e.seq<=old.seq)?i:a,0);}stop();seek(n);}
+function changeMode(next){stop();if(mode==='observed')observedIndex=index;else personalIndex=index;mode=next;seek(next==='personal'?personalIndex:observedIndex);}
 function flat(rs,clues,positions){
  if(!rs.length){$('#flat').innerHTML='';return;}
  const pts=rs.flatMap(r=>r.polygon),xmin=Math.min(...pts.map(p=>p[0])),xmax=Math.max(...pts.map(p=>p[0])),zmin=Math.min(...pts.map(p=>p[1])),zmax=Math.max(...pts.map(p=>p[1]));
@@ -28,30 +39,33 @@ function flat(rs,clues,positions){
 }
 function render(){
  snap=snapshot(mode,index);const e=snap.event,events=eventsFor(mode),clues=snap.clues.map((c,i)=>({...c,number:i+1}));
- for(const m of ['observed','truth'])$('#'+m).classList.toggle('active',mode===m);
+ for(const m of ['observed','personal'])$('#'+m).classList.toggle('active',mode===m);
  const floors=[...new Set(rooms.filter(r=>snap.unlocked.includes(r.id)).map(r=>r.floor))];
  $('#maps').innerHTML=floors.map(f=>`<button data-map="${f}" class="${map===f?'active':''}">${floorNames[f]}</button>`).join('')+`<button data-map="mainland" class="${map===null?'active':''}">本土／海上记录</button>`;
  const rs=rooms.filter(r=>r.floor===map&&snap.unlocked.includes(r.id)&&(!focus||r.id===focus));
  $('#room-list').innerHTML=rooms.filter(r=>r.floor===map&&snap.unlocked.includes(r.id)).map(r=>`<button data-room="${r.id}" class="${focus===r.id?'active':''}">${esc(r.name)}</button>`).join('');
  $('#breadcrumb').textContent=(floorNames[map]||'本土／海上')+(focus?' / '+placeName(focus):' / 全景');$('#drawing-label').textContent=focus?placeName(focus):floorNames[map]||'叙事地点';
  $('#event-time').textContent=e.time;$('#event-title').textContent=e.title;$('#event-summary').textContent=e.summary;$('#event-source').textContent='依据：'+e.source;
- $('#context-note').textContent=e.truth?(work==='kubi'?'解答重读；其中推理与未定结局保留原有性质。':'结尾补述的行动；不代表当时已被其他人观察到。'):'本节点仅展示明确描写的位置与截至此时已记录的线索。';
- $('#time-label').textContent=e.time;$('#mode-note').textContent=(mode==='truth'?'真相复盘':'当时所见')+' · '+(index+1)+' / '+events.length+' 个事件';
+ $('#context-note').textContent=mode==='personal'?'人物来自自己的位置假设；物证保留切换前的当时所见，不将证词自动当作事实。':'本节点仅展示明确描写的位置与截至此时已记录的线索。';
+ $('#time-label').textContent=e.time;$('#mode-note').textContent=(mode==='personal'?'自己推理':'当时所见')+' · '+(index+1)+' / '+events.length+' 个事件';
  $('#scrubber').max=events.length-1;$('#scrubber').value=index;$('#scrubber').setAttribute('aria-valuetext',e.time+' '+e.title);$('#previous').disabled=index===0;$('#next').disabled=index===events.length-1;
- $('#days').innerHTML=[...new Set(events.map(e=>e.day))].map(d=>`<button data-day="${d}" class="${e.day===d?'active':''}">${esc(book.dayLabels[d]||String(d))}</button>`).join('');
+ $('#days').innerHTML=[...new Set(events.map(e=>e.day))].map(d=>`<button data-day="${d}" class="${e.day===d?'active':''}">${esc(mode==='personal'?'第'+(d+1)+'日':book.dayLabels[d]||String(d))}</button>`).join('');
  const positions={},counts={};for(const [id,p] of Object.entries(snap.current)){const r=byId(p.place);if(!r||!roles[id])continue;const n=counts[r.id]||0;counts[r.id]=n+1;const q=constrain(r,r.center[0]+(n%3-1)*.7,r.center[1]+Math.floor(n/3)*.7);positions[id]={room:r.id,u:(q.x-r.x)/r.w,v:(q.z-r.z)/r.d};}
  $('#scene').hidden=map===null||view!=='three';$('#flat').toggleAttribute('hidden',map===null||view!=='two');$('#offmap').hidden=map!==null;$('#zoom').hidden=map===null||view!=='three';
  if(map===null){const current=Object.entries(snap.current).filter(([,p])=>p.place&&!byId(p.place)&&!p.dead);$('#offmap').innerHTML=`<div><p class="eyebrow">DOCUMENTED LOCATIONS</p><h2>本土与海上</h2><p>原文没有完整平面，不补造建筑或路线。</p>${current.map(([id,p])=>`<article><strong>${esc(label(id))}</strong><p>${esc(placeName(p.place))}</p><small>${esc(p.note)}</small></article>`).join('')||'<p>本节点没有明确定位的本土人物。</p>'}</div>`;}
- else if(view==='three'&&scene)scene.setState({floor:map,chapter:99,focus,showPeople:true,positions,truth:mode==='truth',unlocked:snap.unlocked,clues,dead:snap.dead,fire:snap.fire});
+ else if(view==='three'&&scene)scene.setState({floor:map,chapter:99,focus,showPeople:true,positions,unlocked:snap.unlocked,clues,dead:snap.dead,fire:snap.fire});
  else flat(rs,clues,positions);
  for(const v of ['three','two'])$('#'+v).classList.toggle('active',view===v);
- const personRows=names.map((name,id)=>{if(mode==='truth'&&book.aliases?.[id]!==undefined)return '';const p=snap.current[id],dead=snap.dead.includes(String(id)),last=snap.lastSeen[id];return `<article class="person ${dead?'dead':''}">${roles[id]?'<svg viewBox="-18 -28 36 46" aria-hidden="true">'+characterIcon(roles[id],colors[id],work==='kubi')+'</svg>':'<span class="number-pin">本</span>'}<div><strong>${esc(label(id))}</strong><p>${p?.place?esc(placeName(p.place)):dead?'已遇害 · 本节点不继续定位':'本节点位置未明'}</p><small>${esc(p?.note||'')}</small>${!p&&last?.place?`<details><summary>上次记载（不代表当前位置）</summary><small>${esc(last.at+' · '+placeName(last.place))}</small></details>`:''}</div></article>`;});
+ const personRows=names.map((name,id)=>{const p=snap.current[id],dead=snap.dead.includes(String(id)),last=snap.lastSeen[id];return `<article class="person ${dead?'dead':''}">${roles[id]?'<svg viewBox="-18 -28 36 46" aria-hidden="true">'+characterIcon(roles[id],colors[id],work==='kubi')+'</svg>':'<span class="number-pin">本</span>'}<div><strong>${esc(label(id))}</strong><p>${p?.place?esc(placeName(p.place)):dead?'已遇害 · 本节点不继续定位':'本节点位置未明'}</p><small>${esc(p?.note||'')}</small>${!p&&last?.place?`<details><summary>上次记载（不代表当前位置）</summary><small>${esc(last.at+' · '+placeName(last.place))}</small></details>`:''}</div></article>`;});
  const visibleRows=personRows.filter((_,id)=>snap.current[id]||snap.dead.includes(String(id))),unknownRows=personRows.filter((_,id)=>!snap.current[id]&&!snap.dead.includes(String(id))).filter(Boolean);
  $('#people').innerHTML=visibleRows.join('')+(unknownRows.length?`<details class="unknown-roster"><summary>其他 ${unknownRows.length} 位人物 · 本节点位置未明</summary>${unknownRows.join('')}</details>`:'');
- $('#clue-count').textContent=clues.length+'项';$('#clues').innerHTML=clues.map(c=>`<details class="clue"><summary><span class="number-pin">${c.number}</span><strong>${esc(c.title)}</strong><small>${esc(c.state)}</small></summary><button data-place="${esc(c.place)}">定位：${esc(placeName(c.place))} ↗</button><p>${esc(c.detail)}</p><small>${esc(c.kind+' · '+c.at+' · '+c.source)}</small>${mode==='truth'&&c.actual?`<p>结尾核实：${esc(c.actual.detail)} <small>${esc(c.actual.source)}</small></p>`:''}<ol>${c.history.map(h=>`<li>${esc(h.at+' · '+placeName(h.place)+' · '+h.state)}</li>`).join('')}</ol></details>`).join('')||'<p>此时尚未出现案件物证。</p>';
- $('#ending').innerHTML=mode==='truth'?`<h3>${esc(undatedEnding.time+' · '+undatedEnding.title)}</h3><p>${esc(undatedEnding.summary)}</p><small>${esc(undatedEnding.source)}</small>`:'未明时刻不补造精确钟点，解答细节可切换复盘查看。';
+ $('#clue-count').textContent=clues.length+'项';$('#clues').innerHTML=clues.map(c=>`<details class="clue"><summary><span class="number-pin">${c.number}</span><strong>${esc(c.title)}</strong><small>${esc(c.state)}</small></summary><button data-place="${esc(c.place)}">定位：${esc(placeName(c.place))} ↗</button><p>${esc(c.detail)}</p><small>${esc(c.kind+' · '+c.at+' · '+c.source)}</small><ol>${c.history.map(h=>`<li>${esc(h.at+' · '+placeName(h.place)+' · '+h.state)}</li>`).join('')}</ol></details>`).join('')||'<p>此时尚未出现案件物证。</p>';
+ $('#legend').textContent=mode==='personal'?'● 我的位置假设　◉ 所见物证　灰色：遗体假设':'● 人物确证位置　◉ 编号物证　灰色：遗体';
+ $('#people-note').textContent=mode==='personal'?'人物位置来自自己的安排；证词单独核对，不自动改变位置。':'本节点无确切位置时，不延续上次位置。灰色遗体仅按已记录的搬运改变。';
+ $('#planner').hidden=mode!=='personal';if(mode==='personal')planner.render(snap.unlocked);
+ $('#timeline-help').textContent=mode==='personal'?'拖动自己的时间线；位置点延续到下一次安排，时间区间结束后停止定位。':'拖动按书中事件顺序切换，刻度不是等时距；同一时段先后不明确时仅作整理排列，不补造具体分钟或移动轨迹。';
 }
-$('#enter').onclick=()=>{entered=true;$('#spoiler-gate').hidden=true;$('#atlas').hidden=false;try{scene=new ReadingScene($('#scene'),id=>{focus=id;render();},()=>{view='two';render();});}catch(error){console.error('三维场景初始化失败',error);view='two';}render();scene?.resize();};
+$('#enter').onclick=()=>{entered=true;$('#spoiler-gate').hidden=true;$('#atlas').hidden=false;try{scene=new ReadingScene($('#scene'),id=>choose(id),()=>{view='two';render();});}catch(error){console.error('三维场景初始化失败',error);view='two';}render();scene?.resize();};
 $('#maps').onclick=e=>{const b=e.target.closest('[data-map]');if(b){map=b.dataset.map==='mainland'?null:Number(b.dataset.map);focus=null;render();}};
 $('#room-list').onclick=e=>{const b=e.target.closest('[data-room]');if(b){focus=b.dataset.room;render();}};
 $('#overview').onclick=()=>{focus=null;render();};$('#clues').onclick=e=>{const b=e.target.closest('[data-place]');if(b)choose(b.dataset.place);};
@@ -61,7 +75,7 @@ for(const v of ['three','two'])$('#'+v).onclick=()=>{view=v;render();if(v==='thr
 $('#previous').onclick=()=>{stop();seek(index-1);};$('#next').onclick=()=>{stop();seek(index+1);};$('#scrubber').oninput=e=>{stop();seek(Number(e.target.value));};
 $('#days').onclick=e=>{const b=e.target.closest('[data-day]');if(b){stop();seek(eventsFor(mode).findIndex(x=>x.day===Number(b.dataset.day)));}};
 $('#play').onclick=()=>{if(timer){stop();return;}if(index===eventsFor(mode).length-1)seek(0);$('#play').textContent='Ⅱ 暂停';timer=setInterval(()=>{if(index>=eventsFor(mode).length-1)stop();else seek(index+1);},2200);};
-$('#observed').onclick=()=>changeMode('observed');$('#truth').onclick=()=>$('#truth-dialog').showModal();$('#confirm-truth').onclick=()=>{$('#truth-dialog').close();changeMode('truth');};
+$('#observed').onclick=()=>changeMode('observed');$('#personal').onclick=()=>changeMode('personal');
 $('#plus').onclick=()=>scene?.zoom(1.15);$('#minus').onclick=()=>scene?.zoom(1/1.15);$('#reset').onclick=()=>scene?.fit();
 render();
 

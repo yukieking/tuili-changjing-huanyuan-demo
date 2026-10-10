@@ -28,8 +28,10 @@ export class ReadingScene {
     this.scene = new T.Scene();
     this.camera = new T.OrthographicCamera(-10, 10, 10, -10, 0.1, 160);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableRotate = false;
-    this.controls.enablePan = false;
+    this.controls.enableRotate = true;
+    this.controls.enablePan = true;
+    this.controls.minPolarAngle = .12;
+    this.controls.maxPolarAngle = Math.PI / 2.02;
     this.controls.minZoom = 0.5;
     this.controls.maxZoom = 3;
     this.controls.addEventListener("change", () =>
@@ -58,6 +60,7 @@ export class ReadingScene {
       (e) => (down = [e.clientX, e.clientY]),
     );
     host.addEventListener("pointerup", (e) => {
+      if (e.button !== 0) return;
       if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5)
         return;
       const b = host.getBoundingClientRect();
@@ -95,6 +98,7 @@ export class ReadingScene {
   }
   box(g, w, h, d, c, x, y, z, rotation = 0) {
     const m = new T.Mesh(new T.BoxGeometry(w, h, d), this.material(c));
+    m.userData.wall=c==="#faf8ef"&&h>.6;
     m.position.set(x, y, z);
     m.rotation.y = rotation;
     m.castShadow = true;
@@ -380,6 +384,7 @@ export class ReadingScene {
         new T.ConeGeometry(1.4, 0.45, 10),
         this.material("#7195a9"),
       );
+      roof.userData.roof=true;
       roof.position.set(x, 0.95, z);
       g.add(roof);
     } else if (r.type === "ruins") {
@@ -418,6 +423,7 @@ export class ReadingScene {
     this.island.visible = map === 1;
     for (const r of rooms) {
       const part = this.parts.get(r.id);
+      part.traverse(o=>{if(o.userData.wall||o.userData.roof)o.visible=!state.focus;});
       part.visible =
         r.floor === map &&
         r.chapter <= state.chapter && state.unlocked.includes(r.id) &&
@@ -427,9 +433,7 @@ export class ReadingScene {
           state.chapter >= 3 ? "#c4d4df" : "#e5dcc8",
         );
     }
-    for (const g of this.details) g.visible = state.chapter >= 3 && !(state.truth && g.parent===this.parts.get("van"));
-    if(!this.sleepingBag){this.sleepingBag=new T.Group();this.parts.get("van").add(this.sleepingBag);const r=byId("van");this.box(this.sleepingBag,.9,.14,1.8,"#78919a",r.center[0],.13,r.center[1]);}
-    this.sleepingBag.visible=state.truth;
+    for (const g of this.details) g.visible = state.chapter >= 3;
     for (const p of this.pawns.values()) p.visible = false;
     if (state.showPeople)
       for (const [id, p] of Object.entries(state.positions)) {
@@ -508,8 +512,9 @@ export class ReadingScene {
     const w = this.host.clientWidth,
       h = this.host.clientHeight;
     if (!w || !h) return;
-    this.renderer.setSize(w, h, false);
-    this.fit();
+    const changed=this.width!==w||this.height!==h;
+    this.width=w;this.height=h;this.renderer.setSize(w,h,false);
+    if(changed)this.fit();
   }
   zoom(f) {
     this.camera.zoom = Math.max(0.5, Math.min(3, this.camera.zoom * f));

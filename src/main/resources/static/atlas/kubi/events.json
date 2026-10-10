@@ -108,8 +108,7 @@
           "place": "ritual",
           "state": "约时整理",
           "detail": "多数人没有经常看表，五分钟刻度也不能视为精确五分钟。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ]
     },
@@ -175,25 +174,7 @@
           "note": "离开派出所前往东入口"
         }
       },
-      "changes": [],
-      "truthActors": {
-        "4": {
-          "place": "north",
-          "note": "叙述确认"
-        },
-        "7": {
-          "place": "north",
-          "note": "叙述确认"
-        },
-        "22": {
-          "place": "eastStation",
-          "note": "叙述确认"
-        },
-        "24": {
-          "place": null,
-          "note": "离开派出所前往东入口"
-        }
-      }
+      "changes": []
     },
     {
       "id": "wellFirst",
@@ -221,25 +202,7 @@
           "note": "窗边监视北入口"
         }
       },
-      "changes": [],
-      "truthActors": {
-        "4": {
-          "place": "well",
-          "note": "目击标签，身份未核实"
-        },
-        "7": {
-          "place": "stone",
-          "note": "叙述确认"
-        },
-        "3": {
-          "place": "north",
-          "note": "叙述确认"
-        },
-        "6": {
-          "place": "ritual",
-          "note": "窗边监视北入口"
-        }
-      }
+      "changes": []
     },
     {
       "id": "soundToShrine",
@@ -274,28 +237,9 @@
           "place": "courtyard",
           "state": "根据声音推定行动",
           "detail": "不能把听见声音画成一路目视追踪。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
-      ],
-      "truthActors": {
-        "4": {
-          "place": null,
-          "note": "脚步声不是真正长寿郎入堂；身份归属有不同解答"
-        },
-        "22": {
-          "place": null,
-          "note": "前往东入口的途中"
-        },
-        "24": {
-          "place": null,
-          "note": "前往东入口的途中"
-        },
-        "12": {
-          "place": null,
-          "note": "前往东入口的途中"
-        }
-      }
+      ]
     },
     {
       "id": "twoSightings1",
@@ -334,32 +278,9 @@
           "place": "well",
           "state": "片刻后不见",
           "detail": "身份与具体去向在当时没有核实。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
-      ],
-      "truthActors": {
-        "3": {
-          "place": "well",
-          "note": "第一次目击的叙事标签"
-        },
-        "7": {
-          "place": "stone",
-          "note": "叙述确认"
-        },
-        "22": {
-          "place": "east",
-          "note": "叙述确认"
-        },
-        "13": {
-          "place": "east",
-          "note": "叙述确认"
-        },
-        "24": {
-          "place": "east",
-          "note": "叙述确认"
-        }
-      }
+      ]
     },
     {
       "id": "twoSightings2",
@@ -386,20 +307,9 @@
           "place": "well",
           "state": "再次出现并净身",
           "detail": "目击顺序确定，身份连续性待解。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
-      ],
-      "truthActors": {
-        "3": {
-          "place": "well",
-          "note": "第二次目击标签"
-        },
-        "7": {
-          "place": "stone",
-          "note": "叙述确认"
-        }
-      }
+      ]
     },
     {
       "id": "girlShrine",
@@ -426,20 +336,9 @@
           "place": "shrine",
           "state": "目击者觉得像提着人头",
           "detail": "光线、遮挡和恐惧影响辨识；不在事实图层放出一个确定人头。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
-      ],
-      "truthActors": {
-        "3": {
-          "place": "shrine",
-          "note": "斧高目击标签"
-        },
-        "22": {
-          "place": "east",
-          "note": "叙述确认"
-        }
-      }
+      ]
     },
     {
       "id": "towerSound",
@@ -462,16 +361,9 @@
           "place": "towerEntry",
           "state": "叙述有人走上荣螺塔",
           "detail": "主客叙述不能合成两人真实同屏。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
-      ],
-      "truthActors": {
-        "3": {
-          "place": "frontRoom",
-          "note": "解答据亮灯与换装重读；当时说法不属全知事实"
-        }
-      }
+      ]
     },
     {
       "id": "towerTop",
@@ -494,8 +386,7 @@
           "place": "towerTop",
           "state": "塔顶火光消失后前婚舍亮灯",
           "detail": "所见灯光变化是线索，不能自动等同人物瞬移。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
       ]
     },
@@ -564,8 +455,7 @@
           "place": "well",
           "state": "据称妃女子落井",
           "detail": "死者身份与死因不是目击落井过程后直接确定的。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "note",
@@ -573,8 +463,7 @@
           "place": "ritual",
           "state": "由斧高带回",
           "detail": "称“小斧儿”的用词后来参与身份解答。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ],
       "deaths": {
@@ -686,8 +575,7 @@
           "place": "well",
           "state": "已捞起并包裹",
           "detail": "只有少数家属声称确认身份；不是全体见过死者脸。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -728,8 +616,7 @@
           "place": "crematorium",
           "state": "火化，骨灰送回",
           "detail": "火化具体钟点与路程未记录；不能一直把遗体留在井边。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "removeBodies": [
@@ -758,8 +645,7 @@
           "place": "ichimori",
           "state": "事后汇总完成",
           "detail": "由多人叙述组成，不能直接当作全知镜头。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ]
     },
@@ -800,8 +686,7 @@
           "place": "north",
           "state": "北、东、南口分别监视",
           "detail": "监视是证词约束，不是整个山体有实体封墙。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -862,8 +747,7 @@
           "place": "ritual",
           "state": "藏青、灰、茶色",
           "detail": "头巾遮挡身份；颜色归属最初由斧高按出场次序判断，不能仅凭颜色确认脸。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -956,8 +840,7 @@
           "place": "ritual",
           "state": "正文与活动表有约时差异",
           "detail": "现身与出发可能是不同动作；不强行订正为同一分钟。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ]
     },
@@ -1058,8 +941,7 @@
           "place": "middleRoom",
           "state": "约16:30为推定",
           "detail": "人物棋子为推定位置，不能用于确定不在场证明。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ]
     },
@@ -1084,8 +966,7 @@
           "place": "middleRoom",
           "state": "警方推定约16:40",
           "detail": "被害者当时被认为是毬子，不能把这个推定时刻当作亲眼所见。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ]
     },
@@ -1130,8 +1011,7 @@
           "place": "middleRoom",
           "state": "被称作毬子",
           "detail": "无头、全裸；下身盖淡紫色包袱布，身份尚无充分验明。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "purpleCloth",
@@ -1139,16 +1019,15 @@
           "place": "middleRoom",
           "state": "盖住尸体下身",
           "detail": "形态与位置来自现场；不据此证明死者性别身份关系。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
         "21": "middleRoom"
       },
-      "truthDeaths": {
-        "3": "middleRoom"
-      }
+      "apparentDeaths": [
+        "21"
+      ]
     },
     {
       "id": "bridesMeet",
@@ -1191,8 +1070,7 @@
           "place": "kannon",
           "state": "警方推定约17:15",
           "detail": "身份与到达时刻均需要在解答中重审。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ]
     },
@@ -1249,8 +1127,7 @@
           "place": "middleRoom",
           "state": "颈部下方可见多次刀具痕迹",
           "detail": "纸窗外木格与里外间拉门为密室条件，不构造原文未说明的出口。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "weapons",
@@ -1258,8 +1135,7 @@
           "place": "shrine",
           "state": "斧头、柴刀等可取用",
           "detail": "尚不能确认每件工具都参与同一次作案。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -1284,8 +1160,7 @@
           "place": "kannon",
           "state": "被认为是长寿郎",
           "detail": "头部缺失，性别与既知人物身份的对应仍有疑问。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "axe",
@@ -1293,16 +1168,15 @@
           "place": "kannon",
           "state": "留在第二现场",
           "detail": "两处斩首和致命伤需要分开；不能一律当作斧子直接杀人。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
         "3": "kannon"
       },
-      "truthDeaths": {
-        "29": "kannon"
-      }
+      "apparentDeaths": [
+        "3"
+      ]
     },
     {
       "id": "guardOvernight",
@@ -1325,8 +1199,7 @@
           "place": "north",
           "state": "警方与青年团继续警戒",
           "detail": "仍是监视约束，不等同于山中不可能进行身份替换。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1346,8 +1219,7 @@
           "place": "forest",
           "state": "搜索发现",
           "detail": "不能自动把衣物归属当作尸体已验明。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "washTrace",
@@ -1355,8 +1227,7 @@
           "place": "eastWater",
           "state": "有清洗痕迹",
           "detail": "警方认为清洗过人头；后续解答将改读为活人卸妆。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ],
       "removeBodies": [
@@ -1438,8 +1309,7 @@
           "place": "ichimori",
           "state": "一枝要求见头颅才承认死亡",
           "detail": "继承问题的说法，不是新的死亡鉴定。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
       ]
     },
@@ -1484,8 +1354,7 @@
           "place": "ichimori",
           "state": "家族揭示其为兵堂与郁子之子",
           "detail": "身份说明与他是否涉案是不同问题。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ]
     },
@@ -1518,8 +1387,7 @@
           "place": "jinja",
           "state": "斧高看见二人接近",
           "detail": "求婚、威胁或交易不能仅凭外观作定论。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
       ]
     },
@@ -1552,8 +1420,7 @@
           "place": "shrine",
           "state": "身份尚在核实",
           "detail": "这具身体不是仅凭祭坛头颅就能确认归属。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "headOnAltar",
@@ -1561,8 +1428,7 @@
           "place": "shrine",
           "state": "被辨为长寿郎",
           "detail": "头与身不是同一人的先验组合。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -1587,8 +1453,7 @@
           "place": "shrine",
           "state": "伊势桥推定凌晨01:00—03:00",
           "detail": "医学推定，不是已确定的攻击时刻。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ]
     },
@@ -1621,8 +1486,7 @@
           "place": "forest",
           "state": "被包在外褂中发现",
           "detail": "头身比对及指纹核实后再登记被害者。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "thirdBody",
@@ -1630,8 +1494,7 @@
           "place": "shrine",
           "state": "据失踪、头颅与比对认作纮弍",
           "detail": "死亡时段仍为推定，不等于发现时刚被杀。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "deaths": {
@@ -1663,8 +1526,7 @@
           "place": "ichimori",
           "state": "兰子在讨论中提及",
           "detail": "属于知情程度线索，不凭此单独证明完整作案路线。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         }
       ]
     },
@@ -1689,8 +1551,7 @@
           "place": "city",
           "state": "另案四名死者",
           "detail": "过程与每名死者位置没有充分叙述，采用本土地点卡片。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ],
       "map": null
@@ -1711,8 +1572,7 @@
           "place": "city",
           "state": "被报道死亡",
           "detail": "尾声又猜测门外来者可能是斧高，不能将猜测画成确定复活。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ],
       "map": null
@@ -1738,8 +1598,7 @@
           "place": "rental",
           "state": "以警方记录和斧高叙述重建",
           "detail": "资料可信性与小说化叙述之间存在距离。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ],
       "map": null
@@ -1766,406 +1625,5 @@
       "map": null
     }
   ],
-  "truthOnly": [
-    {
-      "id": "twinsRestored",
-      "day": 0,
-      "seq": 690,
-      "time": "十三夜参礼 · 支走斧高后，时刻未给",
-      "title": "双胞胎临时恢复原身份",
-      "summary": "解答说明：日常扮长寿郎者其实是女生，日常扮妃女子者是男生；祭祀堂内临时换回原来的性别身份。",
-      "source": "第24章",
-      "actors": {
-        "3": {
-          "place": "ritual",
-          "note": "解答重建"
-        },
-        "4": {
-          "place": "ritual",
-          "note": "解答重建"
-        }
-      },
-      "changes": [
-        {
-          "id": "twinIdentity",
-          "title": "双胞胎身份",
-          "place": "ritual",
-          "state": "日常称呼与身体性别错位",
-          "detail": "真相层固定身体身份，避免因名字互换把同一人画成两个。",
-          "kind": "文书",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "maleInWell",
-      "day": 0,
-      "seq": 718,
-      "time": "十三夜参礼 · 井边净身之后，时刻未明",
-      "title": "井中死者是真正的哥哥",
-      "summary": "两轮解答都把井中死者识别为真正长寿郎（男）；第一轮认为纮弍所为，幕间（四）另提出斧高的可能。凶手不能一概画成已证事实。",
-      "source": "第24章；幕间（四）",
-      "actors": {},
-      "changes": [
-        {
-          "id": "wellBody",
-          "title": "真正哥哥的遗体",
-          "place": "well",
-          "state": "长寿郎（男）在井中",
-          "detail": "死亡身份重读较明确，凶手与动作时序存在不同解答。",
-          "kind": "判断",
-          "truth": true
-        },
-        {
-          "id": "riteKiller",
-          "title": "井边作案者解释",
-          "place": "well",
-          "state": "纮弍说与斧高说并存",
-          "detail": "不同时画两人作案；不把最终篇未证实的猜测当作定论。",
-          "kind": "判断",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "4": "well"
-      }
-    },
-    {
-      "id": "girlDisguise",
-      "day": 0,
-      "seq": 742,
-      "time": "十三夜参礼 · 进入神堂后",
-      "title": "女生经塔到婚舍换装",
-      "summary": "解答重建她携带哥哥灯笼与衣物，经神堂和荣螺塔到前婚舍，恢复日常的长寿郎装扮。首次、再次井边身影都是她。",
-      "source": "第24章",
-      "actors": {
-        "3": {
-          "place": "frontRoom",
-          "note": "解答重建，具体分钟未给"
-        }
-      },
-      "changes": [
-        {
-          "id": "lantern",
-          "title": "灯笼与包裹衣物",
-          "place": "frontRoom",
-          "state": "并非携带哥哥头颅",
-          "detail": "替换身份解释目击中的人头印象和塔顶失踪。",
-          "kind": "判断",
-          "truth": true
-        },
-        {
-          "id": "light",
-          "title": "灯光变化",
-          "place": "frontRoom",
-          "state": "灭灯与换装后的亮灯",
-          "detail": "来源是解答推理，不生成超出原文的连续行动轨迹。",
-          "kind": "判断",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "middleIdentity",
-      "day": 10,
-      "seq": 1645,
-      "time": "婚舍集会 · 中婚舍发生变故时段",
-      "title": "女尸实为长寿郎（女）",
-      "summary": "解答认为毬子与她推搡，导致后脑撞柱，之后斩首并伪装成毬子。具体争执过程被原文说成未明；尾声毬子承认杀了长寿郎。",
-      "source": "第24章；尾声",
-      "actors": {
-        "21": {
-          "place": "middleRoom",
-          "note": "解答重建"
-        }
-      },
-      "changes": [
-        {
-          "id": "femaleBody",
-          "title": "长寿郎（女）的遗体",
-          "place": "middleRoom",
-          "state": "伪装成古里毬子",
-          "detail": "与第二具男尸一起构成双重替换；不是毬子真的死在这里。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "3": "middleRoom"
-      }
-    },
-    {
-      "id": "ranKilled",
-      "day": 10,
-      "seq": 1718,
-      "time": "婚舍集会 · 祠堂案时段，钟点未明",
-      "title": "真正江川兰子被杀",
-      "summary": "解答说明真正的江川兰子是男性兰堂；男尸被伪装成长寿郎，毬子取得其服装和身份。",
-      "source": "第24章",
-      "actors": {
-        "21": {
-          "place": "kannon",
-          "note": "解答重建"
-        }
-      },
-      "changes": [
-        {
-          "id": "maleBody",
-          "title": "真正江川兰子遗体",
-          "place": "kannon",
-          "state": "男尸被当成长寿郎",
-          "detail": "五点十五分是原警方推定，不能当作真实精准行凶钟点。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "29": "kannon"
-      }
-    },
-    {
-      "id": "washMakeup",
-      "day": 10,
-      "seq": 1720,
-      "time": "婚舍集会 · 祠堂之后、会合之前",
-      "title": "毬子在手水舍卸妆",
-      "summary": "她洗掉浓妆、换服饰，假扮江川兰子来到神堂。手水舍痕迹属于活人洗脸，不是确定清洗毬子的人头。",
-      "source": "第24章",
-      "actors": {
-        "21": {
-          "place": "eastWater",
-          "note": "解答重建"
-        }
-      },
-      "changes": [
-        {
-          "id": "washTrace",
-          "title": "手水舍清洗痕迹",
-          "place": "eastWater",
-          "state": "毬子本人卸妆",
-          "detail": "不能把此处画成发生了另一次斩首。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "hirojiKilling",
-      "day": 13,
-      "seq": 10,
-      "time": "第三案 · 凌晨01:00—03:00为推定",
-      "title": "媛神堂再度成为案发点",
-      "summary": "解答认为毬子以兰子身份约纮弍夜间到神堂，击杀并斩首，留下长寿郎的头；攻击精确钟点未明。",
-      "source": "第20章；第24章",
-      "actors": {
-        "21": {
-          "place": "shrine",
-          "note": "解答推断"
-        }
-      },
-      "changes": [
-        {
-          "id": "thirdBody",
-          "title": "纮弍遗体",
-          "place": "shrine",
-          "state": "解答认为由毬子杀害",
-          "detail": "第一轮解答与幕间（四）的反向质疑需要同时保留。",
-          "kind": "判断",
-          "truth": true
-        },
-        {
-          "id": "headOnAltar",
-          "title": "长寿郎头颅",
-          "place": "shrine",
-          "state": "用来明确长寿郎死亡并结束继承争议",
-          "detail": "此处是头、身体来自不同死者。",
-          "kind": "判断",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "13": "shrine"
-      }
-    },
-    {
-      "id": "authorSwap",
-      "day": 20,
-      "seq": 20,
-      "time": "连载写作后期 · 第23章中途之后",
-      "title": "作者也被替换",
-      "summary": "尾声揭示：真正妙子写到第23章中途，之后由古里毬子冒充妙子续写。毬子此前已长期冒充江川兰子。",
-      "source": "尾声",
-      "actors": {
-        "21": {
-          "place": "rental",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "manuscript",
-          "title": "连载原稿",
-          "place": "rental",
-          "state": "作者从妙子变为毬子",
-          "detail": "不能把全部第一人称文字当成同一人的可靠证词。",
-          "kind": "文书",
-          "truth": true
-        },
-        {
-          "id": "myokoBody",
-          "title": "真正妙子",
-          "place": "rentalYard",
-          "state": "已被害，尸体被埋后院",
-          "detail": "作案准确日期、死亡动作及尸体完整状态未详写。",
-          "kind": "状态",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "23": "rentalYard"
-      }
-    },
-    {
-      "id": "alternative",
-      "day": 21,
-      "seq": 20,
-      "time": "出租屋解答 · 幕间（四）",
-      "title": "斧高说与证词可靠性",
-      "summary": "来客指出斧高证词可能不实，提出另一轮作案解释。尾声叙述者对前案的部分承认、来客身份猜测与这轮推理不是同等事实。",
-      "source": "幕间（四）；尾声",
-      "actors": {
-        "21": {
-          "place": "rental",
-          "note": "叙述确认"
-        },
-        "31": {
-          "place": "rental",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "alternate",
-          "title": "另一轮解答",
-          "place": "rental",
-          "state": "质疑证词并提出斧高可能",
-          "detail": "只作为解答图层，不改画成无可争议的全部历史。",
-          "kind": "判断",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "map": null
-    },
-    {
-      "id": "tailIdentity",
-      "day": 21,
-      "seq": 30,
-      "time": "尾声 · 日期未给",
-      "title": "叙述者与门外来客",
-      "summary": "毬子承认冒充妙子；结尾又怀疑来客是斧高或别的存在。小说没有给出确定来客身份，保留未明。",
-      "source": "尾声",
-      "actors": {
-        "21": {
-          "place": "rental",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "visitorIdentity",
-          "title": "来客身份",
-          "place": "rental",
-          "state": "最终未定",
-          "detail": "不把刀城、斧高或怪异存在任选其一画成已验证身份。",
-          "kind": "判断",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "map": null
-    },
-    {
-      "id": "rentalReport",
-      "day": 22,
-      "seq": 10,
-      "time": "报章附录 · 十三日下午17:20左右",
-      "title": "出租屋内无头女尸",
-      "summary": "邮递员在出租屋发现无头女尸，推定约两周前死亡。警方尚需确认身份；不要把发现日当作死亡日。",
-      "source": "民宅内发现无头女尸",
-      "actors": {},
-      "changes": [
-        {
-          "id": "rentalCorpse",
-          "title": "出租屋内无头女尸",
-          "place": "rental",
-          "state": "被发现，身份不明",
-          "detail": "不能直接将女尸一律标作妙子；附录尚在调查。",
-          "kind": "文书",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "map": null
-    },
-    {
-      "id": "yardReport",
-      "day": 22,
-      "seq": 20,
-      "time": "报章附录 · 随后报道",
-      "title": "后院又发现无头女尸",
-      "summary": "警方后院挖出另一具女尸，妙子与蒙面作家均下落不明；人物对应及报章具体日期没有补造。",
-      "source": "新发现又一具无头女尸；神秘的蒙面作家下落不明？",
-      "actors": {},
-      "changes": [
-        {
-          "id": "yardCorpse",
-          "title": "出租屋后院女尸",
-          "place": "rentalYard",
-          "state": "另发现一具",
-          "detail": "与室内女尸分开登记；确定身体身份需要额外证据。",
-          "kind": "文书",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "map": null
-    }
-  ],
-  "aliases": {},
-  "aliasRules": [
-    {
-      "from": "29",
-      "to": "21",
-      "day": 10,
-      "seq": 1725
-    },
-    {
-      "from": "23",
-      "to": "21",
-      "day": 21,
-      "seq": 0
-    }
-  ],
-  "truthNames": {
-    "3": "长寿郎（女／真正妃女子）",
-    "4": "妃女子（男／真正长寿郎）",
-    "21": "古里毬子／冒充兰子、妙子",
-    "29": "真正江川兰子／兰堂"
-  },
-  "ending": {
-    "time": "尾声与报章附录 · 日期及来客身份未完全确定",
-    "title": "保留小说的最后一层疑问",
-    "summary": "复盘使用书中解答重读身体、姓名与证词，仍把第一轮推理、斧高说、叙述者承认和结尾疑问分开。首次落井的作案者和门外来客没有被制作成唯一确定结论；附录女尸也不强行对号入座。",
-    "source": "第24章；幕间（四）；尾声；报章附录"
-  },
-  "basis": "本书活动表明确为粗略时间，正文与表中少量钟点存在差异。十年前后两次仪式分开排序，绝对年月日未给处不补造。真相复盘固定身体身份并保留解答的推理性质；所见姓名、遗体认定、实际身份不等同。村庄与塔结构有附图依据，绝对尺寸、高差、房内落点为示意。"
+  "basis": "空间形状和相邻关系按原文整理；原文未说明的尺寸、材质与室内落点为示意。当时所见只随事件展开，自己的假说另行保存。"
 }

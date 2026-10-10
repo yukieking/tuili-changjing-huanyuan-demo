@@ -18,7 +18,7 @@ class ApplicationTest {
         assertTrue(get("/api/health").body().contains("推理图鉴"));assertEquals(3,mapper.readTree(get("/api/atlas").body()).get("works").size());
         for(String id:new String[]{"decagon","christie","kubi"}){
             assertEquals(200,get("/"+id+".html").statusCode());var response=get("/api/atlas/"+id);assertEquals(200,response.statusCode());
-            var book=mapper.readTree(response.body());assertTrue(book.get("observed").size()>20);assertTrue(book.get("truthOnly").size()>5);
+            var book=mapper.readTree(response.body());assertTrue(book.get("observed").size()>20);assertNull(book.get("truthOnly"));assertNull(book.get("truthNames"));
             assertEquals(200,get("/atlas/"+id+"/geometry.js").statusCode());assertEquals(200,get("/atlas/"+id+"/scene.js").statusCode());
         }
         assertTrue(mapper.readTree(get("/api/recommendations").body()).get("books").size()>=19);

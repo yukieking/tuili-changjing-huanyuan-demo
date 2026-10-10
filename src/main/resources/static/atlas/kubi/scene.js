@@ -31,8 +31,8 @@ export class ReadingScene {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.target.set(2, 0, 0);
     this.controls.enableDamping = false;
-    this.controls.enableRotate = false;
-    this.controls.enablePan = false;
+    this.controls.enableRotate = true;
+    this.controls.enablePan = true;
     this.controls.maxPolarAngle = Math.PI / 2.04;
     this.controls.minDistance = 10;
     this.controls.maxDistance = 145;
@@ -56,6 +56,7 @@ export class ReadingScene {
       (e) => (down = { x: e.clientX, y: e.clientY }),
     );
     host.addEventListener("pointerup", (e) => {
+      if (e.button !== 0) return;
       if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 5)
         return;
       const rect = this.renderer.domElement.getBoundingClientRect();

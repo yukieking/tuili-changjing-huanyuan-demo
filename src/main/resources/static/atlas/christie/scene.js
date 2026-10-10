@@ -21,11 +21,14 @@ export class ReadingScene {
     this.scene = new T.Scene();
     this.camera = new T.OrthographicCamera(-10, 10, 8, -8, 0.1, 200);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableRotate = false;
-    this.controls.enablePan = false;
+    this.controls.enableRotate = true;
+    this.controls.enablePan = true;
     this.controls.enableDamping = false;
+    this.controls.minPolarAngle = .12;
+    this.controls.maxPolarAngle = Math.PI / 2.02;
     this.controls.minZoom = 0.5;
     this.controls.maxZoom = 3;
+    this.controls.addEventListener("change",()=>this.renderer.render(this.scene,this.camera));
     this.scene.add(new T.HemisphereLight("#fffdf3", "#a1a99c", 2.6));
     const sun = new T.DirectionalLight("#fff2df", 2.4);
     sun.position.set(-8, 22, 9);
@@ -49,6 +52,7 @@ export class ReadingScene {
       (e) => (start = { x: e.clientX, y: e.clientY }),
     );
     host.addEventListener("pointerup", (e) => {
+      if (e.button !== 0) return;
       if (!start || Math.hypot(e.clientX - start.x, e.clientY - start.y) > 5)
         return;
       const rect = host.getBoundingClientRect();
@@ -96,6 +100,7 @@ export class ReadingScene {
       new T.MeshStandardMaterial({ color: c, roughness: 0.9 }),
     );
     m.position.set(x, y, z);
+    m.userData.wall=h>=1&&(w<=.15||d<=.15)&&c==="#fffdf2";
     m.castShadow = true;
     m.receiveShadow = true;
     g.add(m);
@@ -303,6 +308,7 @@ export class ReadingScene {
       this.parts.get(r.id).visible =
         r.chapter <= chapter && state.unlocked.includes(r.id) && (!focus || focus === r.id);
     this.staffLink.visible = chapter >= 8 && !focus;
+    for(const g of this.parts.values())g.traverse(o=>{if(o.userData.wall)o.visible=!focus;});
     for (const [id, g] of this.pawns) g.visible = false;
     if (state.showPeople)
       for (const [id, p] of Object.entries(state.positions)) {
@@ -374,8 +380,9 @@ export class ReadingScene {
     const w = this.host.clientWidth,
       h = this.host.clientHeight;
     if (!w || !h) return;
-    this.renderer.setSize(w, h, false);
-    this.fit();
+    const changed=this.width!==w||this.height!==h;
+    this.width=w;this.height=h;this.renderer.setSize(w,h,false);
+    if(changed)this.fit();
   }
   zoom(f) {
     this.camera.zoom = Math.max(0.5, Math.min(3, this.camera.zoom * f));

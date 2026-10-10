@@ -92,8 +92,7 @@
           "place": "vera",
           "state": "墙上可读",
           "detail": "仅登记房间内物件，不把它当作已经验证的杀人预告。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         },
         {
           "id": "bear",
@@ -101,8 +100,7 @@
           "place": "vera",
           "state": "放在壁炉上",
           "detail": "后续位置会改变；不能一开始就放在室外。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -159,8 +157,7 @@
           "place": "dining",
           "state": "已见10个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -221,8 +218,7 @@
           "place": "living",
           "state": "声音响起",
           "detail": "记录的是指控，不是法院或警方鉴定结论。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ]
     },
@@ -247,8 +243,7 @@
           "place": "neighbor",
           "state": "发现录音来源",
           "detail": "邻室与休息厅的相通关系有文字依据；孔的位置和高度未明。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -281,8 +276,7 @@
           "place": "staff",
           "state": "已饮用并卧床",
           "detail": "当时无法由她熟睡直接确认毒物或死亡。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -335,8 +329,7 @@
           "place": "living",
           "state": "中毒后被检查",
           "detail": "毒物判断与投毒者身份分开记录。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "marstonCause",
@@ -344,8 +337,7 @@
           "place": "living",
           "state": "疑似氰化物",
           "detail": "阿姆斯特朗的现场判断。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ],
       "deaths": {
@@ -368,8 +360,7 @@
           "place": "dining",
           "state": "已见9个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "moveBodies": {
@@ -441,8 +432,7 @@
           "place": "staff",
           "state": "熟睡后未醒",
           "detail": "起初存在多种解释；不能提前判定管家杀妻。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ],
       "deaths": {
@@ -494,8 +484,7 @@
           "place": "dining",
           "state": "已见8个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "boat",
@@ -503,8 +492,7 @@
           "place": "landing",
           "state": "未按约定抵岛",
           "detail": "这是交通中断，不能据此推导藏在岛上的第三者。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -605,8 +593,7 @@
           "place": "staff",
           "state": "来源为罗杰斯",
           "detail": "原文有上行小楼梯，不能把佣人房画在一层。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -631,8 +618,7 @@
           "place": "shore",
           "state": "发现重击伤",
           "detail": "现场检查；之后遗体搬回客房。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
@@ -672,8 +658,7 @@
           "place": "dining",
           "state": "已见7个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "moveBodies": {
@@ -725,8 +710,7 @@
           "place": "living",
           "state": "认为凶手可能是内部人物",
           "detail": "搜岛未发现额外人物，不等同穷尽一切证明。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         }
       ]
     },
@@ -751,8 +735,7 @@
           "place": "dining",
           "state": "罗杰斯上锁，钥匙放口袋",
           "detail": "次晨的瓷人变化需要结合钥匙去向理解。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "guestLocks",
@@ -760,8 +743,7 @@
           "place": "guests",
           "state": "各自上锁并插好门栓",
           "detail": "只是睡前观察，不证明整夜留在房内。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -826,8 +808,7 @@
           "place": "dining",
           "state": "已见6个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -864,8 +845,7 @@
           "place": "laundry",
           "state": "大斧留有血迹",
           "detail": "死亡发生在洗衣房；不能把案发点画进厨房。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
@@ -949,8 +929,7 @@
           "place": "dining",
           "state": "她在饮后感到头晕",
           "detail": "是否被加药要到手稿核实。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -991,8 +970,7 @@
           "place": "dining",
           "state": "不像黄蜂叮咬",
           "detail": "医生认为毒物由针筒注入；黄蜂并非杀人凶器。",
-          "kind": "判断",
-          "truth": false
+          "kind": "判断"
         },
         {
           "id": "figures",
@@ -1000,8 +978,7 @@
           "place": "dining",
           "state": "已见5个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "deaths": {
@@ -1045,8 +1022,7 @@
           "place": "stepsEast",
           "state": "窗外地面被发现",
           "detail": "室外图的落点只表示来自窗外，不能当作原文确定的东侧坐标。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -1087,8 +1063,7 @@
           "place": "guests",
           "state": "床边抽屉内已失踪",
           "detail": "当时并不知道谁取走，也不知道藏处。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1129,8 +1104,7 @@
           "place": "living",
           "state": "小柜和大碗橱分别锁闭",
           "detail": "钥匙分持不等于此前投毒无法发生。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1199,8 +1173,7 @@
           "place": "vera",
           "state": "黑暗中触碰后被发现",
           "detail": "来源与布置者此时未明。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ]
     },
@@ -1237,8 +1210,7 @@
           "place": "living",
           "state": "法官装扮和额头红印",
           "detail": "真正伤口还是装扮，在当时尚未核实。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "figures",
@@ -1246,14 +1218,15 @@
           "place": "dining",
           "state": "已见4个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "deaths": {
         "2": "living"
       },
-      "truthDeaths": {}
+      "apparentDeaths": [
+        "2"
+      ]
     },
     {
       "id": "wargraveMove",
@@ -1284,28 +1257,6 @@
       "changes": [],
       "moveBodies": {
         "2": "guests"
-      },
-      "truthActors": {
-        "0": {
-          "place": "kitchen",
-          "note": "叙述确认"
-        },
-        "1": {
-          "place": "kitchen",
-          "note": "叙述确认"
-        },
-        "3": {
-          "place": "kitchen",
-          "note": "叙述确认"
-        },
-        "4": {
-          "place": "kitchen",
-          "note": "叙述确认"
-        },
-        "2": {
-          "place": "guests",
-          "note": "实际仍活着，假装遗体"
-        }
       }
     },
     {
@@ -1329,8 +1280,7 @@
           "place": "guests",
           "state": "重新出现在床边抽屉",
           "detail": "谁把它放回，只在手稿复盘揭示。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1363,8 +1313,7 @@
           "place": "hall",
           "state": "仅见背影，身份未明",
           "detail": "不能把黑影在事实层直接标成阿姆斯特朗。",
-          "kind": "证词",
-          "truth": false
+          "kind": "证词"
         },
         {
           "id": "armstrongAbsence",
@@ -1372,8 +1321,7 @@
           "place": "guests",
           "state": "客房无人应答",
           "detail": "此时尚未发现尸体，不能在当时所见提前标为死亡。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1406,8 +1354,7 @@
           "place": "dining",
           "state": "窗玻璃破碎",
           "detail": "搜寻发现的状态不证明医生破窗逃走。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1440,8 +1387,7 @@
           "place": "dining",
           "state": "已见3个",
           "detail": "数量按此时原文记载更新；与死亡的联系属于人物逐步发现的线索。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1494,8 +1440,7 @@
           "place": "stepsEast",
           "state": "砸落在布洛尔近旁",
           "detail": "来自维拉房间；谁扔下当时没有目击。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
@@ -1527,8 +1472,7 @@
           "place": "shore",
           "state": "海边被发现",
           "detail": "发现时间不同于落水时间；法医的时段推算到尾声才说明。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         }
       ],
       "deaths": {
@@ -1560,8 +1504,7 @@
           "place": "shore",
           "state": "拖到潮水冲不到处",
           "detail": "仍属海边场景，尸体落点只作示意。",
-          "kind": "物证",
-          "truth": false
+          "kind": "物证"
         },
         {
           "id": "gun",
@@ -1569,8 +1512,7 @@
           "place": "shore",
           "state": "维拉拿到手中",
           "detail": "取枪发生在海边，并非从房间重新取出。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1595,8 +1537,7 @@
           "place": "shore",
           "state": "维拉开枪后持有",
           "detail": "小说实际描写的开枪节点。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "deaths": {
@@ -1624,8 +1565,7 @@
           "place": "vera",
           "state": "被维拉带上楼",
           "detail": "图上只标目的房间，过程不是实时定位。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "gun",
@@ -1633,8 +1573,7 @@
           "place": "corridor",
           "state": "上楼途中丢下",
           "detail": "原文未指定哪级楼梯或走廊坐标；此处为楼上通行区示意。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ]
     },
@@ -1654,8 +1593,7 @@
           "place": "vera",
           "state": "维拉上吊，椅子被踢开",
           "detail": "布置时间和布置者未在当时叙述中说明。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "figures",
@@ -1663,8 +1601,7 @@
           "place": "vera",
           "state": "掉落摔碎，已无完整瓷人",
           "detail": "不是餐桌上又出现了一个新的瓷人。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         }
       ],
       "deaths": {
@@ -1687,8 +1624,7 @@
           "place": "vera",
           "state": "警方见椅子整齐靠墙",
           "detail": "死亡现场被改变，不能把椅子一直留作被踢翻的状态。",
-          "kind": "状态",
-          "truth": false
+          "kind": "状态"
         },
         {
           "id": "police",
@@ -1696,8 +1632,7 @@
           "place": "mainland",
           "state": "留下无法解释的矛盾",
           "detail": "发现、尸检与日记不等于警方已经掌握手稿真相。",
-          "kind": "文书",
-          "truth": false
+          "kind": "文书"
         }
       ],
       "deaths": {
@@ -1706,482 +1641,5 @@
       "map": null
     }
   ],
-  "truthOnly": [
-    {
-      "id": "prepare",
-      "day": 7,
-      "seq": 10,
-      "time": "登岛前 · 日期未细分",
-      "title": "法官筹备孤岛邀请",
-      "summary": "沃格雷夫借莫里斯代理买岛，按各人的经历发出邀请；本土准备地点未准确建模。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "mainland",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "invites",
-          "title": "邀请与代理人",
-          "place": "mainland",
-          "state": "沃格雷夫策划",
-          "detail": "手稿自述，不能据此把其他人的旧罪全部视为独立司法事实。",
-          "kind": "文书",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "map": null
-    },
-    {
-      "id": "poisonMarston",
-      "day": 8,
-      "seq": 55,
-      "time": "8/08 · 录音引发混乱时",
-      "title": "法官向酒杯投毒",
-      "summary": "沃格雷夫利用指控后的混乱对马斯顿杯中投毒。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "living",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "glass",
-          "title": "马斯顿酒杯",
-          "place": "living",
-          "state": "沃格雷夫投毒",
-          "detail": "作案细节来自手稿，不是现场其他人的目击。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "poisonMrs",
-      "day": 8,
-      "seq": 48,
-      "time": "8/08 · 女管家晕倒之后",
-      "title": "对白兰地下药",
-      "summary": "沃格雷夫对给女管家的白兰地下致死安眠药；她随后被带回上层。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "living",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "brandy",
-          "title": "女管家白兰地",
-          "place": "living",
-          "state": "法官加入安眠药",
-          "detail": "投药钟点和剂量不做数值模拟。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "killMac",
-      "day": 9,
-      "seq": 50,
-      "time": "8/09 · 午前，准确钟点未明",
-      "title": "将军在海边遇袭",
-      "summary": "法官选择离开露台的时机，在海边从后袭击将军。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "shore",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "macCause",
-          "title": "将军死亡",
-          "place": "shore",
-          "state": "沃格雷夫从后袭击",
-          "detail": "自白补述；不补造袭击准确分钟。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "6": "shore"
-      }
-    },
-    {
-      "id": "killRogers",
-      "day": 10,
-      "seq": 5,
-      "time": "8/10 · 清晨",
-      "title": "法官在劈柴处杀死管家",
-      "summary": "罗杰斯正在劈柴，法官从背后袭击，并取得管家口袋里的餐厅钥匙。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "laundry",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "diningLock",
-          "title": "餐厅钥匙",
-          "place": "laundry",
-          "state": "法官从罗杰斯口袋取得",
-          "detail": "罗杰斯锁门并没有阻止持钥匙者进餐厅。",
-          "kind": "状态",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "8": "laundry"
-      }
-    },
-    {
-      "id": "hideGun",
-      "day": 10,
-      "seq": 25,
-      "time": "8/10 · 管家遗体发现的混乱中",
-      "title": "偷枪并藏入食品罐",
-      "summary": "法官从隆巴德房中拿枪，藏在储藏室的食品罐；储藏室与小厨房分隔未知，此处标厨房存储区。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "guests",
-          "note": "隆巴德卧室"
-        }
-      },
-      "changes": [
-        {
-          "id": "gun",
-          "title": "隆巴德手枪",
-          "place": "kitchen",
-          "state": "藏在食品罐内",
-          "detail": "原文说储藏室；地图以厨房存储区表达，绝非精确藏点。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "drugBrent",
-      "day": 10,
-      "seq": 32,
-      "time": "8/10 · 早餐续咖啡时",
-      "title": "给布伦特咖啡加安眠药",
-      "summary": "法官在第二次倒咖啡时下药，让她随后昏沉。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "dining",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "brentCoffee",
-          "title": "布伦特咖啡",
-          "place": "dining",
-          "state": "法官加入安眠药",
-          "detail": "先镇静、后注射是两个步骤。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "killBrent",
-      "day": 10,
-      "seq": 38,
-      "time": "8/10 · 她被独留餐厅后",
-      "title": "法官返回餐厅注射毒物",
-      "summary": "沃格雷夫在她意识模糊时注射氰化物，并用黄蜂呼应童谣。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "dining",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "brentNeedle",
-          "title": "注射针眼",
-          "place": "dining",
-          "state": "法官注射造成",
-          "detail": "黄蜂只用于误导。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "5": "dining"
-      }
-    },
-    {
-      "id": "fakeDeath",
-      "day": 10,
-      "seq": 72,
-      "time": "8/10 · 维拉尖叫引开众人时",
-      "title": "法官与医生合谋假死",
-      "summary": "医生信任法官，协助他扮死；红印、帘布、羊毛和烛光让其余人误信死亡。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "living",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "judgeCostume",
-          "title": "假死装扮",
-          "place": "living",
-          "state": "额头红印并非此时中枪",
-          "detail": "真相层此刻不把法官列为死者。",
-          "kind": "状态",
-          "truth": true
-        },
-        {
-          "id": "seaweed",
-          "title": "海草",
-          "place": "vera",
-          "state": "法官预先布置以引开众人",
-          "detail": "布置准确钟点未知。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "cliffMeet",
-      "day": 11,
-      "seq": 5,
-      "time": "8/11 · 01:45（手稿自述）",
-      "title": "法官与医生在悬崖会面",
-      "summary": "两人来到房后崖边小路；这一钟点来自手稿，不是其他人的目击。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "cliff",
-          "note": "叙述确认"
-        },
-        "3": {
-          "place": "cliff",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [],
-      "truth": true
-    },
-    {
-      "id": "pushDoctor",
-      "day": 11,
-      "seq": 10,
-      "time": "8/11 · 悬崖会面后",
-      "title": "法官将医生推入海中",
-      "summary": "沃格雷夫把阿姆斯特朗推下悬崖，随后返屋制造脚步声。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "cliff",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "armstrongBody",
-          "title": "医生落水",
-          "place": "cliff",
-          "state": "从房后悬崖落水",
-          "detail": "落水点与后来海边发现遗体的位置不同。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "3": "cliff"
-      }
-    },
-    {
-      "id": "windowReturn",
-      "day": 11,
-      "seq": 23,
-      "time": "8/11 · 凌晨追踪黑影时",
-      "title": "由餐厅窗返回并再装尸体",
-      "summary": "法官诱使二人追踪，绕回餐厅窗，打碎玻璃，再到床上躺着。枪已被放回，但准确归还时刻未知。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "guests",
-          "note": "回床继续假装遗体"
-        }
-      },
-      "changes": [
-        {
-          "id": "shadow",
-          "title": "黑影",
-          "place": "hall",
-          "state": "实际为沃格雷夫",
-          "detail": "不能将医生失踪与黑影身份混为一谈。",
-          "kind": "物证",
-          "truth": true
-        },
-        {
-          "id": "window",
-          "title": "餐厅窗玻璃",
-          "place": "dining",
-          "state": "法官返回后打碎",
-          "detail": "原文给出门窗方式，具体外绕路径不明。",
-          "kind": "状态",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "dropBear",
-      "day": 11,
-      "seq": 48,
-      "time": "8/11 · 布洛尔返回住宅时",
-      "title": "熊形钟从维拉窗上方砸落",
-      "summary": "法官利用布洛尔单独回屋，将熊形大理石钟砸向东侧石阶。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "vera",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "bear",
-          "title": "熊形大理石钟",
-          "place": "stepsEast",
-          "state": "法官利用上方窗口投下",
-          "detail": "只表达窗与下方石阶关系，未经真实尺寸或物理仿真验证。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "4": "stepsEast"
-      }
-    },
-    {
-      "id": "setRope",
-      "day": 11,
-      "seq": 78,
-      "time": "8/11 · 维拉射杀隆巴德之后",
-      "title": "法官布置卧室绳套",
-      "summary": "他趁维拉还未回房布好绳套和椅子，利用她的心理状态诱发自杀。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "vera",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "rope",
-          "title": "绳套与椅子",
-          "place": "vera",
-          "state": "沃格雷夫布置",
-          "detail": "没有给出准确的安装分钟。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "chairReset",
-      "day": 11,
-      "seq": 90,
-      "time": "8/11 · 维拉死后",
-      "title": "移椅并回收手枪",
-      "summary": "法官从橱柜阴影处走出，把椅子靠墙，取回维拉丢下的枪，保留其指纹。",
-      "source": "第18章手稿",
-      "actors": {
-        "2": {
-          "place": "vera",
-          "note": "叙述确认"
-        }
-      },
-      "changes": [
-        {
-          "id": "rope",
-          "title": "椅子",
-          "place": "vera",
-          "state": "由法官移到墙边",
-          "detail": "解释警方发现的现场矛盾。",
-          "kind": "状态",
-          "truth": true
-        },
-        {
-          "id": "gun",
-          "title": "手枪",
-          "place": "guests",
-          "state": "法官取回，之后带回自己房间",
-          "detail": "地图标目的区，不补造逐步坐标。",
-          "kind": "物证",
-          "truth": true
-        }
-      ],
-      "truth": true
-    },
-    {
-      "id": "lastShot",
-      "day": 11,
-      "seq": 95,
-      "time": "8/11 · 最后；准确钟点未给",
-      "title": "法官安排自己的枪击死亡",
-      "summary": "手稿写下最后的计划：返床并留下真正的额头弹孔。警方验尸确认他最终饮弹而死；不是先前假死时便已死亡。",
-      "source": "第18章手稿；第17章警方资料",
-      "actors": {},
-      "changes": [
-        {
-          "id": "judgeCostume",
-          "title": "沃格雷夫真实枪伤",
-          "place": "guests",
-          "state": "最终枪伤与先前假死分开",
-          "detail": "计划叙述与尸检互证结局；不生成射击机关操作步骤。",
-          "kind": "状态",
-          "truth": true
-        }
-      ],
-      "truth": true,
-      "deaths": {
-        "2": "guests"
-      }
-    }
-  ],
-  "aliases": {},
-  "truthNames": {},
-  "ending": {
-    "time": "手稿与尾声 · 部分日期未明",
-    "title": "发现与真相的时间差",
-    "summary": "登岛日期和连续案件日期由手稿与正文交叉整理。法官假死不是真实死亡；医生落水点不是遗体发现点。警方谈话与瓶中手稿被发现的准确日期没有补造。",
-    "source": "第17–18章"
-  },
-  "basis": "依据所给译本。客房排列未完整说明，除维拉房与相连浴室外，其他客房只显示未定分区；遗体保留的是最后确证所在地。岛上外景落点、尺寸及窗外物证位置为示意，不能用于验证距离或耗时。"
+  "basis": "空间形状和相邻关系按原文整理；原文未说明的尺寸、材质与室内落点为示意。当时所见只随事件展开，自己的假说另行保存。"
 }
