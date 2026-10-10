@@ -1,3 +1,4 @@
+import {drawPlan as kubiPlan} from './kubi/flat-map.js';
 import {eventsFor as replayEvents,snapshot as replaySnapshot} from './engine.js';
 import {createPlanner} from './planner-ui.js';
 import {timeLabel} from './planning.js';
@@ -30,6 +31,7 @@ function choose(place){const r=byId(place);map=r?.floor??null;focus=r?.id??null;
 function changeMode(next){stop();if(mode==='observed')observedIndex=index;else personalIndex=index;mode=next;seek(next==='personal'?personalIndex:observedIndex);}
 function flat(rs,clues,positions){
  if(!rs.length){$('#flat').innerHTML='';return;}
+ if(work==='kubi'){$('#flat').innerHTML=kubiPlan(rs,clues,positions,names,snap.dead);return;}
  const pts=rs.flatMap(r=>r.polygon),xmin=Math.min(...pts.map(p=>p[0])),xmax=Math.max(...pts.map(p=>p[0])),zmin=Math.min(...pts.map(p=>p[1])),zmax=Math.max(...pts.map(p=>p[1]));
  const scale=Math.min(880/(xmax-xmin||1),520/(zmax-zmin||1)),xy=(x,z)=>[500+(x-(xmin+xmax)/2)*scale,325+(z-(zmin+zmax)/2)*scale];
  let html=rs.map(r=>{const [x,y]=xy(...r.center);return `<g data-room="${r.id}" role="button" tabindex="0" aria-label="查看${esc(r.name)}立体图"><polygon points="${r.polygon.map(p=>xy(...p).join(',')).join(' ')}" fill="${r.floor===0?'#e6dec9':'#dbe4e7'}" stroke="#748b91" stroke-width="3" ${r.type==='passage'?'stroke-dasharray="8 6"':''}/><text x="${x}" y="${y-12}" text-anchor="middle" fill="#314e55" font-size="19">${esc(r.name)}</text></g>`;}).join('');
